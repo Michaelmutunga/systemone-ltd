@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import systemOneLogo from '@/assets/system-one-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S1</span>
-            </div>
+            <img 
+              src={systemOneLogo} 
+              alt="System ONE Ltd Logo" 
+              className="h-12 w-auto"
+            />
             <div>
               <h1 className="text-xl font-bold text-dark-grey">System One Ltd</h1>
               <p className="text-sm text-professional-grey">Technology Solutions</p>
