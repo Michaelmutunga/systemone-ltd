@@ -2,28 +2,33 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Layout from '@/components/Layout';
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     service: '',
-    message: '',
+    message: ''
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     toast({
       title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      description: "Thank you for your inquiry. We'll get back to you within 24 hours."
     });
     // Reset form
     setFormData({
@@ -31,12 +36,10 @@ const Contact = () => {
       email: '',
       company: '',
       service: '',
-      message: '',
+      message: ''
     });
   };
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
@@ -68,32 +71,14 @@ const Contact = () => {
                     <label htmlFor="name" className="block text-sm font-medium text-dark-grey mb-2">
                       Full Name *
                     </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Your full name"
-                    />
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your full name" />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-dark-grey mb-2">
                       Email Address *
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="your@email.com"
-                    />
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your@email.com" />
                   </div>
                 </div>
                 
@@ -102,28 +87,14 @@ const Contact = () => {
                     <label htmlFor="company" className="block text-sm font-medium text-dark-grey mb-2">
                       Company Name
                     </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Your company"
-                    />
+                    <input type="text" id="company" name="company" value={formData.company} onChange={handleInputChange} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your company" />
                   </div>
                   
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-dark-grey mb-2">
                       Service of Interest
                     </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    >
+                    <select id="service" name="service" value={formData.service} onChange={handleInputChange} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                       <option value="">Select a service</option>
                       <option value="erp">ERP Systems</option>
                       <option value="consulting">IT Consultancy</option>
@@ -140,22 +111,10 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-dark-grey mb-2">
                     Message *
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                    placeholder="Tell us about your project or requirements..."
-                  />
+                  <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none" placeholder="Tell us about your project or requirements..." />
                 </div>
                 
-                <button
-                  type="submit"
-                  className="w-full btn-primary flex items-center justify-center gap-2"
-                >
+                <button type="submit" className="w-full btn-primary flex items-center justify-center gap-2">
                   <Send size={20} />
                   Send Message
                 </button>
@@ -192,8 +151,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-dark-grey mb-1">Call Us</h3>
-                    <p className="text-professional-grey">+254 700 123 456</p>
-                    <p className="text-professional-grey">+254 733 987 654</p>
+                    <p className="text-professional-grey">+254 716 003 953</p>
+                    <p className="text-professional-grey">+254 734 025 131</p>
                   </div>
                 </div>
 
@@ -237,7 +196,7 @@ const Contact = () => {
                 </p>
                 <div className="flex items-center space-x-2">
                   <Phone size={16} className="text-primary" />
-                  <span className="font-medium text-primary">+254 711 555 000</span>
+                  <span className="font-medium text-primary">+254 718 375 717</span>
                 </div>
               </div>
             </div>
@@ -271,8 +230,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Contact;
