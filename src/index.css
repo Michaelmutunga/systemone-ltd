@@ -9,49 +9,59 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --foreground: 220 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 217 91% 60%;
+    --primary: 220 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 45 95% 65%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 217 91% 60%;
+    --accent: 5 85% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --ring: 220 85% 55%;
 
-    /* Custom design tokens for System One */
-    --tech-blue: 217 91% 60%;
-    --tech-blue-dark: 217 91% 50%;
-    --tech-blue-light: 217 91% 70%;
-    --professional-grey: 215 15% 45%;
-    --light-grey: 220 14% 96%;
-    --dark-grey: 215 25% 15%;
+    /* Custom triadic color scheme for System One */
+    --tech-blue: 220 85% 55%;
+    --tech-blue-dark: 220 85% 45%;
+    --tech-blue-light: 220 85% 65%;
+    --tech-red: 5 85% 60%;
+    --tech-red-dark: 5 85% 50%;
+    --tech-red-light: 5 85% 70%;
+    --tech-yellow: 45 95% 65%;
+    --tech-yellow-dark: 45 95% 55%;
+    --tech-yellow-light: 45 95% 75%;
+    --professional-grey: 220 15% 45%;
+    --light-grey: 210 20% 96%;
+    --dark-grey: 220 25% 15%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    /* Triadic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 55%), hsl(5 85% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(45 95% 65%), hsl(220 85% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(5 85% 60%), hsl(45 95% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 12px -2px hsl(217 91% 60% / 0.1);
-    --shadow-medium: 0 8px 24px -4px hsl(217 91% 60% / 0.15);
-    --shadow-large: 0 20px 40px -8px hsl(217 91% 60% / 0.2);
+    /* Enhanced shadows with color */
+    --shadow-soft: 0 4px 12px -2px hsl(220 85% 55% / 0.1);
+    --shadow-medium: 0 8px 24px -4px hsl(220 85% 55% / 0.15);
+    --shadow-large: 0 20px 40px -8px hsl(220 85% 55% / 0.2);
+    --shadow-red: 0 4px 12px -2px hsl(5 85% 60% / 0.15);
+    --shadow-yellow: 0 4px 12px -2px hsl(45 95% 65% / 0.15);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -127,13 +137,21 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Professional components */
+  /* Professional components with triadic colors */
   .hero-section {
-    @apply bg-gradient-to-br from-background to-secondary;
+    background: var(--gradient-subtle);
   }
   
   .tech-gradient {
     background: var(--gradient-primary);
+  }
+  
+  .tech-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .tech-gradient-accent {
+    background: var(--gradient-accent);
   }
   
   .card-hover {
@@ -143,6 +161,16 @@ All colors MUST be HSL.
   
   .card-hover:hover {
     box-shadow: var(--shadow-medium);
+  }
+  
+  .card-hover-red {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-red);
+  }
+  
+  .card-hover-yellow {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-yellow);
   }
   
   .section-padding {
@@ -163,10 +191,31 @@ All colors MUST be HSL.
   }
   
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply bg-primary text-primary-foreground hover:bg-tech-blue-dark px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply bg-secondary text-secondary-foreground hover:bg-tech-yellow-dark border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-tech-red-dark px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  /* Triadic accent elements */
+  .accent-blue {
+    @apply bg-tech-blue text-white;
+  }
+  
+  .accent-red {
+    @apply bg-tech-red text-white;
+  }
+  
+  .accent-yellow {
+    @apply bg-tech-yellow text-dark-grey;
+  }
+  
+  .border-triadic {
+    border-image: linear-gradient(90deg, hsl(var(--tech-blue)), hsl(var(--tech-red)), hsl(var(--tech-yellow))) 1;
   }
 }

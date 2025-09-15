@@ -57,10 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom System One color tokens
+        // Custom System One triadic color tokens
         "tech-blue": "hsl(var(--tech-blue))",
         "tech-blue-dark": "hsl(var(--tech-blue-dark))",
         "tech-blue-light": "hsl(var(--tech-blue-light))",
+        "tech-red": "hsl(var(--tech-red))",
+        "tech-red-dark": "hsl(var(--tech-red-dark))",
+        "tech-red-light": "hsl(var(--tech-red-light))",
+        "tech-yellow": "hsl(var(--tech-yellow))",
+        "tech-yellow-dark": "hsl(var(--tech-yellow-dark))",
+        "tech-yellow-light": "hsl(var(--tech-yellow-light))",
         "professional-grey": "hsl(var(--professional-grey))",
         "light-grey": "hsl(var(--light-grey))",
         "dark-grey": "hsl(var(--dark-grey))",
