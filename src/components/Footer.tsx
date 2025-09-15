@@ -1,20 +1,14 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import systemOneLogo from '@/assets/system-one-logo.png';
-
 const Footer = () => {
-  return (
-    <footer className="bg-dark-grey text-white">
+  return <footer className="bg-dark-grey text-white">
       <div className="container-width section-padding">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src={systemOneLogo} 
-                alt="System ONE Ltd Logo" 
-                className="h-12 w-auto"
-              />
+              <img src={systemOneLogo} alt="System ONE Ltd Logo" className="h-12 w-auto" />
               <div>
                 <h3 className="text-lg font-bold text-white">System One Ltd</h3>
                 <p className="text-sm text-white/80">Technology Solutions</p>
@@ -82,11 +76,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-primary" />
-                <span className="text-gray-300 text-sm">info@systemone.co.ke</span>
+                <span className="text-gray-300 text-sm">info@systemone.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-primary" />
-                <span className="text-gray-300 text-sm">+254 700 123 456</span>
+                <span className="text-gray-300 text-sm">+254716003953</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-primary mt-1" />
@@ -105,8 +99,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
