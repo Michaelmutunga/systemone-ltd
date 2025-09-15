@@ -26,7 +26,7 @@ const Header = () => {
             <img 
               src={systemOneLogo} 
               alt="System ONE Ltd Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
             <div>
               <h1 className="text-xl font-bold text-dark-grey">System One Ltd</h1>

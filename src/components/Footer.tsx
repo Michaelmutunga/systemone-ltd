@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import systemOneLogo from '@/assets/system-one-logo.png';
 
 const Footer = () => {
   return (
@@ -8,12 +9,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">S1</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src={systemOneLogo} 
+                alt="System ONE Ltd Logo" 
+                className="h-12 w-auto"
+              />
+              <div>
+                <h3 className="text-lg font-bold text-white">System One Ltd</h3>
+                <p className="text-sm text-white/80">Technology Solutions</p>
               </div>
-              <span className="text-xl font-bold">System One Ltd</span>
-            </div>
+            </Link>
             <p className="text-gray-300 text-sm">
               Leading technology solutions provider in Kenya, delivering innovative IT services and enterprise solutions.
             </p>
