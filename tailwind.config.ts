@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom System One color tokens
+        "tech-blue": "hsl(var(--tech-blue))",
+        "tech-blue-dark": "hsl(var(--tech-blue-dark))",
+        "tech-blue-light": "hsl(var(--tech-blue-light))",
+        "professional-grey": "hsl(var(--professional-grey))",
+        "light-grey": "hsl(var(--light-grey))",
+        "dark-grey": "hsl(var(--dark-grey))",
       },
       borderRadius: {
         lg: "var(--radius)",
