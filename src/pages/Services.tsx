@@ -1,95 +1,69 @@
 import { 
-  Database, 
-  Users, 
-  Code, 
-  Network, 
-  HardDrive, 
-  Headphones,
+  GraduationCap, 
+  BookOpen, 
+  Shield, 
+  Fingerprint, 
+  Wind,
   ArrowRight,
-  CheckCircle 
+  CheckCircle,
+  Star 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 
 const Services = () => {
-  const services = [
+  const products = [
     {
-      icon: Database,
-      title: 'ERP Systems',
-      description: 'Comprehensive enterprise resource planning solutions to streamline business operations, improve efficiency, and provide real-time insights.',
+      icon: GraduationCap,
+      title: 'CampusCURA ERP',
+      description: 'Our flagship Education ERP solution designed to streamline operations for schools, colleges, and universities.',
       features: [
-        'Financial Management',
-        'Inventory Control',
-        'HR Management',
-        'Customer Relationship Management',
-        'Reporting & Analytics',
-        'Integration Capabilities'
+        'Student enrollment & management',
+        'Finance & accounting',
+        'Attendance & timetable scheduling',
+        'Library management',
+        'Examination and grading',
+        'Access control integration'
+      ],
+      highlight: 'CampusCURA enables institutions to improve efficiency, accountability, and student experience by providing a single, centralized system.',
+    },
+    {
+      icon: BookOpen,
+      title: 'Library Radar (RFID Security Solution)',
+      description: 'An RFID-based library security and automation system that helps libraries protect resources, improve circulation efficiency, and enhance the patron experience.',
+      features: [
+        'RFID book tagging for easy identification',
+        'Anti-theft detection through RFID security gates',
+        'Self-check-in/check-out kiosks',
+        'Inventory and shelf management',
+        'Real-time tracking of library assets'
       ],
     },
     {
-      icon: Users,
-      title: 'IT Consultancy',
-      description: 'Strategic IT guidance and consulting services to help you make informed technology decisions and optimize your IT infrastructure.',
+      icon: Shield,
+      title: 'Hardware Products',
+      description: 'We supply a wide range of RFID and biometric hardware to complement our security and ERP solutions.',
       features: [
-        'Technology Strategy Planning',
-        'Digital Transformation',
-        'System Architecture Design',
-        'Security Assessments',
-        'Performance Optimization',
-        'Technology Roadmaps'
+        'RFID Security Gates – Prevent unauthorized removal of books and assets',
+        'RFID Tags – Attach to books, assets, or ID cards for identification',
+        'RFID Desktop Readers – Enable fast scanning and circulation management',
+        'Biometric Systems – Fingerprint and facial recognition devices for secure access',
+        'Turnstiles – Physical barriers that integrate with RFID and biometric systems for controlled entry'
       ],
     },
     {
-      icon: Code,
-      title: 'Software Development',
-      description: 'Custom software solutions designed specifically for your business needs, from web applications to mobile apps and desktop software.',
+      icon: Wind,
+      title: 'Kamnyweso Breathalyzer',
+      description: 'Our latest innovation in access control and facility safety. Designed to detect alcohol consumption and prevent drunk individuals from accessing secure environments.',
       features: [
-        'Web Application Development',
-        'Mobile App Development',
-        'Desktop Applications',
-        'API Development',
-        'Database Design',
-        'System Integration'
+        'Accurate and fast alcohol detection',
+        'Seamless integration with turnstiles and biometric systems',
+        'Prevents impaired individuals from gaining entry',
+        'Promotes safety, security, and responsible conduct',
+        'Suitable for workplaces, schools, hospitals, and government buildings'
       ],
-    },
-    {
-      icon: Network,
-      title: 'Networking Solutions',
-      description: 'Secure, reliable network infrastructure solutions including LAN/WAN setup, wireless networks, and network security.',
-      features: [
-        'Network Design & Setup',
-        'Wireless Solutions',
-        'Network Security',
-        'VPN Implementation',
-        'Network Monitoring',
-        'Performance Optimization'
-      ],
-    },
-    {
-      icon: HardDrive,
-      title: 'Hardware Solutions',
-      description: 'Quality hardware procurement, installation, and configuration services for servers, workstations, and networking equipment.',
-      features: [
-        'Server Solutions',
-        'Workstation Setup',
-        'Networking Hardware',
-        'Storage Solutions',
-        'Backup Systems',
-        'Hardware Maintenance'
-      ],
-    },
-    {
-      icon: Headphones,
-      title: 'Support Services',
-      description: '24/7 technical support and maintenance services to ensure your IT systems run smoothly and efficiently at all times.',
-      features: [
-        '24/7 Technical Support',
-        'System Maintenance',
-        'Troubleshooting',
-        'Performance Monitoring',
-        'Security Updates',
-        'Training & Documentation'
-      ],
+      isNew: true,
+      highlight: 'Perfect for workplaces, schools, universities, hospitals, government buildings, and high-security facilities.',
     },
   ];
 
@@ -110,47 +84,72 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Products Grid */}
       <section className="section-padding bg-white">
         <div className="container-width">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {services.map((service, index) => (
+            {products.map((product, index) => (
               <div
                 key={index}
-                className="bg-white border border-border rounded-2xl p-8 card-hover"
+                className={`bg-white border rounded-2xl p-8 card-hover relative ${
+                  product.isNew ? 'border-accent shadow-lg' : 'border-border'
+                }`}
               >
+                {product.isNew && (
+                  <div className="absolute -top-3 -right-3 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                    <Star size={14} />
+                    NEW
+                  </div>
+                )}
+                
                 <div className="flex items-start space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <service.icon size={32} className="text-primary" />
+                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                    product.isNew ? 'bg-accent/10' : 'bg-primary/10'
+                  }`}>
+                    <product.icon size={32} className={product.isNew ? 'text-accent' : 'text-primary'} />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-dark-grey mb-2">
-                      {service.title}
+                      {product.title}
                     </h3>
                     <p className="text-professional-grey">
-                      {service.description}
+                      {product.description}
                     </p>
                   </div>
                 </div>
                 
                 <div className="space-y-3 mb-6">
                   <h4 className="font-semibold text-dark-grey">Key Features:</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {service.features.map((feature, featureIndex) => (
+                  <ul className="space-y-2">
+                    {product.features.map((feature, featureIndex) => (
                       <li 
                         key={featureIndex}
-                        className="flex items-center space-x-2 text-sm text-professional-grey"
+                        className="flex items-start space-x-2 text-sm text-professional-grey"
                       >
-                        <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                        <CheckCircle size={16} className={`flex-shrink-0 mt-0.5 ${
+                          product.isNew ? 'text-accent' : 'text-primary'
+                        }`} />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+
+                {product.highlight && (
+                  <div className={`p-4 rounded-lg mb-6 ${
+                    product.isNew ? 'bg-accent/5 border border-accent/20' : 'bg-primary/5 border border-primary/20'
+                  }`}>
+                    <p className="text-sm text-dark-grey font-medium">
+                      👉 {product.highlight}
+                    </p>
+                  </div>
+                )}
                 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors"
+                  className={`inline-flex items-center gap-2 font-medium hover:opacity-80 transition-colors ${
+                    product.isNew ? 'text-accent' : 'text-primary'
+                  }`}
                 >
                   Learn More
                   <ArrowRight size={16} />
@@ -216,19 +215,28 @@ const Services = () => {
       <section className="section-padding tech-gradient text-white">
         <div className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Started?
+            Ready to Transform Your Institution?
           </h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Let's discuss how our services can help transform your business 
-            and achieve your technology goals.
+          <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto">
+            Get in touch to request a demo for CampusCURA, Library Radar, or our innovative 
+            Kamnyweso Breathalyzer. Let us show you how our solutions can enhance your operations.
           </p>
-          <Link
-            to="/contact"
-            className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
-          >
-            Contact Us Today
-            <ArrowRight size={20} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
+            >
+              Get in Touch
+              <ArrowRight size={20} />
+            </Link>
+            <Link
+              to="/contact"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
+            >
+              Request a Demo
+              <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

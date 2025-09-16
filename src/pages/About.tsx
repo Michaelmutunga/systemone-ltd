@@ -174,19 +174,19 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'John Kamau',
+                name: 'John Erick Okatch',
                 role: 'Chief Executive Officer',
-                description: 'Over 15 years of experience in technology leadership and business strategy.',
+                description: 'Visionary leader driving System One Ltd\'s strategic direction and innovation.',
               },
               {
-                name: 'Sarah Wanjiku',
-                role: 'Chief Technology Officer',
-                description: 'Expert in enterprise software development and system architecture.',
+                name: 'Lynette Nzamalu',
+                role: 'Director',
+                description: 'Operations director ensuring excellence in service delivery and client satisfaction.',
               },
               {
-                name: 'Michael Ochieng',
-                role: 'Head of Operations',
-                description: 'Specializes in project management and client relationship management.',
+                name: 'Ruth Muyala',
+                role: 'Admin',
+                description: 'Administrative professional managing day-to-day operations and client support.',
               },
             ].map((member, index) => (
               <div
