@@ -216,6 +216,108 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Our Clients Section */}
+      <section className="section-padding bg-white">
+        <div className="container-width">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+              Our Trusted Partners
+            </h2>
+            <p className="text-xl text-professional-grey">
+              Leading institutions across Kenya trust our solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {[
+              {
+                name: 'Karatina University',
+                solution: 'Library Radar + Biometrics',
+                logoPlaceholder: 'KU'
+              },
+              {
+                name: 'University of Embu',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'UE'
+              },
+              {
+                name: 'Kibabii University',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'KiU'
+              },
+              {
+                name: 'Tharaka University',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'TU'
+              },
+              {
+                name: 'KSTVET',
+                solution: 'CampusCURA + Library Radar + Biometrics',
+                logoPlaceholder: 'KSTVET'
+              },
+              {
+                name: 'Machakos University',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'MU'
+              },
+              {
+                name: 'Belgut TTI',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'BTTI'
+              },
+              {
+                name: 'RVTTI',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'RVTTI'
+              },
+              {
+                name: 'Maasai Mara University',
+                solution: 'CampusCURA ERP',
+                logoPlaceholder: 'MMU'
+              }
+            ].map((client, index) => (
+              <div
+                key={index}
+                className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
+              >
+                {/* Logo Placeholder */}
+                <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <span className="text-primary font-bold text-sm text-center">
+                    {client.logoPlaceholder}
+                  </span>
+                </div>
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white font-semibold text-sm mb-2">
+                    {client.name}
+                  </h3>
+                  <p className="text-white/90 text-xs">
+                    {client.solution}
+                  </p>
+                </div>
+                
+                {/* Client Name (visible on mobile) */}
+                <div className="md:hidden text-center">
+                  <h3 className="text-dark-grey font-semibold text-sm mb-1">
+                    {client.name}
+                  </h3>
+                  <p className="text-professional-grey text-xs">
+                    {client.solution}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-professional-grey text-sm">
+              * Logo placeholders shown. Replace with actual institutional logos for production.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding tech-gradient text-white">
         <div className="container-width text-center">
