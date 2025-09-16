@@ -172,7 +172,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {[
               {
                 step: '01',
@@ -191,6 +191,11 @@ const Services = () => {
               },
               {
                 step: '04',
+                title: 'Training',
+                description: 'We provide comprehensive training to ensure your team can effectively use the system.',
+              },
+              {
+                step: '05',
                 title: 'Support',
                 description: 'We provide ongoing support and optimization for continued success.',
               },

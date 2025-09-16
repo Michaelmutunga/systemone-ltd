@@ -163,8 +163,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-dark-grey mb-1">Visit Us</h3>
                     <p className="text-professional-grey">
-                      CBD Business Center<br />
-                      Kimathi Street, 5th Floor<br />
+                      Greatwall Apartments<br />
+                      Beijing Road<br />
                       Nairobi, Kenya
                     </p>
                   </div>
@@ -222,7 +222,7 @@ const Contact = () => {
                 <MapPin size={48} className="text-primary mx-auto mb-4" />
                 <p className="text-professional-grey">
                   Interactive map will be integrated here<br />
-                  CBD Business Center, Kimathi Street<br />
+                  Greatwall Apartments, Beijing Road<br />
                   Nairobi, Kenya
                 </p>
               </div>
