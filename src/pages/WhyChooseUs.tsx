@@ -44,22 +44,22 @@ const WhyChooseUs = () => {
 
   const testimonials = [
     {
-      name: 'Grace Mwangi',
-      company: 'Nairobi Manufacturing Ltd',
-      role: 'Operations Manager',
-      quote: 'System One transformed our inventory management with their ERP solution. We now have real-time visibility across all our operations.',
+      name: 'ICT Director',
+      company: 'KSTVET',
+      role: 'ICT Director',
+      quote: 'With CampusCURA, we now have a centralized system for managing students, finance, and library services. The integration of RFID and biometrics has significantly improved accountability and security across our campuses. We highly recommend System One\'s solutions for institutions looking to modernize.',
     },
     {
-      name: 'David Kipchoge',
-      company: 'East Africa Logistics',
-      role: 'IT Director',
-      quote: 'Their networking solutions improved our connectivity by 400%. The team was professional and delivered on time.',
+      name: 'Deputy Vice-Chancellor',
+      company: 'Maasai Mara University',
+      role: 'Deputy Vice-Chancellor (Academic Affairs)',
+      quote: 'We chose CampusCURA because we wanted an ERP tailored for education. It has delivered beyond expectations — from automating finance to streamlining student services. The support from System One has been excellent.',
     },
     {
-      name: 'Mary Wanjira',
-      company: 'Kenyan Retail Group',
-      role: 'CEO',
-      quote: 'The custom software they developed has streamlined our entire business process. ROI was achieved within 6 months.',
+      name: 'Chief Librarian',
+      company: 'Karatina University',
+      role: 'Chief Librarian',
+      quote: 'System One\'s Library Radar has transformed the way we manage our library resources. The RFID security gates and biometric integration have reduced book losses and streamlined student access. We now have a modern, secure, and efficient library experience for our users.',
     },
   ];
 
