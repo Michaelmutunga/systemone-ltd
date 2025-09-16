@@ -85,8 +85,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-primary mt-1" />
                 <span className="text-gray-300 text-sm">
-                  Nairobi, Kenya<br />
-                  CBD Business Center
+                  Greatwall Apartments<br />
+                  Beijing Road, Nairobi, Kenya
                 </span>
               </div>
             </div>
