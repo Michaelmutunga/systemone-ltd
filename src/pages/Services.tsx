@@ -11,6 +11,17 @@ import {
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 
+// Import logos
+import karatinaLogo from '@/assets/logos/karatina-university.png';
+import embuLogo from '@/assets/logos/university-of-embu.png';
+import kibabiiLogo from '@/assets/logos/kibabii-university.jpg';
+import tharakaLogo from '@/assets/logos/tharaka-university.jpeg';
+import kstvetLogo from '@/assets/logos/kstvet.jpeg';
+import machakosLogo from '@/assets/logos/machakos-university.png';
+import belgutLogo from '@/assets/logos/belgut-tti.jpeg';
+import rvttiLogo from '@/assets/logos/rvtti.png';
+import maasaiMaraLogo from '@/assets/logos/maasai-mara-university.jpeg';
+
 const Services = () => {
   const products = [
     {
@@ -233,58 +244,60 @@ const Services = () => {
               {
                 name: 'Karatina University',
                 solution: 'Library Radar + Biometrics',
-                logoPlaceholder: 'KU'
+                logo: karatinaLogo
               },
               {
                 name: 'University of Embu',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'UE'
+                logo: embuLogo
               },
               {
                 name: 'Kibabii University',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'KiU'
+                logo: kibabiiLogo
               },
               {
                 name: 'Tharaka University',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'TU'
+                logo: tharakaLogo
               },
               {
                 name: 'KSTVET',
                 solution: 'CampusCURA + Library Radar + Biometrics',
-                logoPlaceholder: 'KSTVET'
+                logo: kstvetLogo
               },
               {
                 name: 'Machakos University',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'MU'
+                logo: machakosLogo
               },
               {
                 name: 'Belgut TTI',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'BTTI'
+                logo: belgutLogo
               },
               {
                 name: 'RVTTI',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'RVTTI'
+                logo: rvttiLogo
               },
               {
                 name: 'Maasai Mara University',
                 solution: 'CampusCURA ERP',
-                logoPlaceholder: 'MMU'
+                logo: maasaiMaraLogo
               }
             ].map((client, index) => (
               <div
                 key={index}
                 className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
               >
-                {/* Logo Placeholder */}
-                <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <span className="text-primary font-bold text-sm text-center">
-                    {client.logoPlaceholder}
-                  </span>
+                {/* Logo */}
+                <div className="w-20 h-20 mx-auto mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 
                 {/* Hover Overlay */}
@@ -310,11 +323,6 @@ const Services = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <p className="text-professional-grey text-sm">
-              * Logo placeholders shown. Replace with actual institutional logos for production.
-            </p>
-          </div>
         </div>
       </section>
 
