@@ -248,17 +248,17 @@ const Services = () => {
               },
               {
                 name: 'University of Embu',
-                solution: 'CampusCURA ERP',
+                solution: 'Library Radar',
                 logo: embuLogo
               },
               {
                 name: 'Kibabii University',
-                solution: 'CampusCURA ERP',
+                solution: 'Library Radar',
                 logo: kibabiiLogo
               },
               {
                 name: 'Tharaka University',
-                solution: 'CampusCURA ERP',
+                solution: 'Library Radar',
                 logo: tharakaLogo
               },
               {
