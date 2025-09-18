@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Layout from '@/components/Layout';
 const Contact = () => {
   const {
@@ -23,21 +24,45 @@ const Contact = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours."
-    });
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      service: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Send email via Supabase edge function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your inquiry. We'll get back to you within 24 hours."
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <Layout>
       {/* Hero Section */}
@@ -114,9 +139,13 @@ const Contact = () => {
                   <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none" placeholder="Tell us about your project or requirements..." />
                 </div>
                 
-                <button type="submit" className="w-full btn-primary flex items-center justify-center gap-2">
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   <Send size={20} />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
