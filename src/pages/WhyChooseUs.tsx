@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
       icon: Award,
       title: 'Proven Track Record',
       description: 'Our portfolio of successful implementations across various industries demonstrates our ability to deliver results that drive business growth.',
-      stats: '500+ Projects',
+      stats: '100+ Projects',
     },
     {
       icon: Zap,
