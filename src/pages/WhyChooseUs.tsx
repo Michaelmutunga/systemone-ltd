@@ -205,14 +205,14 @@ const WhyChooseUs = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {[
-              'Microsoft Certified Partner',
-              'Cisco Technology Partner',
-              'Oracle Silver Partner',
-              'Google Cloud Partner',
+              'IoT & RFID Systems Integration Certificate',
+              'RFID Technology Certification',
+              'Kenya ICT Authority Certifications / Partnerships',
+              'Physical Access Control & Biometrics Certification',
               'AWS Consulting Partner',
               'ISO 27001 Certified',
-              'CompTIA Authorized',
-              'VMware Partner',
+              'Agile / Scrum Certification',
+              'Certified RFID Professional (CRP)',
             ].map((cert, index) => (
               <div
                 key={index}
