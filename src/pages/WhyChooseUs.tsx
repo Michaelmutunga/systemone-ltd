@@ -112,7 +112,7 @@ const WhyChooseUs = () => {
         <div className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
-              System One vs. Competitors
+              System One vs. Other companies
             </h2>
             <p className="text-xl text-professional-grey">
               See how we stack up against other technology providers
@@ -126,8 +126,8 @@ const WhyChooseUs = () => {
                   <tr>
                     <th className="px-6 py-4 text-left">Features</th>
                     <th className="px-6 py-4 text-center">System One</th>
-                    <th className="px-6 py-4 text-center">Competitor A</th>
-                    <th className="px-6 py-4 text-center">Competitor B</th>
+                    <th className="px-6 py-4 text-center">Other company</th>
+                    <th className="px-6 py-4 text-center">Other comapny</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
