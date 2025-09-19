@@ -243,7 +243,7 @@ const WhyChooseUs = () => {
               to="/contact"
               className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200"
             >
-              Get Free Consultation
+              Get Free Demo
             </Link>
             <Link
               to="/services"
