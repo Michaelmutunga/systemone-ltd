@@ -136,8 +136,8 @@ const WhyChooseUs = () => {
                     ['Custom Development', '✓', '✓', '✗'],
                     ['Affordable Pricing', '✓', '✗', '✓'],
                     ['10+ Years Experience', '✓', '✓', '✗'],
-                    ['Free Consultation', '✓', '✗', '✗'],
-                    ['Local Presence in Kenya', '✓', '✗', '✗'],
+                    ['Free Consultation/Demo', '✓', '✗', '✗'],
+                    ['10+ Years Warranty', '✓', '✗', '✗'],
                   ].map((row, index) => (
                     <tr key={index} className="hover:bg-secondary/10">
                       <td className="px-6 py-4 font-medium text-dark-grey">{row[0]}</td>
