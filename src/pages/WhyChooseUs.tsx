@@ -126,8 +126,8 @@ const WhyChooseUs = () => {
                   <tr>
                     <th className="px-6 py-4 text-left">Features</th>
                     <th className="px-6 py-4 text-center">System One</th>
-                    <th className="px-6 py-4 text-center">Other company</th>
-                    <th className="px-6 py-4 text-center">Other comapny</th>
+                    <th className="px-6 py-4 text-center">Company A</th>
+                    <th className="px-6 py-4 text-center">Company B</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
