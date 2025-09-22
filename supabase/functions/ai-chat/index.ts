@@ -57,9 +57,36 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
     });
 
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error('OpenAI API error:', errorData);
-      throw new Error(`OpenAI API error: ${response.status}`);
+      const rawText = await response.text();
+      console.error('OpenAI API error:', rawText);
+      const status = response.status;
+
+      // Friendly handling for common upstream errors
+      if (status === 429) {
+        return new Response(
+          JSON.stringify({ ok: false, code: 'rate_limit', message: 'The AI is receiving too many requests. Please wait a few seconds and try again.' }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 },
+        );
+      }
+
+      if (status === 401) {
+        return new Response(
+          JSON.stringify({ ok: false, code: 'auth_error', message: 'AI credentials are invalid. Please contact the site administrator.' }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 },
+        );
+      }
+
+      // Fallback for other errors
+      let message = rawText;
+      try {
+        const parsed = JSON.parse(rawText);
+        message = parsed?.error?.message || parsed?.message || rawText;
+      } catch (_) {}
+
+      return new Response(
+        JSON.stringify({ ok: false, code: 'upstream_error', status, message }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 },
+      );
     }
 
     const data = await response.json();
@@ -68,6 +95,7 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
     console.log('AI response generated successfully');
 
     return new Response(JSON.stringify({ 
+      ok: true,
       response: aiResponse,
       conversationHistory: [...conversationHistory, 
         { role: 'user', content: message },

@@ -56,6 +56,15 @@ const Chatbot = () => {
         throw error;
       }
 
+      if (data && data.ok === false) {
+        toast({
+          title: 'Please try again',
+          description: data.message || 'The assistant is temporarily unavailable.',
+          variant: 'destructive',
+        });
+        return;
+      }
+
       const aiMessage: Message = {
         role: 'assistant',
         content: data.response,
