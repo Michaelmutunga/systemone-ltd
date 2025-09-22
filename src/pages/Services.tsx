@@ -268,7 +268,7 @@ const Services = () => {
               },
               {
                 name: 'Machakos University',
-                solution: 'CampusCURA ERP',
+                solution: 'Library Radar + Biometrics',
                 logo: machakosLogo
               },
               {
