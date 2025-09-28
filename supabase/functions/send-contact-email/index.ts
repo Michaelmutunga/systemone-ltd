@@ -1,7 +1,4 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -36,25 +33,39 @@ const handler = async (req: Request): Promise<Response> => {
 
     const { name, email, company, service, message } = formData;
 
-    // Send email to company
-    const emailResponse = await resend.emails.send({
-      from: "System One Website <onboarding@resend.dev>",
-      to: ["info@systemoneltd.com"],
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
-        <p><strong>Service:</strong> ${service}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        <hr>
-        <p><small>This message was sent from the System One website contact form.</small></p>
-      `,
+    // Send email using Resend API
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
+      },
+      body: JSON.stringify({
+        from: "System One Website <onboarding@resend.dev>",
+        to: ["info@systemoneltd.com"],
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
+          <p><strong>Service:</strong> ${service}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p><small>This message was sent from the System One website contact form.</small></p>
+        `,
+      }),
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text();
+      throw new Error(`Failed to send email: ${errorText}`);
+    }
+
+    const emailData = await emailResponse.json();
+
+    console.log("Email sent successfully:", emailData);
 
     return new Response(
       JSON.stringify({ 

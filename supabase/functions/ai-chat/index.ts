@@ -42,19 +42,45 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
       { role: 'user', content: message }
     ];
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${openAIApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: messages,
-        max_tokens: 500,
-        temperature: 0.7,
-      }),
-    });
+    // Retry logic with exponential backoff for rate limits
+    let response: Response | undefined;
+    let attempts = 0;
+    const maxAttempts = 3;
+    
+    while (attempts < maxAttempts) {
+      attempts++;
+      console.log(`OpenAI API attempt ${attempts}/${maxAttempts}`);
+      
+      response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${openAIApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: messages,
+          max_tokens: 500,
+          temperature: 0.7,
+        }),
+      });
+
+      // If successful or non-retryable error, break
+      if (response.ok || (response.status !== 429 && response.status !== 503)) {
+        break;
+      }
+
+      // If rate limited and not last attempt, wait with exponential backoff
+      if (response.status === 429 && attempts < maxAttempts) {
+        const waitTime = Math.pow(2, attempts - 1) * 1000; // 1s, 2s, 4s
+        console.log(`Rate limited, waiting ${waitTime}ms before retry ${attempts + 1}`);
+        await new Promise(resolve => setTimeout(resolve, waitTime));
+      }
+    }
+
+    if (!response) {
+      throw new Error('Failed to get response from OpenAI after retries');
+    }
 
     if (!response.ok) {
       const rawText = await response.text();
@@ -108,7 +134,7 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
   } catch (error) {
     console.error('Error in AI chat function:', error);
     return new Response(JSON.stringify({ 
-      error: error.message || 'Failed to process chat request' 
+      error: (error as Error).message || 'Failed to process chat request' 
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
