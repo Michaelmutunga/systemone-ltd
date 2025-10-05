@@ -241,7 +241,7 @@ const Contact = () => {
               Find Our Office
             </h2>
             <p className="text-xl text-professional-grey">
-              Located in the heart of Nairobi's Central Business District
+              Located at the edge of Nairobi
             </p>
           </div>
           
