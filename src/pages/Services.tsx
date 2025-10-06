@@ -21,6 +21,13 @@ import machakosLogo from '@/assets/logos/machakos-university.png';
 import belgutLogo from '@/assets/logos/belgut-tti.jpeg';
 import rvttiLogo from '@/assets/logos/rvtti.png';
 import maasaiMaraLogo from '@/assets/logos/maasai-mara-university.jpeg';
+import pcKinyanjuiLogo from '@/assets/logos/pc-kinyanjui.jpeg';
+import kajiadoEastLogo from '@/assets/logos/kajiado-east.jpeg';
+import bandariLogo from '@/assets/logos/bandari.jpeg';
+import kslLogo from '@/assets/logos/ksl.png';
+import aldaiLogo from '@/assets/logos/aldai.png';
+import ummaLogo from '@/assets/logos/umma-university.jpeg';
+import iluLogo from '@/assets/logos/ilu.jpeg';
 
 const Services = () => {
   const products = [
@@ -241,6 +248,41 @@ const Services = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {[
+              {
+                name: 'PC Kinyanjui Technical Training Institute',
+                solution: 'CampusCURA ERP + Library Radar',
+                logo: pcKinyanjuiLogo
+              },
+              {
+                name: 'Kajiado East Technical and Vocational College',
+                solution: 'CampusCURA ERP',
+                logo: kajiadoEastLogo
+              },
+              {
+                name: 'Bandari Maritime Academy',
+                solution: 'Library Radar',
+                logo: bandariLogo
+              },
+              {
+                name: 'Kenya School of Law',
+                solution: 'Library Radar',
+                logo: kslLogo
+              },
+              {
+                name: 'Aldai Technical Training Institute',
+                solution: 'CampusCURA ERP + Library Radar',
+                logo: aldaiLogo
+              },
+              {
+                name: 'Umma University',
+                solution: 'Library Radar',
+                logo: ummaLogo
+              },
+              {
+                name: 'International Leadership University',
+                solution: 'Library Radar',
+                logo: iluLogo
+              },
               {
                 name: 'Karatina University',
                 solution: 'Library Radar + Biometrics',
