@@ -324,7 +324,7 @@ const Services = () => {
                 logo: rvttiLogo
               },
               {
-                name: 'Maasai Mara University',
+                name: 'Maasai Mara Technical and Vocational College',
                 solution: 'CampusCURA ERP',
                 logo: maasaiMaraLogo
               }
