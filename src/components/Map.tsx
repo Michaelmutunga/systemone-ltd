@@ -9,8 +9,8 @@ const Map = () => {
   useEffect(() => {
     if (!mapContainer.current || mapInstance.current) return;
 
-    // Initialize map - Beijing Road near KCAA transmitting station, Mlolongo
-    mapInstance.current = L.map(mapContainer.current).setView([-1.3654, 36.9574], 16);
+    // Initialize map - Great Wall Apartments, Beijing Road, Mlolongo
+    mapInstance.current = L.map(mapContainer.current).setView([-1.3835403058632503, 36.93942379891467], 16);
 
     // Add OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,8 +29,8 @@ const Map = () => {
       shadowSize: [41, 41]
     });
 
-    // Add marker for Great Wall Apartments - Beijing Road near KCAA transmitting station
-    const marker = L.marker([-1.3654, 36.9574], { icon: customIcon }).addTo(mapInstance.current);
+    // Add marker for Great Wall Apartments
+    const marker = L.marker([-1.3835403058632503, 36.93942379891467], { icon: customIcon }).addTo(mapInstance.current);
     
     // Add popup
     marker.bindPopup(`
