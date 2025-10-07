@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Layout from '@/components/Layout';
+import Map from '@/components/Map';
 const Contact = () => {
   const {
     toast
@@ -245,17 +246,8 @@ const Contact = () => {
             </p>
           </div>
           
-          <div className="bg-white rounded-2xl p-8 text-center">
-            <div className="w-full h-64 bg-secondary/30 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={48} className="text-primary mx-auto mb-4" />
-                <p className="text-professional-grey">
-                  Interactive map will be integrated here<br />
-                  Greatwall Apartments, Beijing Road<br />
-                  Nairobi, Kenya
-                </p>
-              </div>
-            </div>
+          <div className="bg-white rounded-2xl p-8">
+            <Map />
           </div>
         </div>
       </section>
