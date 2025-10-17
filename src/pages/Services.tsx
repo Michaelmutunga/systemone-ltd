@@ -164,7 +164,13 @@ const Services = () => {
                 )}
                 
                 <Link
-                  to="/contact"
+                  to={
+                    product.title === 'CampusCURA ERP' 
+                      ? '/campusCURA' 
+                      : product.title === 'Library Radar (RFID Security Solution)' 
+                      ? '/LibraryRadar' 
+                      : '/HardwareProducts'
+                  }
                   className={`inline-flex items-center gap-2 font-medium hover:opacity-80 transition-colors ${
                     product.isNew ? 'text-accent' : 'text-primary'
                   }`}
