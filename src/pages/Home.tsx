@@ -121,23 +121,15 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: 'ERP Systems',
                 description: 'Complete enterprise resource planning solutions to streamline your business operations.',
               },
               {
-                title: 'IT Consultancy',
-                description: 'Strategic IT guidance and consulting to optimize your technology infrastructure.',
-              },
-              {
                 title: 'Software Development',
                 description: 'Custom software solutions designed to meet your specific business requirements.',
-              },
-              {
-                title: 'Networking Solutions',
-                description: 'Secure and reliable network infrastructure for seamless connectivity.',
               },
               {
                 title: 'Hardware Solutions',
