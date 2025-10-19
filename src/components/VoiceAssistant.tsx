@@ -1,56 +1,56 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Mic, MicOff, Phone, PhoneOff } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
-import Vapi from '@vapi-ai/web';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Mic, MicOff, Phone, PhoneOff } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
+import Vapi from "@vapi-ai/web";
 
 const VoiceAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isCallActive, setIsCallActive] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [callStatus, setCallStatus] = useState<string>('Idle');
+  const [callStatus, setCallStatus] = useState<string>("Idle");
   const { toast } = useToast();
 
   // Initialize Vapi
   useEffect(() => {
-    const vapiInstance = new Vapi('YOUR_VAPI_PUBLIC_KEY'); // Replace with your Vapi public key
+    const vapiInstance = new Vapi("57182b75-41d7-4e9a-bc69-525e7f9b39fd"); // Replace with your Vapi public key
     setVapi(vapiInstance);
 
     // Set up event listeners
-    vapiInstance.on('call-start', () => {
-      console.log('Call started');
+    vapiInstance.on("call-start", () => {
+      console.log("Call started");
       setIsCallActive(true);
-      setCallStatus('Connected');
+      setCallStatus("Connected");
       toast({
         title: "Call Started",
         description: "Voice assistant is now active",
       });
     });
 
-    vapiInstance.on('call-end', () => {
-      console.log('Call ended');
+    vapiInstance.on("call-end", () => {
+      console.log("Call ended");
       setIsCallActive(false);
-      setCallStatus('Call Ended');
+      setCallStatus("Call Ended");
       toast({
         title: "Call Ended",
         description: "Voice assistant disconnected",
       });
     });
 
-    vapiInstance.on('speech-start', () => {
-      console.log('Assistant started speaking');
-      setCallStatus('Assistant Speaking');
+    vapiInstance.on("speech-start", () => {
+      console.log("Assistant started speaking");
+      setCallStatus("Assistant Speaking");
     });
 
-    vapiInstance.on('speech-end', () => {
-      console.log('Assistant stopped speaking');
-      setCallStatus('Listening');
+    vapiInstance.on("speech-end", () => {
+      console.log("Assistant stopped speaking");
+      setCallStatus("Listening");
     });
 
-    vapiInstance.on('error', (error) => {
-      console.error('Vapi error:', error);
+    vapiInstance.on("error", (error) => {
+      console.error("Vapi error:", error);
       toast({
         title: "Error",
         description: error.message || "An error occurred with the voice assistant",
@@ -58,8 +58,8 @@ const VoiceAssistant = () => {
       });
     });
 
-    vapiInstance.on('message', (message) => {
-      console.log('Message received:', message);
+    vapiInstance.on("message", (message) => {
+      console.log("Message received:", message);
     });
 
     return () => {
@@ -71,10 +71,10 @@ const VoiceAssistant = () => {
     if (!vapi) return;
 
     try {
-      setCallStatus('Connecting...');
+      setCallStatus("Connecting...");
       // Start call with assistant configuration
-      await vapi.start('YOUR_ASSISTANT_ID'); // Replace with your Vapi assistant ID
-      
+      await vapi.start("4260e990-ee15-4011-bb20-28674ba25c2a"); // Replace with your Vapi assistant ID
+
       // Alternative: Use inline configuration
       // await vapi.start({
       //   model: {
@@ -91,8 +91,8 @@ const VoiceAssistant = () => {
       //   }
       // });
     } catch (error) {
-      console.error('Failed to start call:', error);
-      setCallStatus('Failed to Connect');
+      console.error("Failed to start call:", error);
+      setCallStatus("Failed to Connect");
       toast({
         title: "Connection Failed",
         description: "Could not start the voice assistant",
@@ -105,7 +105,7 @@ const VoiceAssistant = () => {
     if (vapi) {
       vapi.stop();
       setIsCallActive(false);
-      setCallStatus('Idle');
+      setCallStatus("Idle");
     }
   };
 
@@ -142,22 +142,13 @@ const VoiceAssistant = () => {
 
             <div className="flex flex-col gap-3">
               {!isCallActive ? (
-                <Button
-                  onClick={startCall}
-                  className="w-full"
-                  size="lg"
-                >
+                <Button onClick={startCall} className="w-full" size="lg">
                   <Phone className="h-5 w-5 mr-2" />
                   Start Call
                 </Button>
               ) : (
                 <>
-                  <Button
-                    onClick={toggleMute}
-                    variant="outline"
-                    className="w-full"
-                    size="lg"
-                  >
+                  <Button onClick={toggleMute} variant="outline" className="w-full" size="lg">
                     {isMuted ? (
                       <>
                         <MicOff className="h-5 w-5 mr-2" />
@@ -170,12 +161,7 @@ const VoiceAssistant = () => {
                       </>
                     )}
                   </Button>
-                  <Button
-                    onClick={endCall}
-                    variant="destructive"
-                    className="w-full"
-                    size="lg"
-                  >
+                  <Button onClick={endCall} variant="destructive" className="w-full" size="lg">
                     <PhoneOff className="h-5 w-5 mr-2" />
                     End Call
                   </Button>
@@ -183,9 +169,7 @@ const VoiceAssistant = () => {
               )}
             </div>
 
-            <div className="text-xs text-muted-foreground text-center pt-2 border-t">
-              Powered by Vapi
-            </div>
+            <div className="text-xs text-muted-foreground text-center pt-2 border-t">Powered by Vapi</div>
           </div>
         </Card>
       )}
