@@ -1,6 +1,16 @@
 import { Shield, Fingerprint, Wind, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import biometricSystem1 from '@/assets/products/biometric-system-1.png';
+import biometricSystem2 from '@/assets/products/biometric-system-2.png';
+import biometricSystem3 from '@/assets/products/biometric-system-3.png';
+import inventoryStockTaker1 from '@/assets/products/inventory-stock-taker-1.png';
+import inventoryStockTaker2 from '@/assets/products/inventory-stock-taker-2.png';
+import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.png';
+import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.png';
+import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.png';
+import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.png';
+import rfidTag1 from '@/assets/products/rfid-tag-1.png';
 
 const HardwareProducts = () => {
   return (
@@ -31,56 +41,107 @@ const HardwareProducts = () => {
               Our Hardware Solutions
             </h2>
             
-            <div className="space-y-8">
-              {[
-                {
-                  icon: Shield,
-                  title: 'RFID Security Gates',
-                  description: 'Prevent unauthorized removal of books and assets with advanced detection technology',
-                  color: 'primary'
-                },
-                {
-                  icon: Shield,
-                  title: 'RFID Tags',
-                  description: 'Attach to books, assets, or ID cards for easy identification and tracking',
-                  color: 'primary'
-                },
-                {
-                  icon: Shield,
-                  title: 'RFID Desktop Readers',
-                  description: 'Enable fast scanning and efficient circulation management at service desks',
-                  color: 'primary'
-                },
-                {
-                  icon: Fingerprint,
-                  title: 'Biometric Systems',
-                  description: 'Fingerprint and facial recognition devices for secure access control and authentication',
-                  color: 'primary'
-                },
-                {
-                  icon: Shield,
-                  title: 'Turnstiles',
-                  description: 'Physical barriers that integrate with RFID and biometric systems for controlled entry points',
-                  color: 'primary'
-                }
-              ].map((product, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-border rounded-xl p-6 card-hover flex items-start space-x-4"
-                >
+            <div className="space-y-12">
+              {/* RFID Tags */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4 mb-6">
                   <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <product.icon size={28} className="text-primary" />
+                    <Shield size={28} className="text-primary" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-dark-grey mb-2">
-                      {product.title}
+                      RFID Tags
                     </h3>
                     <p className="text-professional-grey">
-                      {product.description}
+                      Attach to books, assets, or ID cards for easy identification and tracking
                     </p>
                   </div>
                 </div>
-              ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <img src={rfidTag1} alt="RFID Tags" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                </div>
+              </div>
+
+              {/* RFID Desktop Readers */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-grey mb-2">
+                      RFID Desktop Readers & Handheld Scanners
+                    </h3>
+                    <p className="text-professional-grey">
+                      Enable fast scanning and efficient circulation management at service desks or on-the-go inventory tracking
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <img src={rfidDesktopReader1} alt="RFID Desktop Reader" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidDesktopReader2} alt="RFID Desktop Reader" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidDesktopReader3} alt="RFID Desktop Reader" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={inventoryStockTaker1} alt="Handheld RFID Scanner" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={inventoryStockTaker2} alt="Handheld RFID Scanner" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={inventoryStockTaker3} alt="Handheld RFID Scanner" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                </div>
+              </div>
+
+              {/* Biometric Systems */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Fingerprint size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-grey mb-2">
+                      Biometric Systems
+                    </h3>
+                    <p className="text-professional-grey">
+                      Fingerprint and facial recognition devices for secure access control and authentication
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <img src={biometricSystem1} alt="Biometric Fingerprint System" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={biometricSystem2} alt="Facial Recognition System" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={biometricSystem3} alt="Biometric Access Control" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                </div>
+              </div>
+
+              {/* RFID Security Gates */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-grey mb-2">
+                      RFID Security Gates
+                    </h3>
+                    <p className="text-professional-grey">
+                      Prevent unauthorized removal of books and assets with advanced detection technology
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Turnstiles */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-grey mb-2">
+                      Turnstiles
+                    </h3>
+                    <p className="text-professional-grey">
+                      Physical barriers that integrate with RFID and biometric systems for controlled entry points
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
