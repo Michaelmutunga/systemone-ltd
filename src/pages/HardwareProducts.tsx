@@ -20,6 +20,9 @@ import turnstile5 from '@/assets/products/turnstile-5.png';
 import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
 import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
+import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.png';
+import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.png';
+import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.png';
 
 const HardwareProducts = () => {
   return (
@@ -162,6 +165,28 @@ const HardwareProducts = () => {
                   <img src={turnstile2} alt="Double Lane Turnstile" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
                   <img src={turnstile4} alt="Tripod Turnstile" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
                   <img src={turnstile5} alt="Barrier Gate System" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                </div>
+              </div>
+
+              {/* Self-check-in/check-out Kiosks */}
+              <div className="bg-white border border-border rounded-xl p-6 card-hover">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark-grey mb-2">
+                      Self-check-in/check-out Kiosks
+                    </h3>
+                    <p className="text-professional-grey">
+                      Automated kiosks that enable users to check in and check out materials independently, reducing wait times and improving user experience
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <img src={selfCheckinKiosk1} alt="Library Self-checkout Kiosk" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={selfCheckinKiosk2} alt="Self-service Check-in Kiosk" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={selfCheckinKiosk3} alt="Automated Checkout Station" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
                 </div>
               </div>
             </div>
