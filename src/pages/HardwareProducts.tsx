@@ -17,6 +17,9 @@ import turnstile1 from '@/assets/products/turnstile-1.png';
 import turnstile2 from '@/assets/products/turnstile-2.png';
 import turnstile4 from '@/assets/products/turnstile-4.png';
 import turnstile5 from '@/assets/products/turnstile-5.png';
+import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
+import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
+import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
 
 const HardwareProducts = () => {
   return (
@@ -119,7 +122,7 @@ const HardwareProducts = () => {
 
               {/* RFID Security Gates */}
               <div className="bg-white border border-border rounded-xl p-6 card-hover">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 mb-6">
                   <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield size={28} className="text-primary" />
                   </div>
@@ -131,6 +134,11 @@ const HardwareProducts = () => {
                       Prevent unauthorized removal of books and assets with advanced detection technology
                     </p>
                   </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <img src={rfidSecurityGate1} alt="RFID Security Gate Main and Secondary" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidSecurityGate2} alt="RFID Security Gate Sleek Design" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidSecurityGate3} alt="RFID Security Gate with Display" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
                 </div>
               </div>
 
