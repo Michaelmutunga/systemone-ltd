@@ -23,6 +23,9 @@ import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
 import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.png';
 import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.png';
 import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.png';
+import breathalyzer1 from '@/assets/products/breathalyzer-1.png';
+import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
+import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
 
 const HardwareProducts = () => {
   return (
@@ -251,6 +254,12 @@ const HardwareProducts = () => {
                   👉 Perfect for workplaces, schools, universities, hospitals, government buildings, 
                   and high-security facilities.
                 </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <img src={breathalyzer1} alt="Kamnyweso Breathalyzer Front View" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                <img src={breathalyzer2} alt="Kamnyweso Breathalyzer with Facial Recognition" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                <img src={breathalyzer3} alt="Kamnyweso Breathalyzer Features" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
               </div>
             </div>
           </div>
