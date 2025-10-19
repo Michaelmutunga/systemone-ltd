@@ -11,6 +11,12 @@ import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.png';
 import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.png';
 import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.png';
 import rfidTag1 from '@/assets/products/rfid-tag-1.png';
+import rfidTag2 from '@/assets/products/rfid-tag-2.png';
+import rfidTag3 from '@/assets/products/rfid-tag-3.png';
+import turnstile1 from '@/assets/products/turnstile-1.png';
+import turnstile2 from '@/assets/products/turnstile-2.png';
+import turnstile4 from '@/assets/products/turnstile-4.png';
+import turnstile5 from '@/assets/products/turnstile-5.png';
 
 const HardwareProducts = () => {
   return (
@@ -58,7 +64,9 @@ const HardwareProducts = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src={rfidTag1} alt="RFID Tags" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidTag1} alt="RFID Tags Roll" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidTag2} alt="RFID Tag Strip" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={rfidTag3} alt="RFID Tag Sheet" className="w-full h-48 object-contain rounded-lg bg-secondary/5 p-4" />
                 </div>
               </div>
 
@@ -128,7 +136,7 @@ const HardwareProducts = () => {
 
               {/* Turnstiles */}
               <div className="bg-white border border-border rounded-xl p-6 card-hover">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 mb-6">
                   <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield size={28} className="text-primary" />
                   </div>
@@ -140,6 +148,12 @@ const HardwareProducts = () => {
                       Physical barriers that integrate with RFID and biometric systems for controlled entry points
                     </p>
                   </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <img src={turnstile1} alt="Full Height Turnstile" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={turnstile2} alt="Double Lane Turnstile" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={turnstile4} alt="Tripod Turnstile" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
+                  <img src={turnstile5} alt="Barrier Gate System" className="w-full h-64 object-contain rounded-lg bg-secondary/5 p-4" />
                 </div>
               </div>
             </div>
