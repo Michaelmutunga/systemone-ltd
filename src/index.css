@@ -219,3 +219,21 @@ All colors MUST be HSL.
     border-image: linear-gradient(90deg, hsl(var(--tech-blue)), hsl(var(--tech-red)), hsl(var(--tech-yellow))) 1;
   }
 }
+
+/* Infinite scroll animation */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 60s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}

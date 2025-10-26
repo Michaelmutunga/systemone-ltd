@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import HardwareCarousel from '@/components/HardwareCarousel';
 
 // Import logos
 import karatinaLogo from '@/assets/logos/karatina-university.png';
@@ -101,6 +102,9 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Hardware Products Carousel */}
+      <HardwareCarousel />
 
       {/* Products Grid */}
       <section className="section-padding bg-white">
