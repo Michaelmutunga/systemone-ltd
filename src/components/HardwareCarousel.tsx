@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback } from 'react';
 
 // Import all hardware product images
 import biometric1 from '@/assets/products/biometric-system-1.png';
@@ -54,6 +57,20 @@ const HardwareCarousel = () => {
     { image: turnstile3, name: 'Turnstile' },
   ];
 
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'start',
+    slidesToScroll: 3
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <section className="bg-secondary/10 py-12 overflow-hidden">
       <div className="container-width mb-8">
@@ -63,56 +80,56 @@ const HardwareCarousel = () => {
       </div>
       
       <div className="relative">
-        {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary/10 to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary/10 to-transparent z-10" />
+        {/* Navigation Buttons */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-dark-grey p-3 rounded-full transition-all duration-300 hover:scale-110"
+          aria-label="Previous products"
+        >
+          <ChevronLeft size={32} />
+        </button>
         
-        {/* Infinite scroll container */}
-        <div className="flex animate-infinite-scroll">
-          {/* First set of images */}
-          {products.map((product, index) => (
-            <Link
-              key={`first-${index}`}
-              to="/hardwareproducts"
-              className="flex-shrink-0 w-64 h-64 mx-4 group relative cursor-pointer"
-            >
-              <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain"
-                />
-                {/* Hover overlay with product name */}
-                <div className="absolute inset-0 bg-primary/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white font-semibold text-center px-4">
-                    {product.name}
-                  </p>
-                </div>
+        <button
+          onClick={scrollNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-dark-grey p-3 rounded-full transition-all duration-300 hover:scale-110"
+          aria-label="Next products"
+        >
+          <ChevronRight size={32} />
+        </button>
+        
+        {/* Gradient overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary/10 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary/10 to-transparent z-10 pointer-events-none" />
+        
+        {/* Carousel container */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {products.map((product, index) => (
+              <div
+                key={index}
+                className="flex-[0_0_auto] w-64 mx-4"
+              >
+                <Link
+                  to="/hardwareproducts"
+                  className="block group relative cursor-pointer h-64"
+                >
+                  <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-contain"
+                    />
+                    {/* Hover overlay with product name */}
+                    <div className="absolute inset-0 bg-primary/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-white font-semibold text-center px-4">
+                        {product.name}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
-          ))}
-          {/* Duplicate set for seamless loop */}
-          {products.map((product, index) => (
-            <Link
-              key={`second-${index}`}
-              to="/hardwareproducts"
-              className="flex-shrink-0 w-64 h-64 mx-4 group relative cursor-pointer"
-            >
-              <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain"
-                />
-                {/* Hover overlay with product name */}
-                <div className="absolute inset-0 bg-primary/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white font-semibold text-center px-4">
-                    {product.name}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
