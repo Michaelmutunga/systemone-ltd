@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // Import all hardware product images
 import biometric1 from '@/assets/products/biometric-system-1.png';
 import biometric2 from '@/assets/products/biometric-system-2.png';
@@ -25,15 +27,31 @@ import turnstile2 from '@/assets/products/turnstile-4.png';
 import turnstile3 from '@/assets/products/turnstile-5.png';
 
 const HardwareCarousel = () => {
-  const images = [
-    biometric1, biometric2, biometric3,
-    breathalyzer1, breathalyzer2, breathalyzer3,
-    inventory1, inventory2, inventory3,
-    rfidReader1, rfidReader2, rfidReader3,
-    rfidGate1, rfidGate2, rfidGate3,
-    rfidTag1, rfidTag2, rfidTag3,
-    kiosk1, kiosk2, kiosk3,
-    turnstile1, turnstile2, turnstile3
+  const products = [
+    { image: biometric1, name: 'Biometric System' },
+    { image: biometric2, name: 'Biometric System' },
+    { image: biometric3, name: 'Biometric System' },
+    { image: breathalyzer1, name: 'Kamnyweso Breathalyzer' },
+    { image: breathalyzer2, name: 'Kamnyweso Breathalyzer' },
+    { image: breathalyzer3, name: 'Kamnyweso Breathalyzer' },
+    { image: inventory1, name: 'Inventory Stock Taker' },
+    { image: inventory2, name: 'Inventory Stock Taker' },
+    { image: inventory3, name: 'Inventory Stock Taker' },
+    { image: rfidReader1, name: 'RFID Desktop Reader' },
+    { image: rfidReader2, name: 'RFID Desktop Reader' },
+    { image: rfidReader3, name: 'RFID Desktop Reader' },
+    { image: rfidGate1, name: 'RFID Security Gate' },
+    { image: rfidGate2, name: 'RFID Security Gate' },
+    { image: rfidGate3, name: 'RFID Security Gate' },
+    { image: rfidTag1, name: 'RFID Tag' },
+    { image: rfidTag2, name: 'RFID Tag' },
+    { image: rfidTag3, name: 'RFID Tag' },
+    { image: kiosk1, name: 'Self Check-in Kiosk' },
+    { image: kiosk2, name: 'Self Check-in Kiosk' },
+    { image: kiosk3, name: 'Self Check-in Kiosk' },
+    { image: turnstile1, name: 'Turnstile' },
+    { image: turnstile2, name: 'Turnstile' },
+    { image: turnstile3, name: 'Turnstile' },
   ];
 
   return (
@@ -52,30 +70,48 @@ const HardwareCarousel = () => {
         {/* Infinite scroll container */}
         <div className="flex animate-infinite-scroll">
           {/* First set of images */}
-          {images.map((image, index) => (
-            <div
+          {products.map((product, index) => (
+            <Link
               key={`first-${index}`}
-              className="flex-shrink-0 w-64 h-64 mx-4"
+              to="/hardwareproducts"
+              className="flex-shrink-0 w-64 h-64 mx-4 group relative cursor-pointer"
             >
-              <img
-                src={image}
-                alt={`Hardware product ${index + 1}`}
-                className="w-full h-full object-contain rounded-lg bg-white p-4 shadow-md hover:shadow-xl transition-shadow"
-              />
-            </div>
+              <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-contain"
+                />
+                {/* Hover overlay with product name */}
+                <div className="absolute inset-0 bg-primary/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white font-semibold text-center px-4">
+                    {product.name}
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
           {/* Duplicate set for seamless loop */}
-          {images.map((image, index) => (
-            <div
+          {products.map((product, index) => (
+            <Link
               key={`second-${index}`}
-              className="flex-shrink-0 w-64 h-64 mx-4"
+              to="/hardwareproducts"
+              className="flex-shrink-0 w-64 h-64 mx-4 group relative cursor-pointer"
             >
-              <img
-                src={image}
-                alt={`Hardware product ${index + 1}`}
-                className="w-full h-full object-contain rounded-lg bg-white p-4 shadow-md hover:shadow-xl transition-shadow"
-              />
-            </div>
+              <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-contain"
+                />
+                {/* Hover overlay with product name */}
+                <div className="absolute inset-0 bg-primary/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white font-semibold text-center px-4">
+                    {product.name}
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
