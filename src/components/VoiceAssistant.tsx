@@ -15,7 +15,7 @@ const VoiceAssistant = () => {
 
   // Initialize Vapi
   useEffect(() => {
-    const vapiInstance = new Vapi("7d2ff232-3665-449c-8478-27e4bd146e8f"); // Replace with your Vapi public key
+    const vapiInstance = new Vapi("57182b75-41d7-4e9a-bc69-525e7f9b39fd"); // Replace with your Vapi public key
     setVapi(vapiInstance);
 
     // Set up event listeners
