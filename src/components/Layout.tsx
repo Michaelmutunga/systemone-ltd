@@ -15,7 +15,6 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-      <VoiceAssistant />
     </div>
   );
 };
