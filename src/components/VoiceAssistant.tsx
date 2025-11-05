@@ -168,8 +168,6 @@ const VoiceAssistant = () => {
                 </>
               )}
             </div>
-
-            <div className="text-xs text-muted-foreground text-center pt-2 border-t">Powered by Vapi</div>
           </div>
         </Card>
       )}
