@@ -110,7 +110,7 @@ const HardwareCarousel = () => {
                 className="flex-[0_0_auto] w-64 mx-4"
               >
                 <Link
-                  to="/hardwareproducts"
+                  to="/hardware-products"
                   className="block group relative cursor-pointer h-64"
                 >
                   <div className="w-full h-full rounded-lg bg-white p-4 shadow-md group-hover:shadow-xl transition-shadow relative overflow-hidden">

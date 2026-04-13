@@ -11,6 +11,8 @@ import {
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import HardwareCarousel from '@/components/HardwareCarousel';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 // Import logos
 import karatinaLogo from '@/assets/logos/karatina-university.png';
@@ -63,11 +65,11 @@ const Services = () => {
       title: 'Hardware Products',
       description: 'We supply a wide range of RFID and biometric hardware to complement our security and ERP solutions.',
       features: [
-        'RFID Security Gates – Prevent unauthorized removal of books and assets',
-        'RFID Tags – Attach to books, assets, or ID cards for identification',
-        'RFID Desktop Readers – Enable fast scanning and circulation management',
-        'Biometric Systems – Fingerprint and facial recognition devices for secure access',
-        'Turnstiles – Physical barriers that integrate with RFID and biometric systems for controlled entry'
+        'RFID Security Gates - Prevent unauthorized removal of books and assets',
+        'RFID Tags - Attach to books, assets, or ID cards for identification',
+        'RFID Desktop Readers - Enable fast scanning and circulation management',
+        'Biometric Systems - Fingerprint and facial recognition devices for secure access',
+        'Turnstiles - Physical barriers that integrate with RFID and biometric systems for controlled entry'
       ],
     },
     {
@@ -86,8 +88,33 @@ const Services = () => {
     },
   ];
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'System One Ltd Products and Services',
+    url: `${SITE.url}/services`,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: products.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: product.title,
+      url:
+        product.title === 'CampusCURA ERP'
+          ? `${SITE.url}/campus-cura`
+          : product.title === 'Library Radar (RFID Security Solution)'
+            ? `${SITE.url}/library-radar`
+            : `${SITE.url}/hardware-products`,
+    })),
+  };
+
   return (
     <Layout>
+      <Seo
+        title="Products & Services | System One Ltd"
+        description="Explore CampusCURA ERP, Library Radar, hardware products, and safety technology solutions from System One Ltd."
+        canonicalPath="/services"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
@@ -162,7 +189,7 @@ const Services = () => {
                     product.isNew ? 'bg-accent/5 border border-accent/20' : 'bg-primary/5 border border-primary/20'
                   }`}>
                     <p className="text-sm text-dark-grey font-medium">
-                      👉 {product.highlight}
+                      {product.highlight}
                     </p>
                   </div>
                 )}
@@ -170,10 +197,10 @@ const Services = () => {
                 <Link
                   to={
                     product.title === 'CampusCURA ERP' 
-                      ? '/campusCURA' 
+                      ? '/campus-cura'
                       : product.title === 'Library Radar (RFID Security Solution)' 
-                      ? '/LibraryRadar' 
-                      : '/HardwareProducts'
+                      ? '/library-radar'
+                      : '/hardware-products'
                   }
                   className={`inline-flex items-center gap-2 font-medium hover:opacity-80 transition-colors ${
                     product.isNew ? 'text-accent' : 'text-primary'

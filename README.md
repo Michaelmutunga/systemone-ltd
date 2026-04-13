@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# System One Kenya Web
 
-## Project info
+Marketing and product website for System One Ltd, built with Vite, React, TypeScript, Tailwind CSS, and Supabase edge functions.
 
-**URL**: https://lovable.dev/projects/00df0033-a87b-45c2-a1c0-548ac94253bd
+## What’s in the app
 
-## How can I edit this code?
+- Public pages for Home, About, Services, Why Choose Us, and Contact
+- Product detail pages for CampusCURA, Library Radar, and Hardware Products
+- Contact form backed by a Supabase edge function that sends email through Resend
+- AI chat edge function for conversational support
+- Optional voice assistant integration through Vapi
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- React Router
+- Supabase
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/00df0033-a87b-45c2-a1c0-548ac94253bd) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Local Setup
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - start the local dev server
+- `npm run build` - create a production build
+- `npm run lint` - run ESLint
+- `npm run preview` - preview the production build locally
 
-**Use GitHub Codespaces**
+## Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Set these in `.env`:
 
-## What technologies are used for this project?
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_SUPABASE_PROJECT_ID`
+- `VITE_VAPI_PUBLIC_KEY`
+- `VITE_VAPI_ASSISTANT_ID`
+- `VITE_GA_MEASUREMENT_ID`
+- `VITE_GOOGLE_SITE_VERIFICATION` optional for Google Search Console
 
-This project is built with:
+Supabase edge functions also expect:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `RESEND_API_KEY`
+- `OPENAI_API_KEY`
 
-## How can I deploy this project?
+## Routes
 
-Simply open [Lovable](https://lovable.dev/projects/00df0033-a87b-45c2-a1c0-548ac94253bd) and click on Share -> Publish.
+- `/`
+- `/about`
+- `/services`
+- `/why-choose-us`
+- `/contact`
+- `/campus-cura`
+- `/library-radar`
+- `/hardware-products`
 
-## Can I connect a custom domain to my Lovable project?
+## Supabase Functions
 
-Yes, you can!
+- `send-contact-email` handles contact form submissions
+- `ai-chat` responds to assistant messages using OpenAI
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Notes
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- The site is content-heavy and largely static, so most changes are copy, layout, or conversion-focused.
+- Route names now use lowercase kebab-case for consistency.
+- The voice assistant and AI chat are optional product features and can be disabled if you want a simpler public site.

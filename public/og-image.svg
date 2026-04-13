@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="System One Ltd">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="180" fill="#facc15" opacity="0.16"/>
+  <circle cx="150" cy="530" r="210" fill="#ffffff" opacity="0.08"/>
+  <rect x="70" y="80" width="140" height="140" rx="28" fill="#ffffff" opacity="0.12"/>
+  <path d="M105 116h70v24h-70zM105 148h70v24h-70zM105 180h70v24h-70z" fill="#fff"/>
+  <text x="250" y="180" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">System One Ltd</text>
+  <text x="250" y="246" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="34">Technology solutions for Kenya's education and enterprise sectors</text>
+  <text x="250" y="314" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="26">ERP Systems  •  RFID Security  •  Biometrics  •  Hardware Products</text>
+  <rect x="250" y="380" width="380" height="66" rx="18" fill="#ffffff"/>
+  <text x="286" y="423" fill="#1d4ed8" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">systemoneltd.com</text>
+</svg>

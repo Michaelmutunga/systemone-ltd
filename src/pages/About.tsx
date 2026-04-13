@@ -1,5 +1,7 @@
 import { Target, Eye, Award, Users2 } from 'lucide-react';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 const About = () => {
   const values = [
@@ -25,8 +27,27 @@ const About = () => {
     },
   ];
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About System One Ltd',
+    url: `${SITE.url}/about`,
+    description: 'Learn about System One Ltd, our mission, leadership, values, and experience delivering technology solutions across Kenya.',
+    about: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+
   return (
     <Layout>
+      <Seo
+        title="About System One Ltd | Technology Solutions Kenya"
+        description="Learn about System One Ltd, our mission, leadership, values, and experience delivering technology solutions across Kenya."
+        canonicalPath="/about"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">

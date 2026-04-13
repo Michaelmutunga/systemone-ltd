@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://systemoneltd.com/sitemap.xml
+Host: https://systemoneltd.com

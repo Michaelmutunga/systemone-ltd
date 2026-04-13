@@ -2,6 +2,8 @@ import { ArrowRight, Shield, Users, Settings, Headphones } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-tech.jpg';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 const Home = () => {
   const features = [
@@ -27,8 +29,22 @@ const Home = () => {
     },
   ];
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'System One Ltd | Technology Solutions Kenya',
+    url: SITE.url,
+    description: SITE.description,
+  };
+
   return (
     <Layout>
+      <Seo
+        title="System One Ltd | Technology Solutions Kenya"
+        description="System One Ltd delivers educational technology, ERP systems, hardware solutions, and support services for institutions and businesses across Kenya."
+        canonicalPath="/"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section relative overflow-hidden">
         <div className="container-width section-padding">

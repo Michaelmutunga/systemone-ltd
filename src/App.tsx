@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -17,19 +18,23 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <GoogleAnalytics />
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/campusCURA" element={<CampusCURA />} />
-          <Route path="/LibraryRadar" element={<LibraryRadar />} />
-          <Route path="/HardwareProducts" element={<HardwareProducts />} />
+          <Route path="/campusCURA" element={<Navigate to="/campus-cura" replace />} />
+          <Route path="/LibraryRadar" element={<Navigate to="/library-radar" replace />} />
+          <Route path="/HardwareProducts" element={<Navigate to="/hardware-products" replace />} />
+          <Route path="/campus-cura" element={<CampusCURA />} />
+          <Route path="/library-radar" element={<LibraryRadar />} />
+          <Route path="/hardware-products" element={<HardwareProducts />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

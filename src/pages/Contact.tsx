@@ -4,6 +4,8 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Layout from '@/components/Layout';
 import Map from '@/components/Map';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 const Contact = () => {
   const {
     toast
@@ -26,6 +28,28 @@ const Contact = () => {
     }));
   };
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: SITE.name,
+    url: `${SITE.url}/contact`,
+    email: SITE.email,
+    telephone: SITE.phoneDisplay,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: SITE.address.streetAddress,
+      addressLocality: SITE.address.locality,
+      addressRegion: SITE.address.region,
+      addressCountry: SITE.address.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: SITE.geo.latitude,
+      longitude: SITE.geo.longitude,
+    },
+    openingHours: SITE.hours,
+    hasMap: SITE.googleMapsUrl,
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +57,7 @@ const Contact = () => {
 
     try {
       // Send email via Supabase edge function
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
@@ -54,7 +78,7 @@ const Contact = () => {
         service: '',
         message: ''
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error sending email:', error);
       toast({
         title: "Error",
@@ -66,6 +90,12 @@ const Contact = () => {
     }
   };
   return <Layout>
+      <Seo
+        title="Contact System One Ltd | Request a Demo"
+        description="Contact System One Ltd by phone, email, or the website form to request a consultation, demo, or support."
+        canonicalPath="/contact"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
@@ -197,6 +227,14 @@ const Contact = () => {
                       Beijing Road<br />
                       Nairobi, Kenya
                     </p>
+                    <a
+                      href={SITE.googleMapsUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex mt-3 text-primary font-medium hover:underline"
+                    >
+                      Open in Google Maps
+                    </a>
                   </div>
                 </div>
 

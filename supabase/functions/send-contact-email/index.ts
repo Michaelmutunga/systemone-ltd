@@ -29,7 +29,6 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const formData: ContactFormData = await req.json();
-    console.log("Received contact form data:", formData);
 
     const { name, email, company, service, message } = formData;
 
@@ -66,8 +65,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailData = await emailResponse.json();
 
-    console.log("Email sent successfully:", emailData);
-
     return new Response(
       JSON.stringify({ 
         success: true, 
@@ -81,12 +78,13 @@ const handler = async (req: Request): Promise<Response> => {
         },
       }
     );
-  } catch (error: any) {
-    console.error("Error in send-contact-email function:", error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error in send-contact-email function:", message);
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: message 
       }),
       {
         status: 500,

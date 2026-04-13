@@ -5,6 +5,11 @@ import { Mic, MicOff, Phone, PhoneOff } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import Vapi from "@vapi-ai/web";
 
+const VAPI_PUBLIC_KEY =
+  import.meta.env.VITE_VAPI_PUBLIC_KEY ?? "57182b75-41d7-4e9a-bc69-525e7f9b39fd";
+const VAPI_ASSISTANT_ID =
+  import.meta.env.VITE_VAPI_ASSISTANT_ID ?? "4260e990-ee15-4011-bb20-28674ba25c2a";
+
 const VoiceAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [vapi, setVapi] = useState<Vapi | null>(null);
@@ -13,14 +18,11 @@ const VoiceAssistant = () => {
   const [callStatus, setCallStatus] = useState<string>("Idle");
   const { toast } = useToast();
 
-  // Initialize Vapi
   useEffect(() => {
-    const vapiInstance = new Vapi("57182b75-41d7-4e9a-bc69-525e7f9b39fd"); // Replace with your Vapi public key
+    const vapiInstance = new Vapi(VAPI_PUBLIC_KEY);
     setVapi(vapiInstance);
 
-    // Set up event listeners
     vapiInstance.on("call-start", () => {
-      console.log("Call started");
       setIsCallActive(true);
       setCallStatus("Connected");
       toast({
@@ -30,7 +32,6 @@ const VoiceAssistant = () => {
     });
 
     vapiInstance.on("call-end", () => {
-      console.log("Call ended");
       setIsCallActive(false);
       setCallStatus("Call Ended");
       toast({
@@ -40,12 +41,10 @@ const VoiceAssistant = () => {
     });
 
     vapiInstance.on("speech-start", () => {
-      console.log("Assistant started speaking");
       setCallStatus("Assistant Speaking");
     });
 
     vapiInstance.on("speech-end", () => {
-      console.log("Assistant stopped speaking");
       setCallStatus("Listening");
     });
 
@@ -58,10 +57,6 @@ const VoiceAssistant = () => {
       });
     });
 
-    vapiInstance.on("message", (message) => {
-      console.log("Message received:", message);
-    });
-
     return () => {
       vapiInstance.stop();
     };
@@ -72,24 +67,7 @@ const VoiceAssistant = () => {
 
     try {
       setCallStatus("Connecting...");
-      // Start call with assistant configuration
-      await vapi.start("4260e990-ee15-4011-bb20-28674ba25c2a"); // Replace with your Vapi assistant ID
-
-      // Alternative: Use inline configuration
-      // await vapi.start({
-      //   model: {
-      //     provider: 'openai',
-      //     model: 'gpt-4',
-      //     messages: [{
-      //       role: 'system',
-      //       content: 'You are a helpful assistant for System One Ltd, specializing in educational technology solutions.'
-      //     }]
-      //   },
-      //   voice: {
-      //     provider: 'playht',
-      //     voiceId: 'jennifer'
-      //   }
-      // });
+      await vapi.start(VAPI_ASSISTANT_ID);
     } catch (error) {
       console.error("Failed to start call:", error);
       setCallStatus("Failed to Connect");
@@ -122,7 +100,6 @@ const VoiceAssistant = () => {
 
   return (
     <>
-      {/* Voice Assistant Toggle Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 bg-primary hover:bg-primary/90"
@@ -131,7 +108,6 @@ const VoiceAssistant = () => {
         {isCallActive ? <Phone className="h-6 w-6 animate-pulse" /> : <Mic className="h-6 w-6" />}
       </Button>
 
-      {/* Voice Assistant Control Panel */}
       {isOpen && (
         <Card className="fixed bottom-24 right-6 w-80 shadow-xl z-40 p-6">
           <div className="space-y-4">

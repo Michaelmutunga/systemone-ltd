@@ -1,10 +1,33 @@
 import { BookOpen, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 const LibraryRadar = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Library Radar',
+    url: `${SITE.url}/library-radar`,
+    provider: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    },
+    areaServed: 'Kenya',
+    description:
+      'Library Radar is an RFID security and automation solution that helps libraries protect resources and improve circulation.',
+  };
+
   return (
     <Layout>
+      <Seo
+        title="Library Radar | System One Ltd"
+        description="Library Radar is an RFID security and automation solution that helps libraries protect resources and improve circulation."
+        canonicalPath="/library-radar"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">

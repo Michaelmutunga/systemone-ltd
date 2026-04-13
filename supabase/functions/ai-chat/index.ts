@@ -17,8 +17,6 @@ serve(async (req) => {
   try {
     const { message, conversationHistory = [] } = await req.json();
 
-    console.log('AI Chat request received:', { message, historyLength: conversationHistory.length });
-
     if (!openAIApiKey) {
       throw new Error('OpenAI API key not configured');
     }
@@ -49,8 +47,6 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
     
     while (attempts < maxAttempts) {
       attempts++;
-      console.log(`OpenAI API attempt ${attempts}/${maxAttempts}`);
-      
       response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -73,7 +69,6 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
       // If rate limited and not last attempt, wait with exponential backoff
       if (response.status === 429 && attempts < maxAttempts) {
         const waitTime = Math.pow(2, attempts - 1) * 1000; // 1s, 2s, 4s
-        console.log(`Rate limited, waiting ${waitTime}ms before retry ${attempts + 1}`);
         await new Promise(resolve => setTimeout(resolve, waitTime));
       }
     }
@@ -107,7 +102,9 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
       try {
         const parsed = JSON.parse(rawText);
         message = parsed?.error?.message || parsed?.message || rawText;
-      } catch (_) {}
+      } catch {
+        // Keep the raw upstream message when the error payload is not JSON.
+      }
 
       return new Response(
         JSON.stringify({ ok: false, code: 'upstream_error', status, message }),
@@ -117,8 +114,6 @@ Be friendly, professional, and helpful. Answer questions about the company's ser
 
     const data = await response.json();
     const aiResponse = data.choices[0].message.content;
-
-    console.log('AI response generated successfully');
 
     return new Response(JSON.stringify({ 
       ok: true,

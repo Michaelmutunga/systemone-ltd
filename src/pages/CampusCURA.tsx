@@ -1,10 +1,33 @@
 import { GraduationCap, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 const CampusCURA = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'CampusCURA ERP',
+    url: `${SITE.url}/campus-cura`,
+    provider: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    },
+    areaServed: 'Kenya',
+    description:
+      'CampusCURA is an education ERP for schools, colleges, and universities, combining student, finance, attendance, and library management.',
+  };
+
   return (
     <Layout>
+      <Seo
+        title="CampusCURA ERP | System One Ltd"
+        description="CampusCURA is an education ERP for schools, colleges, and universities, combining student, finance, attendance, and library management."
+        canonicalPath="/campus-cura"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">

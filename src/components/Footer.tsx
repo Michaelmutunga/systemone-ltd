@@ -1,11 +1,12 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import systemOneLogo from '@/assets/system-one-logo.png';
+
 const Footer = () => {
-  return <footer className="bg-dark-grey text-white">
+  return (
+    <footer className="bg-dark-grey text-white">
       <div className="container-width section-padding">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <img src={systemOneLogo} alt="System ONE Ltd Logo" className="h-12 w-auto" />
@@ -18,19 +19,18 @@ const Footer = () => {
               Leading technology solutions provider in Kenya, delivering innovative IT services and enterprise solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <Facebook size={20} />
+              <a href="mailto:info@systemoneltd.com" className="text-gray-300 hover:text-primary transition-colors" aria-label="Email System One">
+                <Mail size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <Twitter size={20} />
+              <a href="tel:+254716003953" className="text-gray-300 hover:text-primary transition-colors" aria-label="Call System One">
+                <Phone size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <Linkedin size={20} />
+              <a href="/contact" className="text-gray-300 hover:text-primary transition-colors" aria-label="Visit contact page">
+                <MapPin size={20} />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -57,7 +57,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
@@ -70,7 +69,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
@@ -95,10 +93,12 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300 text-sm">
-            © 2024 System One Ltd. All rights reserved.
+            Copyright 2024 System One Ltd. All rights reserved.
           </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

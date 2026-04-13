@@ -1,6 +1,8 @@
 import { Shield, DollarSign, Users, Clock, Award, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 
 const WhyChooseUs = () => {
   const benefits = [
@@ -53,7 +55,7 @@ const WhyChooseUs = () => {
       name: 'Deputy Vice-Chancellor',
       company: 'Maasai Mara University',
       role: 'Deputy Vice-Chancellor (Academic Affairs)',
-      quote: 'We chose CampusCURA because we wanted an ERP tailored for education. It has delivered beyond expectations — from automating finance to streamlining student services. The support from System One has been excellent.',
+      quote: 'We chose CampusCURA because we wanted an ERP tailored for education. It has delivered beyond expectations, from automating finance to streamlining student services. The support from System One has been excellent.',
     },
     {
       name: 'Chief Librarian',
@@ -63,8 +65,23 @@ const WhyChooseUs = () => {
     },
   ];
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Why Choose System One Ltd',
+    url: `${SITE.url}/why-choose-us`,
+    description:
+      'See why institutions across Kenya choose System One Ltd for reliable support, affordable technology, and proven delivery.',
+  };
+
   return (
     <Layout>
+      <Seo
+        title="Why Choose System One Ltd | Kenya Technology Partner"
+        description="See why institutions across Kenya choose System One Ltd for reliable support, affordable technology, and proven delivery."
+        canonicalPath="/why-choose-us"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
@@ -132,12 +149,12 @@ const WhyChooseUs = () => {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {[
-                    ['24/7 Local Support', '✓', '✗', '✓'],
-                    ['Custom Development', '✓', '✓', '✗'],
-                    ['Affordable Pricing', '✓', '✗', '✓'],
-                    ['10+ Years Experience', '✓', '✓', '✗'],
-                    ['Free Consultation/Demo', '✓', '✗', '✗'],
-                    ['10+ Years Warranty', '✓', '✗', '✗'],
+                    ['24/7 Local Support', 'Yes', 'No', 'Yes'],
+                    ['Custom Development', 'Yes', 'Yes', 'No'],
+                    ['Affordable Pricing', 'Yes', 'No', 'Yes'],
+                    ['10+ Years Experience', 'Yes', 'Yes', 'No'],
+                    ['Free Consultation/Demo', 'Yes', 'No', 'No'],
+                    ['10+ Years Warranty', 'Yes', 'No', 'No'],
                   ].map((row, index) => (
                     <tr key={index} className="hover:bg-secondary/10">
                       <td className="px-6 py-4 font-medium text-dark-grey">{row[0]}</td>

@@ -1,6 +1,8 @@
 import { Shield, Fingerprint, Wind, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import Seo from '@/components/Seo';
+import { SITE } from '@/lib/site';
 import biometricSystem1 from '@/assets/products/biometric-system-1.png';
 import biometricSystem2 from '@/assets/products/biometric-system-2.png';
 import biometricSystem3 from '@/assets/products/biometric-system-3.png';
@@ -28,8 +30,34 @@ import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
 import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
 
 const HardwareProducts = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'System One Ltd Hardware Products',
+    url: `${SITE.url}/hardware-products`,
+    itemListElement: [
+      'RFID Tags',
+      'RFID Desktop Readers',
+      'Biometric Systems',
+      'RFID Security Gates',
+      'Turnstiles',
+      'Self-check-in/check-out Kiosks',
+      'Kamnyweso Breathalyzer',
+    ].map((name, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name,
+    })),
+  };
+
   return (
     <Layout>
+      <Seo
+        title="Hardware Products | System One Ltd"
+        description="Browse RFID tags, readers, biometric systems, security gates, turnstiles, kiosks, and the Kamnyweso Breathalyzer."
+        canonicalPath="/hardware-products"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
