@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import systemOneLogo from '@/assets/system-one-logo.png';
+import PrefetchLink from '@/components/PrefetchLink';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
       <div className="container-width">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <PrefetchLink to="/" className="flex items-center space-x-3">
             <img 
               src={systemOneLogo} 
               alt="System ONE Ltd Logo" 
@@ -32,12 +33,12 @@ const Header = () => {
               <h1 className="text-xl font-bold text-dark-grey">System One Ltd</h1>
               <p className="text-sm text-professional-grey">Technology Solutions</p>
             </div>
-          </Link>
+          </PrefetchLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link
+              <PrefetchLink
                 key={item.name}
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -47,7 +48,7 @@ const Header = () => {
                 }`}
               >
                 {item.name}
-              </Link>
+              </PrefetchLink>
             ))}
           </nav>
 
@@ -65,18 +66,18 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-2">
               {navigation.map((item) => (
-                <Link
+                <PrefetchLink
                   key={item.name}
                   to={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-primary bg-primary/5'
-                      : 'text-foreground hover:text-primary hover:bg-primary/5'
+                    : 'text-foreground hover:text-primary hover:bg-primary/5'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </PrefetchLink>
               ))}
             </nav>
           </div>

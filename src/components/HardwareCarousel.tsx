@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback } from 'react';
+import PrefetchLink from '@/components/PrefetchLink';
 
 // Import all hardware product images
 import biometric1 from '@/assets/products/biometric-system-1.png';
@@ -109,7 +109,7 @@ const HardwareCarousel = () => {
                 key={index}
                 className="flex-[0_0_auto] w-64 mx-4"
               >
-                <Link
+                <PrefetchLink
                   to="/hardware-products"
                   className="block group relative cursor-pointer h-64"
                 >
@@ -126,7 +126,7 @@ const HardwareCarousel = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </PrefetchLink>
               </div>
             ))}
           </div>

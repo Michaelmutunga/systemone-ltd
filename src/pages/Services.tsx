@@ -8,11 +8,17 @@ import {
   CheckCircle,
   Star 
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import HardwareCarousel from '@/components/HardwareCarousel';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import PrefetchLink from '@/components/PrefetchLink';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 // Import logos
 import karatinaLogo from '@/assets/logos/karatina-university.png';
@@ -88,6 +94,29 @@ const Services = () => {
     },
   ];
 
+  const faqs = [
+    {
+      question: 'How long does it take to implement CampusCURA ERP?',
+      answer:
+        'Implementation timing depends on institution size and scope, but we typically begin with discovery, configuration, training, and phased rollout to keep disruption low.',
+    },
+    {
+      question: 'Do you provide demos before purchase?',
+      answer:
+        'Yes. We offer demos for CampusCURA, Library Radar, and our hardware products so your team can review the workflow and ask implementation questions.',
+    },
+    {
+      question: 'Can your solutions integrate with access control and biometrics?',
+      answer:
+        'Yes. Our ERP and library solutions are designed to work alongside RFID, turnstiles, and biometric systems where the project requires it.',
+    },
+    {
+      question: 'Do you support institutions outside Nairobi?',
+      answer:
+        'Yes. We work with institutions across Kenya and can support remote consultation, deployment planning, and on-site installation where needed.',
+    },
+  ];
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -103,7 +132,20 @@ const Services = () => {
           ? `${SITE.url}/campus-cura`
           : product.title === 'Library Radar (RFID Security Solution)'
             ? `${SITE.url}/library-radar`
-            : `${SITE.url}/hardware-products`,
+        : `${SITE.url}/hardware-products`,
+    })),
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
     })),
   };
 
@@ -113,7 +155,7 @@ const Services = () => {
         title="Products & Services | System One Ltd"
         description="Explore CampusCURA ERP, Library Radar, hardware products, and safety technology solutions from System One Ltd."
         canonicalPath="/services"
-        schema={schema}
+        schema={[schema, faqSchema]}
       />
       {/* Hero Section */}
       <section className="hero-section">
@@ -194,7 +236,7 @@ const Services = () => {
                   </div>
                 )}
                 
-                <Link
+                <PrefetchLink
                   to={
                     product.title === 'CampusCURA ERP' 
                       ? '/campus-cura'
@@ -208,7 +250,7 @@ const Services = () => {
                 >
                   Learn More
                   <ArrowRight size={16} />
-                </Link>
+                </PrefetchLink>
               </div>
             ))}
           </div>
@@ -406,6 +448,34 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
+      <section className="section-padding bg-white">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-professional-grey">
+                Quick answers to common questions about our products and implementation process.
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq) => (
+                <AccordionItem key={faq.question} value={faq.question} className="rounded-xl border border-border bg-white px-6">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-dark-grey hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-professional-grey leading-relaxed pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding tech-gradient text-white">
         <div className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -416,20 +486,20 @@ const Services = () => {
             Kamnyweso Breathalyzer. Let us show you how our solutions can enhance your operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
+            <PrefetchLink
               to="/contact"
               className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
             >
               Get in Touch
               <ArrowRight size={20} />
-            </Link>
-            <Link
+            </PrefetchLink>
+            <PrefetchLink
               to="/contact"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
             >
               Request a Demo
               <ArrowRight size={20} />
-            </Link>
+            </PrefetchLink>
           </div>
         </div>
       </section>

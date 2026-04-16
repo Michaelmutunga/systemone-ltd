@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Layout from '@/components/Layout';
-import Map from '@/components/Map';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+const Map = lazy(() => import('@/components/Map'));
 const Contact = () => {
   const {
     toast
@@ -285,7 +285,13 @@ const Contact = () => {
           </div>
           
           <div className="bg-white rounded-2xl p-8">
-            <Map />
+            <Suspense
+              fallback={
+                <div className="h-96 rounded-xl bg-secondary/10 animate-pulse" aria-busy="true" aria-label="Loading map" />
+              }
+            >
+              <Map />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -1,9 +1,9 @@
 import { ArrowRight, Shield, Users, Settings, Headphones } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-tech.jpg';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import PrefetchLink from '@/components/PrefetchLink';
 
 const Home = () => {
   const features = [
@@ -63,19 +63,19 @@ const Home = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
+                <PrefetchLink
                   to="/services"
                   className="btn-primary inline-flex items-center gap-2 justify-center"
                 >
                   Explore Our Products
                   <ArrowRight size={20} />
-                </Link>
-                <Link
+                </PrefetchLink>
+                <PrefetchLink
                   to="/contact"
                   className="btn-secondary inline-flex items-center gap-2 justify-center"
                 >
                   Get In Touch
-                </Link>
+                </PrefetchLink>
               </div>
             </div>
             
@@ -166,25 +166,25 @@ const Home = () => {
                 <p className="text-professional-grey mb-4">
                   {service.description}
                 </p>
-                <Link
+                <PrefetchLink
                   to="/services"
                   className="text-primary font-medium hover:text-primary/80 transition-colors inline-flex items-center gap-1"
                 >
                   Learn More
                   <ArrowRight size={16} />
-                </Link>
+                </PrefetchLink>
               </div>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <Link
+            <PrefetchLink
               to="/services"
               className="btn-primary inline-flex items-center gap-2"
             >
               View All Services
               <ArrowRight size={20} />
-            </Link>
+            </PrefetchLink>
           </div>
         </div>
       </section>
@@ -199,13 +199,13 @@ const Home = () => {
             Let's discuss how our technology solutions can help your business 
             achieve its goals and stay ahead of the competition.
           </p>
-          <Link
+          <PrefetchLink
             to="/contact"
             className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2"
           >
             Get Started Today
             <ArrowRight size={20} />
-          </Link>
+          </PrefetchLink>
         </div>
       </section>
     </Layout>

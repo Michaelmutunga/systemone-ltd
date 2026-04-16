@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode, Suspense, lazy } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import VoiceAssistant from './VoiceAssistant';
+
+const VoiceAssistant = lazy(() => import('./VoiceAssistant'));
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,7 +16,9 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-      <VoiceAssistant />
+      <Suspense fallback={null}>
+        <VoiceAssistant />
+      </Suspense>
     </div>
   );
 };

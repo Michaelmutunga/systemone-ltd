@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import systemOneLogo from '@/assets/system-one-logo.png';
+import PrefetchLink from '@/components/PrefetchLink';
 
 const Footer = () => {
   return (
@@ -8,13 +8,13 @@ const Footer = () => {
       <div className="container-width section-padding">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-3">
+            <PrefetchLink to="/" className="flex items-center space-x-3">
               <img src={systemOneLogo} alt="System ONE Ltd Logo" className="h-12 w-auto" />
               <div>
                 <h3 className="text-lg font-bold text-white">System One Ltd</h3>
                 <p className="text-sm text-white/80">Technology Solutions</p>
               </div>
-            </Link>
+            </PrefetchLink>
             <p className="text-gray-300 text-sm">
               Leading technology solutions provider in Kenya, delivering innovative IT services and enterprise solutions.
             </p>
@@ -35,24 +35,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-primary transition-colors">
+                <PrefetchLink to="/about" className="text-gray-300 hover:text-primary transition-colors">
                   About Us
-                </Link>
+                </PrefetchLink>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-primary transition-colors">
+                <PrefetchLink to="/services" className="text-gray-300 hover:text-primary transition-colors">
                   Products & Services
-                </Link>
+                </PrefetchLink>
               </li>
               <li>
-                <Link to="/why-choose-us" className="text-gray-300 hover:text-primary transition-colors">
+                <PrefetchLink to="/why-choose-us" className="text-gray-300 hover:text-primary transition-colors">
                   Why Choose Us
-                </Link>
+                </PrefetchLink>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-primary transition-colors">
+                <PrefetchLink to="/contact" className="text-gray-300 hover:text-primary transition-colors">
                   Contact
-                </Link>
+                </PrefetchLink>
               </li>
             </ul>
           </div>
