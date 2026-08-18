@@ -2,7 +2,7 @@ export const SITE = {
   name: 'System One Ltd',
   url: 'https://systemoneltd.com',
   description:
-    'System One Ltd delivers educational technology, ERP systems, hardware solutions, and support services for institutions and businesses across Kenya.',
+    'System One Ltd provides professional RFID solutions for institutions and businesses, supported by software, ERP, ICT implementation, training, and technical support.',
   email: 'info@systemoneltd.com',
   phone: '+254716003953',
   phoneDisplay: '+254 716 003 953',
