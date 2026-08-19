@@ -8,9 +8,11 @@ import {
   Hotel,
   KeyRound,
   PackageCheck,
+  Route,
   ScanLine,
   Settings,
   Shield,
+  ShieldCheck,
   Shirt,
   ShoppingCart,
   Tags,
@@ -22,6 +24,10 @@ import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
 import PrefetchLink from '@/components/PrefetchLink';
 import RfidHeroCarousel from '@/components/RfidHeroCarousel';
+import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
+import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.png';
+import inventoryStockTaker from '@/assets/products/inventory-stock-taker-1.png';
+import rfidTag from '@/assets/products/rfid-tag-1.png';
 
 const Home = () => {
   const features = [
@@ -49,20 +55,28 @@ const Home = () => {
 
   const rfidValues = [
     {
+      icon: Route,
       title: 'Track',
       description: 'Identify and track assets, items, and records across your operation.',
+      image: rfidDesktopReader,
     },
     {
+      icon: ShieldCheck,
       title: 'Secure',
       description: 'Monitor movement and help protect valuable institutional assets.',
+      image: rfidSecurityGate,
     },
     {
+      icon: ScanLine,
       title: 'Automate',
       description: 'Reduce manual identification, counting, and recording work.',
+      image: inventoryStockTaker,
     },
     {
+      icon: Settings,
       title: 'Integrate',
       description: 'Connect RFID technology with the business systems you already use.',
+      image: rfidTag,
     },
   ];
 
@@ -156,23 +170,61 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {rfidValues.map((value) => (
-              <div
-                key={value.title}
-                className="text-center space-y-4 p-6 rounded-xl card-hover bg-white"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
-                  <CheckCircle size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-dark-grey">
-                  {value.title}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-10 items-stretch">
+            <div className="relative overflow-hidden rounded-[32px] bg-secondary/10 shadow-[0_24px_60px_rgba(15,23,42,0.12)] min-h-[460px]">
+              <img
+                src={rfidSecurityGate}
+                alt="RFID security gate"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/15 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 text-white">
+                <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
+                  RFID value
+                </span>
+                <h3 className="mt-4 max-w-md text-3xl md:text-4xl font-bold leading-tight">
+                  From visibility to workflow efficiency
                 </h3>
-                <p className="text-professional-grey">
-                  {value.description}
+                <p className="mt-3 max-w-md text-sm md:text-base text-slate-200">
+                  Operational data, protected assets, and smarter workflows in one connected system.
                 </p>
               </div>
-            ))}
+            </div>
+
+            <div className="space-y-4 pt-1">
+              {rfidValues.map((value, index) => {
+                const Icon = value.icon ?? CheckCircle;
+
+                return (
+                  <div
+                    key={value.title}
+                    className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <div className="relative h-[86px] w-[94px] shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                      <img
+                        src={value.image}
+                        alt={value.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-2 flex items-center gap-3">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-[10px] font-semibold text-primary">
+                          {index + 1}
+                        </span>
+                        <h3 className="text-xl font-semibold text-dark-grey">
+                          {value.title}
+                        </h3>
+                      </div>
+                      <p className="text-sm leading-6 text-professional-grey">
+                        {value.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
