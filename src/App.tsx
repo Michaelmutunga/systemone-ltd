@@ -13,6 +13,7 @@ import {
   HomePage,
   LibraryRadarPage,
   NotFoundPage,
+  RfidSolutionPage,
   ServicesPage,
   WhyChooseUsPage,
   preloadCommonRoutes,
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/campus-cura" element={<CampusCURAPage />} />
               <Route path="/library-radar" element={<LibraryRadarPage />} />
               <Route path="/hardware-products" element={<HardwareProductsPage />} />
+              <Route path="/rfid-solutions/:slug" element={<RfidSolutionPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

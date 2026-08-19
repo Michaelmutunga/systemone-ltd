@@ -1,22 +1,12 @@
 import {
   ArrowRight,
-  BookOpen,
-  Building2,
   CheckCircle,
-  GraduationCap,
   Headphones,
-  Hotel,
-  KeyRound,
-  PackageCheck,
   Route,
   ScanLine,
   Settings,
   Shield,
   ShieldCheck,
-  Shirt,
-  ShoppingCart,
-  Tags,
-  Truck,
   Users,
 } from 'lucide-react';
 import Layout from '@/components/Layout';
@@ -28,6 +18,32 @@ import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
 import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.png';
 import inventoryStockTaker from '@/assets/products/inventory-stock-taker-1.png';
 import rfidTag from '@/assets/products/rfid-tag-1.png';
+import assetTrackingImage from '@/assets/new assets/asset tracking.jpg';
+import inventoryManagementImage from '@/assets/new assets/inventory management.PNG';
+import libraryManagementImage from '@/assets/new assets/library manage.jpg';
+import linenManagementImage from '@/assets/new assets/linen management.jpg';
+import educationLibraryImage from '@/assets/new assets/education and library.jpg';
+import healthcareImage from '@/assets/new assets/Healthcare.jpg';
+import hospitalityImage from '@/assets/new assets/Hospitality.jpg';
+import warehouseLogisticsImage from '@/assets/new assets/Warehousing & Logistics.jpg';
+import retailImage from '@/assets/new assets/Retail.jpg';
+import accessControlImage from '@/assets/new assets/Access control.jpg';
+import karatinaLogo from '@/assets/logos/karatina-university.png';
+import embuLogo from '@/assets/logos/university-of-embu.png';
+import kibabiiLogo from '@/assets/logos/kibabii-university.jpg';
+import tharakaLogo from '@/assets/logos/tharaka-university.jpeg';
+import kstvetLogo from '@/assets/logos/kstvet.jpeg';
+import machakosLogo from '@/assets/logos/machakos-university.png';
+import belgutLogo from '@/assets/logos/belgut-tti.jpeg';
+import rvttiLogo from '@/assets/logos/rvtti.png';
+import maasaiMaraLogo from '@/assets/logos/maasai-mara-university.jpeg';
+import pcKinyanjuiLogo from '@/assets/logos/pc-kinyanjui.jpeg';
+import kajiadoEastLogo from '@/assets/logos/kajiado-east.jpeg';
+import bandariLogo from '@/assets/logos/bandari.jpeg';
+import kslLogo from '@/assets/logos/ksl.png';
+import aldaiLogo from '@/assets/logos/aldai.png';
+import ummaLogo from '@/assets/logos/umma-university.jpeg';
+import iluLogo from '@/assets/logos/ilu.jpeg';
 
 const Home = () => {
   const features = [
@@ -81,23 +97,63 @@ const Home = () => {
   ];
 
   const rfidSolutions = [
-    { icon: BookOpen, title: 'Library Management' },
-    { icon: PackageCheck, title: 'Asset Tracking' },
-    { icon: Shirt, title: 'Linen Management' },
-    { icon: ScanLine, title: 'Inventory Management' },
-    { icon: Shield, title: 'Security Gates' },
-    { icon: Tags, title: 'Tags & Readers' },
-    { icon: Users, title: 'Attendance & Identification' },
-    { icon: KeyRound, title: 'Access Control' },
+    {
+      title: 'Library Management',
+      slug: 'library-management',
+      image: inventoryManagementImage,
+      description: 'Tag, locate, circulate, and protect library materials with faster, more accurate workflows for staff and patrons.',
+    },
+    {
+      title: 'Asset Tracking',
+      slug: 'asset-tracking',
+      image: assetTrackingImage,
+      description: 'Maintain a clear view of valuable equipment and assets as they move between rooms, departments, and locations.',
+    },
+    {
+      title: 'Linen Management',
+      slug: 'linen-management',
+      image: linenManagementImage,
+      description: 'Track linen issue, return, circulation, and loss so teams can improve accountability and reduce unnecessary replacement.',
+    },
+    {
+      title: 'Inventory Management',
+      slug: 'inventory-management',
+      image: libraryManagementImage,
+      description: 'Replace slow manual counts with reliable item identification and stock visibility across stores, shelves, and operational areas.',
+    },
+    {
+      title: 'Security Gates',
+      slug: 'security-gates',
+      image: rfidSecurityGate,
+      description: 'Create monitored exit points that help detect the unauthorized movement of tagged books, assets, and other valuable items.',
+    },
+    {
+      title: 'Tags & Readers',
+      slug: 'tags-and-readers',
+      image: rfidTag,
+      description: 'Build a dependable RFID foundation with tags and readers selected around the items, environments, and workflows being tracked.',
+    },
+    {
+      title: 'Attendance & Identification',
+      slug: 'attendance-and-identification',
+      image: rfidDesktopReader,
+      description: 'Support accurate identity and attendance records with faster, more consistent identification at the point of access or service.',
+    },
+    {
+      title: 'Access Control',
+      slug: 'access-control',
+      image: rfidSecurityGate,
+      description: 'Connect identity, permissions, and controlled entry to help organizations manage who can access important spaces and resources.',
+    },
   ];
 
   const industries = [
-    { icon: GraduationCap, title: 'Education & Libraries' },
-    { icon: Building2, title: 'Healthcare' },
-    { icon: Hotel, title: 'Hospitality' },
-    { icon: Truck, title: 'Warehousing & Logistics' },
-    { icon: ShoppingCart, title: 'Retail' },
-    { icon: Building2, title: 'Corporate & Institutional' },
+    { title: 'Education & Libraries', image: educationLibraryImage, description: 'Improve circulation, inventory, security, and visibility across learning resources and shared institutional assets.' },
+    { title: 'Healthcare', image: healthcareImage, description: 'Help teams account for equipment, supplies, uniforms, and other items that move through busy care environments.' },
+    { title: 'Hospitality', image: hospitalityImage, description: 'Support linen accountability, stock visibility, and smoother operational handoffs across hotels and guest-service teams.' },
+    { title: 'Warehousing & Logistics', image: warehouseLogisticsImage, description: 'Give warehouse teams faster item identification and more dependable movement records across receiving, storage, and dispatch.' },
+    { title: 'Retail', image: retailImage, description: 'Improve product visibility and stock accuracy while helping teams spend less time searching and counting manually.' },
+    { title: 'Corporate & Institutional', image: accessControlImage, description: 'Create practical asset, identity, and access workflows that support accountable operations across offices and facilities.' },
   ];
 
   const schema = {
@@ -242,27 +298,45 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {rfidSolutions.map((solution) => (
-              <div
-                key={solution.title}
-                className="bg-white p-6 rounded-xl card-hover"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
-                  <solution.icon size={28} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-dark-grey mb-3">
-                  {solution.title}
-                </h3>
-                <PrefetchLink
-                  to="/hardware-products"
-                  className="text-primary font-medium hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+          <div className="space-y-8 lg:space-y-10">
+            {rfidSolutions.map((solution, index) => {
+              const imageOnRight = index % 2 === 1;
+
+              return (
+                <article
+                  key={solution.title}
+                  className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10"
                 >
-                  Learn More
-                  <ArrowRight size={16} />
-                </PrefetchLink>
-              </div>
-            ))}
+                  <div className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}>
+                    <div className="flex h-[260px] items-center justify-center overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.08)] md:h-[320px] lg:h-[420px]">
+                      <img
+                        src={solution.image}
+                        alt={solution.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-auto w-auto max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
+                    <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
+                      {solution.title}
+                    </h3>
+                    <p className="mt-4 max-w-xl text-base leading-7 text-professional-grey">
+                      {solution.description}
+                    </p>
+                    <PrefetchLink
+                      to={`/rfid-solutions/${solution.slug}`}
+                      className="mt-6 inline-flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors"
+                    >
+                      Learn More
+                      <ArrowRight size={16} />
+                    </PrefetchLink>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -354,18 +428,167 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {industries.map((industry) => (
-              <div key={industry.title} className="bg-white p-6 rounded-xl card-hover">
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <industry.icon size={28} className="text-primary" />
+              <article
+                key={industry.title}
+                className="flex flex-col rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden h-full"
+              >
+                <div className="relative w-full h-[200px] overflow-hidden bg-slate-100">
+                  <img
+                    src={industry.image}
+                    alt={industry.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-dark-grey">
-                  {industry.title}
-                </h3>
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl md:text-2xl font-bold text-dark-grey mb-3">
+                    {industry.title}
+                  </h3>
+                  <p className="text-base leading-6 text-professional-grey line-clamp-3">
+                    {industry.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Trusted Partners Section */}
+      <section className="section-padding bg-white">
+        <div className="container-width">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+              Our Trusted Partners
+            </h2>
+            <p className="text-xl text-professional-grey">
+              Leading institutions across Kenya trust our solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {[
+              {
+                name: 'PC Kinyanjui Technical Training Institute',
+                solution: 'CampusCURA ERP + Library Radar',
+                logo: pcKinyanjuiLogo
+              },
+              {
+                name: 'Kajiado East Technical and Vocational College',
+                solution: 'CampusCURA ERP',
+                logo: kajiadoEastLogo
+              },
+              {
+                name: 'Bandari Maritime Academy',
+                solution: 'Library Radar',
+                logo: bandariLogo
+              },
+              {
+                name: 'Kenya School of Law',
+                solution: 'Library Radar',
+                logo: kslLogo
+              },
+              {
+                name: 'Aldai Technical Training Institute',
+                solution: 'CampusCURA ERP + Library Radar',
+                logo: aldaiLogo
+              },
+              {
+                name: 'Umma University',
+                solution: 'Library Radar',
+                logo: ummaLogo
+              },
+              {
+                name: 'International Leadership University',
+                solution: 'Library Radar',
+                logo: iluLogo
+              },
+              {
+                name: 'Karatina University',
+                solution: 'Library Radar + Biometrics',
+                logo: karatinaLogo
+              },
+              {
+                name: 'University of Embu',
+                solution: 'Library Radar',
+                logo: embuLogo
+              },
+              {
+                name: 'Kibabii University',
+                solution: 'Library Radar',
+                logo: kibabiiLogo
+              },
+              {
+                name: 'Tharaka University',
+                solution: 'Library Radar',
+                logo: tharakaLogo
+              },
+              {
+                name: 'KSTVET',
+                solution: 'CampusCURA + Library Radar + Biometrics',
+                logo: kstvetLogo
+              },
+              {
+                name: 'Machakos University',
+                solution: 'Library Radar + Biometrics',
+                logo: machakosLogo
+              },
+              {
+                name: 'Belgut TTI',
+                solution: 'CampusCURA ERP',
+                logo: belgutLogo
+              },
+              {
+                name: 'RVTTI',
+                solution: 'CampusCURA ERP',
+                logo: rvttiLogo
+              },
+              {
+                name: 'Maasai Mara Technical and Vocational College',
+                solution: 'CampusCURA ERP',
+                logo: maasaiMaraLogo
+              }
+            ].map((client, index) => (
+              <div
+                key={index}
+                className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
+              >
+                {/* Logo */}
+                <div className="w-20 h-20 mx-auto mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white font-semibold text-sm mb-2">
+                    {client.name}
+                  </h3>
+                  <p className="text-white/90 text-xs">
+                    {client.solution}
+                  </p>
+                </div>
+                
+                {/* Client Name (visible on mobile) */}
+                <div className="md:hidden text-center">
+                  <h3 className="text-dark-grey font-semibold text-sm mb-1">
+                    {client.name}
+                  </h3>
+                  <p className="text-professional-grey text-xs">
+                    {client.solution}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+          
         </div>
       </section>
 
