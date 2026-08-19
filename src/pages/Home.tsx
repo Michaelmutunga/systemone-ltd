@@ -44,6 +44,7 @@ import kslLogo from '@/assets/logos/ksl.png';
 import aldaiLogo from '@/assets/logos/aldai.png';
 import ummaLogo from '@/assets/logos/umma-university.jpeg';
 import iluLogo from '@/assets/logos/ilu.jpeg';
+import fullheightTurnstileImage from '@/assets/new assets/fullheight turnstile.jfif';
 
 const Home = () => {
   const features = [
@@ -142,7 +143,7 @@ const Home = () => {
     {
       title: 'Access Control',
       slug: 'access-control',
-      image: rfidSecurityGate,
+      image: fullheightTurnstileImage,
       description: 'Connect identity, permissions, and controlled entry to help organizations manage who can access important spaces and resources.',
     },
   ];
@@ -558,7 +559,7 @@ const Home = () => {
                 className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
               >
                 {/* Logo */}
-                <div className="w-20 h-20 mx-auto mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <img 
                     src={client.logo} 
                     alt={`${client.name} logo`}
