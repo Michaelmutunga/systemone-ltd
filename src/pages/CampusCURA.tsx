@@ -87,7 +87,7 @@ const CampusCURA = () => {
             
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
               <p className="text-lg text-dark-grey leading-relaxed">
-                👉 CampusCURA enables institutions to improve efficiency, accountability, and student 
+                CampusCURA enables institutions to improve efficiency, accountability, and student 
                 experience by providing a single, centralized system that integrates all aspects of 
                 educational management.
               </p>
