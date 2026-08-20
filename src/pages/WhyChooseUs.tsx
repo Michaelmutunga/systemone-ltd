@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 const WhyChooseUs = () => {
   const benefits = [
@@ -85,7 +86,7 @@ const WhyChooseUs = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-dark-grey mb-6">
               Why Choose System One Ltd?
             </h1>
@@ -93,13 +94,13 @@ const WhyChooseUs = () => {
               Discover what sets us apart as Kenya's leading technology solutions provider 
               and why businesses trust us with their most critical IT needs.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Key Benefits */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div
@@ -121,12 +122,12 @@ const WhyChooseUs = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Comparison Section */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               System One vs. Other companies
@@ -167,12 +168,12 @@ const WhyChooseUs = () => {
               </table>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               What Our Clients Say
@@ -205,12 +206,12 @@ const WhyChooseUs = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Certifications & Partnerships */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               Certifications & Partnerships
@@ -242,12 +243,12 @@ const WhyChooseUs = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width text-center">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Experience the System One Difference
           </h2>
@@ -269,7 +270,7 @@ const WhyChooseUs = () => {
               View Our Services
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

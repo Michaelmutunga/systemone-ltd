@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 const CampusCURA = () => {
   const schema = {
@@ -31,7 +32,7 @@ const CampusCURA = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <GraduationCap size={48} className="text-primary" />
             </div>
@@ -43,13 +44,13 @@ const CampusCURA = () => {
               colleges, and universities. A single, centralized system that improves efficiency, 
               accountability, and student experience.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Key Features Section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
               Key Features
@@ -74,12 +75,12 @@ const CampusCURA = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-8 text-center">
               Why Choose CampusCURA?
@@ -123,12 +124,12 @@ const CampusCURA = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width text-center">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Institution?
           </h2>
@@ -152,7 +153,7 @@ const CampusCURA = () => {
               <ArrowRight size={20} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

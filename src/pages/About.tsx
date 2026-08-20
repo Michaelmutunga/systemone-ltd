@@ -2,6 +2,7 @@ import { Target, Eye, Award, Users2 } from 'lucide-react';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 const About = () => {
   const values = [
@@ -51,7 +52,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-dark-grey mb-6">
               About System One Ltd
             </h1>
@@ -60,13 +61,13 @@ const About = () => {
               System One Ltd has been at the forefront of delivering innovative 
               IT solutions across Kenya for over a decade.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Company Overview */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-dark-grey mb-6">
@@ -113,12 +114,12 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Mission & Vision */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-2xl card-hover">
               <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
@@ -144,12 +145,12 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               Our Core Values
@@ -177,12 +178,12 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               Meet Our Team
@@ -229,7 +230,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

@@ -13,6 +13,7 @@ import HardwareCarousel from '@/components/HardwareCarousel';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
 import PrefetchLink from '@/components/PrefetchLink';
+import Reveal from '@/components/Reveal';
 import {
   Accordion,
   AccordionContent,
@@ -119,6 +120,99 @@ const Services = () => {
     },
   ];
 
+  const partners = [
+    {
+      name: 'PC Kinyanjui Technical Training Institute',
+      solution: 'CampusCURA ERP + Library Radar',
+      logo: pcKinyanjuiLogo
+    },
+    {
+      name: 'Kajiado East Technical and Vocational College',
+      solution: 'CampusCURA ERP',
+      logo: kajiadoEastLogo
+    },
+    {
+      name: 'Bandari Maritime Academy',
+      solution: 'Library Radar',
+      logo: bandariLogo
+    },
+    {
+      name: 'Kenya School of Law',
+      solution: 'Library Radar',
+      logo: kslLogo
+    },
+    {
+      name: 'Aldai Technical Training Institute',
+      solution: 'CampusCURA ERP + Library Radar',
+      logo: aldaiLogo
+    },
+    {
+      name: 'Umma University',
+      solution: 'Library Radar',
+      logo: ummaLogo
+    },
+    {
+      name: 'International Leadership University',
+      solution: 'Library Radar',
+      logo: iluLogo
+    },
+    {
+      name: 'Karatina University',
+      solution: 'Library Radar + Biometrics',
+      logo: karatinaLogo
+    },
+    {
+      name: 'University of Embu',
+      solution: 'Library Radar',
+      logo: embuLogo
+    },
+    {
+      name: 'Kibabii University',
+      solution: 'Library Radar',
+      logo: kibabiiLogo
+    },
+    {
+      name: 'Tharaka University',
+      solution: 'Library Radar',
+      logo: tharakaLogo
+    },
+    {
+      name: 'KSTVET',
+      solution: 'CampusCURA + Library Radar + Biometrics',
+      logo: kstvetLogo
+    },
+    {
+      name: 'Machakos University',
+      solution: 'Library Radar + Biometrics',
+      logo: machakosLogo
+    },
+    {
+      name: 'Belgut TTI',
+      solution: 'CampusCURA ERP',
+      logo: belgutLogo
+    },
+    {
+      name: 'RVTTI',
+      solution: 'CampusCURA ERP',
+      logo: rvttiLogo
+    },
+    {
+      name: 'Maasai Mara Technical and Vocational College',
+      solution: 'CampusCURA ERP',
+      logo: maasaiMaraLogo
+    },
+    {
+      name: 'Kirinyaga University',
+      solution: 'Library Radar',
+      logo: kirinyagaLogo
+    },
+    {
+      name: 'Cooperative University',
+      solution: 'Library Radar',
+      logo: cooperativeLogo
+    }
+  ];
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -162,7 +256,7 @@ const Services = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-dark-grey mb-6">
               Our Products & Services
             </h1>
@@ -170,7 +264,7 @@ const Services = () => {
               Comprehensive technology solutions designed to transform your business 
               operations and drive sustainable growth in today's digital landscape.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -178,8 +272,8 @@ const Services = () => {
       <HardwareCarousel />
 
       {/* Products Grid */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {products.map((product, index) => (
               <div
@@ -256,12 +350,12 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
               Our Process
@@ -312,156 +406,69 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Our Clients Section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
-              Our Trusted Partners
-            </h2>
-            <p className="text-xl text-professional-grey">
-              Leading institutions across Kenya trust our solutions
-            </p>
+      <section className="section-padding bg-white overflow-hidden">
+        <Reveal className="container-width text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+            Our Trusted Partners
+          </h2>
+          <p className="text-xl text-professional-grey">
+            Leading institutions across Kenya trust our solutions
+          </p>
+        </Reveal>
+
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div className="flex w-max animate-infinite-scroll">
+              {[...partners, ...partners].map((client, index) => (
+                <div key={index} className="w-60 flex-shrink-0 px-3">
+                  <div className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover h-60 flex flex-col items-center justify-center overflow-hidden">
+                    {/* Logo */}
+                    <div className="w-24 h-24 mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h3 className="text-white font-semibold text-sm mb-2">
+                        {client.name}
+                      </h3>
+                      <p className="text-white/90 text-xs">
+                        {client.solution}
+                      </p>
+                    </div>
+
+                    {/* Client Name (visible on mobile) */}
+                    <div className="md:hidden text-center">
+                      <h3 className="text-dark-grey font-semibold text-sm mb-1">
+                        {client.name}
+                      </h3>
+                      <p className="text-professional-grey text-xs">
+                        {client.solution}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            {[
-              {
-                name: 'PC Kinyanjui Technical Training Institute',
-                solution: 'CampusCURA ERP + Library Radar',
-                logo: pcKinyanjuiLogo
-              },
-              {
-                name: 'Kajiado East Technical and Vocational College',
-                solution: 'CampusCURA ERP',
-                logo: kajiadoEastLogo
-              },
-              {
-                name: 'Bandari Maritime Academy',
-                solution: 'Library Radar',
-                logo: bandariLogo
-              },
-              {
-                name: 'Kenya School of Law',
-                solution: 'Library Radar',
-                logo: kslLogo
-              },
-              {
-                name: 'Aldai Technical Training Institute',
-                solution: 'CampusCURA ERP + Library Radar',
-                logo: aldaiLogo
-              },
-              {
-                name: 'Umma University',
-                solution: 'Library Radar',
-                logo: ummaLogo
-              },
-              {
-                name: 'International Leadership University',
-                solution: 'Library Radar',
-                logo: iluLogo
-              },
-              {
-                name: 'Karatina University',
-                solution: 'Library Radar + Biometrics',
-                logo: karatinaLogo
-              },
-              {
-                name: 'University of Embu',
-                solution: 'Library Radar',
-                logo: embuLogo
-              },
-              {
-                name: 'Kibabii University',
-                solution: 'Library Radar',
-                logo: kibabiiLogo
-              },
-              {
-                name: 'Tharaka University',
-                solution: 'Library Radar',
-                logo: tharakaLogo
-              },
-              {
-                name: 'KSTVET',
-                solution: 'CampusCURA + Library Radar + Biometrics',
-                logo: kstvetLogo
-              },
-              {
-                name: 'Machakos University',
-                solution: 'Library Radar + Biometrics',
-                logo: machakosLogo
-              },
-              {
-                name: 'Belgut TTI',
-                solution: 'CampusCURA ERP',
-                logo: belgutLogo
-              },
-              {
-                name: 'RVTTI',
-                solution: 'CampusCURA ERP',
-                logo: rvttiLogo
-              },
-              {
-                name: 'Maasai Mara Technical and Vocational College',
-                solution: 'CampusCURA ERP',
-                logo: maasaiMaraLogo
-              },
-              {
-                name: 'Kirinyaga University',
-                solution: 'Library Radar',
-                logo: kirinyagaLogo
-              },
-              {
-                name: 'Cooperative University',
-                solution: 'Library Radar',
-                logo: cooperativeLogo
-              }
-            ].map((client, index) => (
-              <div
-                key={index}
-                className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover"
-              >
-                {/* Logo */}
-                <div className="w-20 h-20 mx-auto mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <img 
-                    src={client.logo} 
-                    alt={`${client.name} logo`}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white font-semibold text-sm mb-2">
-                    {client.name}
-                  </h3>
-                  <p className="text-white/90 text-xs">
-                    {client.solution}
-                  </p>
-                </div>
-                
-                {/* Client Name (visible on mobile) */}
-                <div className="md:hidden text-center">
-                  <h3 className="text-dark-grey font-semibold text-sm mb-1">
-                    {client.name}
-                  </h3>
-                  <p className="text-professional-grey text-xs">
-                    {client.solution}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+
+          {/* Edge fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      {/* FAQ Section */}
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
@@ -485,11 +492,11 @@ const Services = () => {
               ))}
             </Accordion>
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width text-center">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Institution?
           </h2>
@@ -513,7 +520,7 @@ const Services = () => {
               <ArrowRight size={20} />
             </PrefetchLink>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

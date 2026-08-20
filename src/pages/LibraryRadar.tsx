@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 import rfidTag1 from '@/assets/products/rfid-tag-1.png';
 import rfidTag2 from '@/assets/products/rfid-tag-2.png';
@@ -239,7 +240,7 @@ const LibraryRadar = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <BookOpen size={48} className="text-primary" />
             </div>
@@ -252,13 +253,13 @@ const LibraryRadar = () => {
             <p className="text-lg text-professional-grey leading-relaxed">
               Designed to work alongside your existing Library Management System - including Koha and other compatible platforms - Library Radar adds a powerful RFID and automation layer to library operations, connecting staff, patrons, books, inventory, circulation, security and access control through a unified ecosystem.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Complete Library Automation Ecosystem */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
               A Complete Library Automation Ecosystem
@@ -306,12 +307,12 @@ const LibraryRadar = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Staff Workstation */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
               Staff Workstation
@@ -336,12 +337,12 @@ const LibraryRadar = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* RFID Security & Gate Monitoring */}
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               RFID Security &amp; Gate Monitoring
@@ -371,12 +372,12 @@ const LibraryRadar = () => {
               <img src={rfidSecurityGate3} alt="RFID Security Gate with Display" className="w-full h-64 object-contain rounded-lg bg-white p-4" />
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* RFID Hardware Ecosystem */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
               The RFID Hardware Ecosystem
@@ -425,12 +426,12 @@ const LibraryRadar = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* How the Ecosystem Works */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
               How the Ecosystem Works
@@ -451,12 +452,12 @@ const LibraryRadar = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Built Around Your Existing Library System */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
@@ -486,12 +487,12 @@ const LibraryRadar = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Transforming Library Operations */}
-      <section className="section-padding bg-primary/5">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
               Transforming Library Operations
@@ -509,12 +510,12 @@ const LibraryRadar = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width text-center">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Modernize Your Library Today
           </h2>
@@ -538,7 +539,7 @@ const LibraryRadar = () => {
               <ArrowRight size={20} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

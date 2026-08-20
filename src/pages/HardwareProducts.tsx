@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 import biometricSystem1 from '@/assets/products/biometric-system-1.png';
 import biometricSystem2 from '@/assets/products/biometric-system-2.png';
 import biometricSystem3 from '@/assets/products/biometric-system-3.png';
@@ -61,7 +62,7 @@ const HardwareProducts = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Shield size={48} className="text-primary" />
             </div>
@@ -72,13 +73,13 @@ const HardwareProducts = () => {
               We supply a wide range of RFID and biometric hardware to complement our security 
               and ERP solutions. Quality hardware that ensures reliable performance and security.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Hardware Products Section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
               Our Hardware Solutions
@@ -222,12 +223,12 @@ const HardwareProducts = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Kamnyweso Breathalyzer Featured Section */}
-      <section className="section-padding bg-secondary/20">
-        <div className="container-width">
+      <section className="section-padding mesh-gradient-subtle">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white border border-accent rounded-2xl p-8 relative shadow-lg">
               <div className="absolute -top-3 -right-3 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
@@ -291,12 +292,12 @@ const HardwareProducts = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Applications Section */}
-      <section className="section-padding bg-white">
-        <div className="container-width">
+      <section className="section-padding bg-white blueprint-grid">
+        <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
               Perfect For
@@ -322,12 +323,12 @@ const HardwareProducts = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding tech-gradient text-white">
-        <div className="container-width text-center">
+      <section className="section-padding tech-gradient-animated text-white">
+        <Reveal className="container-width text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Enhance Your Security Infrastructure
           </h2>
@@ -351,7 +352,7 @@ const HardwareProducts = () => {
               <ArrowRight size={20} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );
