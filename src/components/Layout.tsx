@@ -8,6 +8,8 @@ interface LayoutProps {
   children: ReactNode;
 }
 
+const isPrerender = typeof navigator !== 'undefined' && navigator.webdriver === true;
+
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -16,9 +18,11 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-      <Suspense fallback={null}>
-        <VoiceAssistant />
-      </Suspense>
+      {!isPrerender && (
+        <Suspense fallback={null}>
+          <VoiceAssistant />
+        </Suspense>
+      )}
     </div>
   );
 };

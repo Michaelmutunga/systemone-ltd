@@ -9,7 +9,9 @@ interface RevealProps {
 
 const Reveal = ({ children, direction = 'up', delay = 0, className = '' }: RevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(
+    () => typeof navigator !== 'undefined' && navigator.webdriver === true,
+  );
 
   useEffect(() => {
     const node = ref.current;

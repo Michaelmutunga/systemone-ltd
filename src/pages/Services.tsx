@@ -243,8 +243,8 @@ const Services = () => {
   return (
     <Layout>
       <Seo
-        title="Products & Services | System One Ltd"
-        description="Explore CampusCURA ERP, Library Radar, hardware products, and safety technology solutions from System One Ltd."
+        title="RFID & Technology Solutions | Services | System One Ltd"
+        description="Explore System One's services: RFID library systems, asset tracking, security gates, Library Radar, CampusCURA ERP, biometrics and ICT support."
         canonicalPath="/services"
         schema={[schema, faqSchema]}
       />
@@ -253,7 +253,7 @@ const Services = () => {
         <div className="container-width section-padding">
           <Reveal className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-dark-grey mb-6">
-              Our Products & Services
+              RFID Solutions & Technology Services
             </h1>
             <p className="text-xl text-professional-grey leading-relaxed">
               Comprehensive technology solutions designed to transform your business 

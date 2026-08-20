@@ -108,8 +108,8 @@ const WhyChooseUs = () => {
   return (
     <Layout>
       <Seo
-        title="Why Choose System One Ltd | Kenya Technology Partner"
-        description="See why institutions across Kenya choose System One Ltd for reliable support, affordable technology, and proven delivery."
+        title="Why Choose System One | RFID Solutions Partner in Kenya"
+        description="Why Kenyan institutions choose System One for RFID: trusted delivery, an expert team, custom integration and ongoing support after deployment."
         canonicalPath="/why-choose-us"
         schema={schema}
       />

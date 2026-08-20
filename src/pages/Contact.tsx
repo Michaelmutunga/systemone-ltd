@@ -91,8 +91,8 @@ const Contact = () => {
   };
   return <Layout>
       <Seo
-        title="Contact System One Ltd | Request a Demo"
-        description="Contact System One Ltd by phone, email, or the website form to request a consultation, demo, or support."
+        title="Contact System One | RFID Consultation & Demo in Kenya"
+        description="Contact System One Ltd in Nairobi for an RFID consultation or demo — by phone, email or the website form. We respond within 24 hours."
         canonicalPath="/contact"
         schema={schema}
       />

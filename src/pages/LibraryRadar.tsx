@@ -232,8 +232,8 @@ const LibraryRadar = () => {
   return (
     <Layout>
       <Seo
-        title="Library Radar | System One Ltd"
-        description="Library Radar is an integrated library automation and RFID management solution that adds a powerful RFID and automation layer to your existing Library Management System - circulation, inventory, security and self-service in one ecosystem."
+        title="Library Radar | RFID Library Management System in Kenya"
+        description="Library Radar is an RFID library management system for Kenyan institutions — tags, security gates, self-service kiosks and stocktaking that work with your existing LMS, including Koha."
         canonicalPath="/library-radar"
         schema={schema}
       />

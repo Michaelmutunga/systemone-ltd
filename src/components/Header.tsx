@@ -30,7 +30,7 @@ const Header = () => {
               className="h-20 w-auto"
             />
             <div>
-              <h1 className="text-xl font-bold text-dark-grey">System One Ltd</h1>
+              <span className="block text-xl font-bold text-dark-grey">System One Ltd</span>
               <p className="text-sm text-professional-grey">Technology Solutions</p>
             </div>
           </PrefetchLink>

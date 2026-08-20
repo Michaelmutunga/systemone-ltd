@@ -54,8 +54,8 @@ const HardwareProducts = () => {
   return (
     <Layout>
       <Seo
-        title="Hardware Products | System One Ltd"
-        description="Browse RFID tags, readers, biometric systems, security gates, turnstiles, kiosks, and the Kamnyweso Breathalyzer."
+        title="RFID Tags, Readers & Security Gates in Kenya | System One"
+        description="RFID hardware in Kenya — tags, desktop and handheld readers, security gates, turnstiles, self-service kiosks and biometric systems, supplied, installed and supported."
         canonicalPath="/hardware-products"
         schema={schema}
       />
@@ -67,7 +67,7 @@ const HardwareProducts = () => {
               <Shield size={48} className="text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-dark-grey mb-6">
-              Hardware Products
+              RFID Hardware Products
             </h1>
             <p className="text-xl text-professional-grey leading-relaxed">
               We supply a wide range of RFID and biometric hardware to complement our security 

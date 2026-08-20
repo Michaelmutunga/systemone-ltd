@@ -29,13 +29,7 @@ const App = () => (
         <BrowserRouter>
           <GoogleAnalytics />
           <RouteWarmup />
-          <Suspense
-            fallback={
-              <div className="min-h-screen flex items-center justify-center bg-background text-professional-grey">
-                Loading System One...
-              </div>
-            }
-          >
+          <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />

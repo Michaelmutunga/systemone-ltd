@@ -131,6 +131,16 @@ const solutions: Solution[] = [
   },
 ];
 
+const seoTitles: Record<string, string> = {
+  'library-management': 'RFID Library Management System in Kenya | System One',
+  'asset-tracking': 'RFID Asset Tracking Solutions in Kenya | System One',
+  'inventory-management': 'RFID Inventory Management in Kenya | System One',
+  'security-gates': 'RFID Security Gates for Libraries in Kenya | System One',
+  'tags-and-readers': 'RFID Tags & Readers in Kenya | System One',
+  'attendance-and-identification': 'RFID Attendance & ID Systems in Kenya | System One',
+  'access-control': 'RFID Access Control & Turnstiles in Kenya | System One',
+};
+
 const RfidSolution = () => {
   const { slug } = useParams();
   const solution = solutions.find((item) => item.slug === slug);
@@ -152,7 +162,7 @@ const RfidSolution = () => {
   return (
     <Layout>
       <Seo
-        title={`${solution.title} | System One Ltd`}
+        title={seoTitles[solution.slug] ?? `${solution.title} | System One Ltd`}
         description={solution.summary}
         canonicalPath={`/rfid-solutions/${solution.slug}`}
         schema={schema}
