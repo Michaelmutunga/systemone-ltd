@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "prerender": "node scripts/prerender.mjs",
     "build:prerender": "npm run build && npm run prerender",
-    "start": "serve -s dist -l ${PORT:-8080}",
+    "start": "serve dist -l ${PORT:-8080}",
     "lint": "eslint .",
     "preview": "vite preview"
   },
