@@ -10,7 +10,7 @@
     "prerender": "node scripts/prerender.mjs",
     "build:prerender": "npm run build && npm run prerender",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "start": "serve dist -l ${PORT:-8080}",
+    "start": "node scripts/server.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -63,7 +63,6 @@
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
     "recharts": "^2.15.4",
-    "serve": "^14.2.6",
     "sonner": "^1.7.4",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
