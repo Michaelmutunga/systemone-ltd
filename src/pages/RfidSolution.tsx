@@ -6,7 +6,6 @@ import { SITE } from '@/lib/site';
 import assetTrackingImage from '@/assets/new assets/asset tracking.jpg';
 import inventoryManagementImage from '@/assets/new assets/inventory management.PNG';
 import libraryManagementImage from '@/assets/new assets/library manage.jpg';
-import linenManagementImage from '@/assets/new assets/linen management.jpg';
 import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
 import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.png';
 import inventoryStockTaker from '@/assets/products/inventory-stock-taker-1.png';
@@ -54,21 +53,6 @@ const solutions: Solution[] = [
       { title: 'Better planning', description: 'Use more reliable asset information to support maintenance, replacement, and utilization decisions.' },
     ],
     components: ['Durable RFID asset tags', 'Handheld RFID scanners', 'Desktop readers', 'Asset records and reporting', 'Optional system integrations'],
-  },
-  {
-    slug: 'linen-management',
-    title: 'Linen Management',
-    image: linenManagementImage,
-    summary: 'Track linen issue, return, circulation, and loss across hospitality, healthcare, and institutional laundry workflows.',
-    overview: 'RFID linen management helps teams understand how linen moves from stores to service areas, laundry, and back into circulation. Each item can be identified at key handoff points so teams can improve counts, investigate losses, and plan replenishment with better information.',
-    workflow: ['Attach a suitable washable RFID tag to each linen item.', 'Record issue, collection, laundry, and return events at agreed checkpoints.', 'Review movement and quantity information by department, ward, room, or service area.', 'Use exception reporting to investigate losses, delays, or unusual consumption.'],
-    capabilities: ['Washable linen identification', 'Issue and return tracking', 'Department-level accountability', 'Laundry cycle visibility', 'Loss and replacement analysis'],
-    benefits: [
-      { title: 'Reduced replacement costs', description: 'Identify recurring losses and improve control over linen that leaves the normal cycle.' },
-      { title: 'Cleaner handoffs', description: 'Give teams shared information at stores, laundry, and service points.' },
-      { title: 'More dependable counts', description: 'Support replenishment and purchasing decisions with operational usage data.' },
-    ],
-    components: ['Washable RFID linen tags', 'Readers or scanning stations', 'Handheld inventory devices', 'Linen movement records', 'Reporting and integration options'],
   },
   {
     slug: 'inventory-management',

@@ -332,26 +332,12 @@ All colors MUST be HSL.
   }
 }
 
-/* Infinite scroll animation */
-@keyframes infinite-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Hidden scrollbar for scrollable carousels */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.animate-infinite-scroll {
-  animation: infinite-scroll 60s linear infinite;
-}
-
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-infinite-scroll {
-    animation: none;
-  }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

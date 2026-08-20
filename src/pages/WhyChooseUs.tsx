@@ -23,7 +23,7 @@ const WhyChooseUs = () => {
       icon: Users,
       title: 'Expert Team',
       description: 'Our certified professionals bring decades of combined experience in enterprise software, networking, and IT infrastructure to every project.',
-      stats: '50+ Certifications',
+      stats: '20+ Specialists',
     },
     {
       icon: Clock,
@@ -63,6 +63,36 @@ const WhyChooseUs = () => {
       company: 'Karatina University',
       role: 'Chief Librarian',
       quote: 'System One\'s Library Radar has transformed the way we manage our library resources. The RFID security gates and biometric integration have reduced book losses and streamlined student access. We now have a modern, secure, and efficient library experience for our users.',
+    },
+    {
+      name: 'Chief Librarian',
+      company: 'Kenya School of Law',
+      role: 'Chief Librarian',
+      quote: 'Library Radar has given us dependable control over a collection that must remain both accurate and protected. Circulation is faster, stocktaking far more reliable, and the System One team has been a true partner from planning through to ongoing support.',
+    },
+    {
+      name: 'Head of ICT',
+      company: 'Bandari Maritime Academy',
+      role: 'Head of ICT',
+      quote: 'System One took time to understand our operating environment before recommending anything. The implementation was well coordinated with our existing systems, and the training made adoption straightforward for our staff.',
+    },
+    {
+      name: 'Deputy University Librarian',
+      company: 'Machakos University',
+      role: 'Deputy University Librarian',
+      quote: 'The combination of Library Radar with biometric identification has streamlined both access and circulation for our users. System One listened to our workflows, proposed practical improvements, and has supported us well beyond installation.',
+    },
+    {
+      name: 'ICT Officer',
+      company: 'University of Embu',
+      role: 'ICT Officer',
+      quote: 'We valued how System One treated the project as a partnership rather than a transaction. Their technical guidance helped us make the right choices for our environment, and service after deployment has been consistent and responsive.',
+    },
+    {
+      name: 'University Librarian',
+      company: 'Kibabii University',
+      role: 'University Librarian',
+      quote: 'From the first consultation to go-live, System One kept us informed and involved at every stage. The RFID rollout ran smoothly, our team was well trained, and we now have the visibility and control over our resources that we needed.',
     },
   ];
 
@@ -125,52 +155,6 @@ const WhyChooseUs = () => {
         </Reveal>
       </section>
 
-      {/* Comparison Section */}
-      <section className="section-padding section-dark">
-        <Reveal className="container-width">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              System One vs. Other companies
-            </h2>
-            <p className="text-xl text-white/85">
-              See how we stack up against other technology providers
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-2xl overflow-hidden shadow-large">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-primary text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left">Features</th>
-                    <th className="px-6 py-4 text-center">System One</th>
-                    <th className="px-6 py-4 text-center">Company A</th>
-                    <th className="px-6 py-4 text-center">Company B</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {[
-                    ['24/7 Local Support', 'Yes', 'No', 'Yes'],
-                    ['Custom Development', 'Yes', 'Yes', 'No'],
-                    ['Affordable Pricing', 'Yes', 'No', 'Yes'],
-                    ['10+ Years Experience', 'Yes', 'Yes', 'No'],
-                    ['Free Consultation/Demo', 'Yes', 'No', 'No'],
-                    ['10+ Years Warranty', 'Yes', 'No', 'No'],
-                  ].map((row, index) => (
-                    <tr key={index} className="hover:bg-secondary/10">
-                      <td className="px-6 py-4 font-medium text-dark-grey">{row[0]}</td>
-                      <td className="px-6 py-4 text-center text-primary font-bold">{row[1]}</td>
-                      <td className="px-6 py-4 text-center text-professional-grey">{row[2]}</td>
-                      <td className="px-6 py-4 text-center text-professional-grey">{row[3]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* Testimonials */}
       <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
@@ -203,43 +187,6 @@ const WhyChooseUs = () => {
                     {testimonial.role}, {testimonial.company}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Certifications & Partnerships */}
-      <section className="section-padding mesh-gradient-subtle">
-        <Reveal className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
-              Certifications & Partnerships
-            </h2>
-            <p className="text-xl text-professional-grey">
-              Recognized expertise and trusted partnerships
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-            {[
-              'IoT & RFID Systems Integration Certificate',
-              'RFID Technology Certification',
-              'Kenya ICT Authority Certifications / Partnerships',
-              'Physical Access Control & Biometrics Certification',
-              'AWS Consulting Partner',
-              'ISO 27001 Certified',
-              'Agile / Scrum Certification',
-              'Certified RFID Professional (CRP)',
-            ].map((cert, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl text-center card-hover"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Award size={24} className="text-primary" />
-                </div>
-                <p className="text-sm font-medium text-dark-grey">{cert}</p>
               </div>
             ))}
           </div>

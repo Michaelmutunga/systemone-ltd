@@ -14,6 +14,7 @@ import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
 import PrefetchLink from '@/components/PrefetchLink';
 import Reveal from '@/components/Reveal';
+import MarqueeCarousel from '@/components/MarqueeCarousel';
 import {
   Accordion,
   AccordionContent,
@@ -420,9 +421,7 @@ const Services = () => {
           </p>
         </Reveal>
 
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="flex w-max animate-infinite-scroll">
+        <MarqueeCarousel>
               {[...partners, ...partners].map((client, index) => (
                 <div key={index} className="w-60 flex-shrink-0 px-3">
                   <div className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover h-60 flex flex-col items-center justify-center overflow-hidden">
@@ -457,13 +456,7 @@ const Services = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Edge fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-        </div>
+            </MarqueeCarousel>
       </section>
 
       {/* FAQ Section */}

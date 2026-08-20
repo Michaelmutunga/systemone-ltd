@@ -15,6 +15,7 @@ import { SITE } from '@/lib/site';
 import PrefetchLink from '@/components/PrefetchLink';
 import RfidHeroCarousel from '@/components/RfidHeroCarousel';
 import Reveal from '@/components/Reveal';
+import MarqueeCarousel from '@/components/MarqueeCarousel';
 import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
 import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.png';
 import inventoryStockTaker from '@/assets/products/inventory-stock-taker-1.png';
@@ -22,12 +23,7 @@ import rfidTag from '@/assets/products/rfid-tag-1.png';
 import assetTrackingImage from '@/assets/new assets/asset tracking.jpg';
 import inventoryManagementImage from '@/assets/new assets/inventory management.PNG';
 import libraryManagementImage from '@/assets/new assets/library manage.jpg';
-import linenManagementImage from '@/assets/new assets/linen management.jpg';
 import educationLibraryImage from '@/assets/new assets/education and library.jpg';
-import healthcareImage from '@/assets/new assets/Healthcare.jpg';
-import hospitalityImage from '@/assets/new assets/Hospitality.jpg';
-import warehouseLogisticsImage from '@/assets/new assets/Warehousing & Logistics.jpg';
-import retailImage from '@/assets/new assets/Retail.jpg';
 import accessControlImage from '@/assets/new assets/Access control.jpg';
 import karatinaLogo from '@/assets/logos/karatina-university.png';
 import embuLogo from '@/assets/logos/university-of-embu.png';
@@ -114,12 +110,6 @@ const Home = () => {
       description: 'Maintain a clear view of valuable equipment and assets as they move between rooms, departments, and locations.',
     },
     {
-      title: 'Linen Management',
-      slug: 'linen-management',
-      image: linenManagementImage,
-      description: 'Track linen issue, return, circulation, and loss so teams can improve accountability and reduce unnecessary replacement.',
-    },
-    {
       title: 'Inventory Management',
       slug: 'inventory-management',
       image: libraryManagementImage,
@@ -153,10 +143,6 @@ const Home = () => {
 
   const industries = [
     { title: 'Education & Libraries', image: educationLibraryImage, description: 'Improve circulation, inventory, security, and visibility across learning resources and shared institutional assets.' },
-    { title: 'Healthcare', image: healthcareImage, description: 'Help teams account for equipment, supplies, uniforms, and other items that move through busy care environments.' },
-    { title: 'Hospitality', image: hospitalityImage, description: 'Support linen accountability, stock visibility, and smoother operational handoffs across hotels and guest-service teams.' },
-    { title: 'Warehousing & Logistics', image: warehouseLogisticsImage, description: 'Give warehouse teams faster item identification and more dependable movement records across receiving, storage, and dispatch.' },
-    { title: 'Retail', image: retailImage, description: 'Improve product visibility and stock accuracy while helping teams spend less time searching and counting manually.' },
     { title: 'Corporate & Institutional', image: accessControlImage, description: 'Create practical asset, identity, and access workflows that support accountable operations across offices and facilities.' },
   ];
 
@@ -390,8 +376,7 @@ const Home = () => {
               Featured RFID Solutions
             </h2>
             <p className="text-xl text-white/85 max-w-3xl mx-auto">
-              RFID solutions for libraries, institutions, healthcare teams, hospitality
-              operations, warehouses, retailers, and corporate facilities.
+              RFID solutions for libraries, institutions, and corporate facilities.
             </p>
           </div>
 
@@ -461,7 +446,7 @@ const Home = () => {
               </h3>
               <p className="text-professional-grey mb-6">
                 RFID security gates, tags, readers, asset tracking, library management,
-                linen management, inventory management, attendance, identification,
+                inventory management, attendance, identification,
                 access control, and custom RFID integration.
               </p>
               <PrefetchLink
@@ -566,50 +551,42 @@ const Home = () => {
           </p>
         </Reveal>
 
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="flex w-max animate-infinite-scroll">
-              {[...partners, ...partners].map((client, index) => (
-                <div key={index} className="w-60 flex-shrink-0 px-3">
-                  <div className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover h-60 flex flex-col items-center justify-center overflow-hidden">
-                    {/* Logo */}
-                    <div className="w-24 h-24 mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <img
-                        src={client.logo}
-                        alt={`${client.name} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="text-white font-semibold text-sm mb-2">
-                        {client.name}
-                      </h3>
-                      <p className="text-white/90 text-xs">
-                        {client.solution}
-                      </p>
-                    </div>
-
-                    {/* Client Name (visible on mobile) */}
-                    <div className="md:hidden text-center">
-                      <h3 className="text-dark-grey font-semibold text-sm mb-1">
-                        {client.name}
-                      </h3>
-                      <p className="text-professional-grey text-xs">
-                        {client.solution}
-                      </p>
-                    </div>
-                  </div>
+        <MarqueeCarousel>
+          {[...partners, ...partners].map((client, index) => (
+            <div key={index} className="w-60 flex-shrink-0 px-3">
+              <div className="group relative bg-white border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 card-hover h-60 flex flex-col items-center justify-center overflow-hidden">
+                {/* Logo */}
+                <div className="w-24 h-24 mb-4 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Edge fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-        </div>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-primary/95 rounded-xl p-4 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white font-semibold text-sm mb-2">
+                    {client.name}
+                  </h3>
+                  <p className="text-white/90 text-xs">
+                    {client.solution}
+                  </p>
+                </div>
+
+                {/* Client Name (visible on mobile) */}
+                <div className="md:hidden text-center">
+                  <h3 className="text-dark-grey font-semibold text-sm mb-1">
+                    {client.name}
+                  </h3>
+                  <p className="text-professional-grey text-xs">
+                    {client.solution}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </MarqueeCarousel>
       </section>
 
       {/* Features Overview */}

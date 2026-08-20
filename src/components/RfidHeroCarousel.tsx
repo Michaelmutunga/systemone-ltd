@@ -3,7 +3,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import rfidGate from '@/assets/products/rfid-security-gate-1.png';
 import rfidReader from '@/assets/products/rfid-desktop-reader-1.png';
-import rfidTags from '@/assets/products/rfid-tag-1.png';
 import inventoryReader from '@/assets/products/inventory-stock-taker-1.png';
 import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.png';
 
@@ -17,11 +16,6 @@ const slides = [
     title: 'RFID Asset Tracking',
     description: 'Identify and track valuable assets across departments, rooms, and facilities.',
     image: inventoryReader,
-  },
-  {
-    title: 'RFID Linen Management',
-    description: 'Track textile movement, reduce manual counting, and support better stock control.',
-    image: rfidTags,
   },
   {
     title: 'RFID Security Gates',
