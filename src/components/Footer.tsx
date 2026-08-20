@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import systemOneLogo from '@/assets/system-one-logo.png';
+import systemOneLogo from '@/assets/system-one-logo.webp';
 import PrefetchLink from '@/components/PrefetchLink';
 
 const Footer = () => {
@@ -45,6 +45,21 @@ const Footer = () => {
                 </PrefetchLink>
               </li>
               <li>
+                <PrefetchLink to="/library-radar" className="text-gray-300 hover:text-primary transition-colors">
+                  Library Radar
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/campus-cura" className="text-gray-300 hover:text-primary transition-colors">
+                  CampusCURA ERP
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/hardware-products" className="text-gray-300 hover:text-primary transition-colors">
+                  Hardware Products
+                </PrefetchLink>
+              </li>
+              <li>
                 <PrefetchLink to="/why-choose-us" className="text-gray-300 hover:text-primary transition-colors">
                   Why Choose Us
                 </PrefetchLink>
@@ -58,14 +73,43 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li>ERP Systems</li>
-              <li>IT Consultancy</li>
-              <li>Software Development</li>
-              <li>Networking Solutions</li>
-              <li>Hardware Solutions</li>
-              <li>Support Services</li>
+            <h3 className="text-lg font-semibold mb-4">RFID Solutions</h3>
+            <ul className="space-y-2">
+              <li>
+                <PrefetchLink to="/rfid-solutions/library-management" className="text-gray-300 hover:text-primary transition-colors">
+                  Library Management
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/asset-tracking" className="text-gray-300 hover:text-primary transition-colors">
+                  Asset Tracking
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/inventory-management" className="text-gray-300 hover:text-primary transition-colors">
+                  Inventory Management
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/security-gates" className="text-gray-300 hover:text-primary transition-colors">
+                  Security Gates
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/tags-and-readers" className="text-gray-300 hover:text-primary transition-colors">
+                  Tags & Readers
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/attendance-and-identification" className="text-gray-300 hover:text-primary transition-colors">
+                  Attendance & ID Systems
+                </PrefetchLink>
+              </li>
+              <li>
+                <PrefetchLink to="/rfid-solutions/access-control" className="text-gray-300 hover:text-primary transition-colors">
+                  Access Control
+                </PrefetchLink>
+              </li>
             </ul>
           </div>
 

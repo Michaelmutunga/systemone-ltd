@@ -24,7 +24,7 @@ import {
 
 // Import logos
 import karatinaLogo from '@/assets/logos/karatina-university.png';
-import embuLogo from '@/assets/logos/university-of-embu.png';
+import embuLogo from '@/assets/logos/university-of-embu.webp';
 import kibabiiLogo from '@/assets/logos/kibabii-university.jpg';
 import tharakaLogo from '@/assets/logos/tharaka-university.jpeg';
 import kstvetLogo from '@/assets/logos/kstvet.jpeg';
@@ -38,7 +38,7 @@ import kslLogo from '@/assets/logos/ksl.png';
 import aldaiLogo from '@/assets/logos/aldai.png';
 import ummaLogo from '@/assets/logos/umma-university.jpeg';
 import iluLogo from '@/assets/logos/ilu.jpeg';
-import kirinyagaLogo from '@/assets/logos/Kirinyaga logo.png';
+import kirinyagaLogo from '@/assets/logos/Kirinyaga logo.webp';
 import cooperativeLogo from '@/assets/logos/cooperative logo.webp';
 
 const Services = () => {

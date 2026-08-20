@@ -19,6 +19,7 @@ const BASE_SCHEMA: Record<string, unknown>[] = [
     '@type': 'Organization',
     name: SITE.name,
     url: SITE.url,
+    logo: `${SITE.url}/system-one-logo.webp`,
     email: SITE.email,
     telephone: SITE.phoneDisplay,
     address: {
@@ -34,6 +35,8 @@ const BASE_SCHEMA: Record<string, unknown>[] = [
       latitude: SITE.geo.latitude,
       longitude: SITE.geo.longitude,
     },
+    areaServed: { '@type': 'Country', name: 'Kenya' },
+    ...(SITE.social.length > 0 ? { sameAs: SITE.social } : {}),
   },
   {
     '@context': 'https://schema.org',
@@ -41,11 +44,7 @@ const BASE_SCHEMA: Record<string, unknown>[] = [
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE.url}/services?query={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
+    inLanguage: 'en',
   },
 ];
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import systemOneLogo from '@/assets/system-one-logo.png';
+import systemOneLogo from '@/assets/system-one-logo.webp';
 import PrefetchLink from '@/components/PrefetchLink';
 
 const Header = () => {

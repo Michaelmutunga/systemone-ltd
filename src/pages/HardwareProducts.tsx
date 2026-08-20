@@ -4,52 +4,92 @@ import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
 import Reveal from '@/components/Reveal';
-import biometricSystem1 from '@/assets/products/biometric-system-1.png';
+import biometricSystem1 from '@/assets/products/biometric-system-1.webp';
 import biometricSystem2 from '@/assets/products/biometric-system-2.png';
-import biometricSystem3 from '@/assets/products/biometric-system-3.png';
-import inventoryStockTaker1 from '@/assets/products/inventory-stock-taker-1.png';
+import biometricSystem3 from '@/assets/products/biometric-system-3.webp';
+import inventoryStockTaker1 from '@/assets/products/inventory-stock-taker-1.webp';
 import inventoryStockTaker2 from '@/assets/products/inventory-stock-taker-2.png';
-import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.png';
-import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.png';
-import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.png';
-import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.png';
-import rfidTag1 from '@/assets/products/rfid-tag-1.png';
-import rfidTag2 from '@/assets/products/rfid-tag-2.png';
-import rfidTag3 from '@/assets/products/rfid-tag-3.png';
-import turnstile1 from '@/assets/products/turnstile-1.png';
-import turnstile2 from '@/assets/products/turnstile-2.png';
+import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.webp';
+import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
+import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
+import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
+import rfidTag1 from '@/assets/products/rfid-tag-1.webp';
+import rfidTag2 from '@/assets/products/rfid-tag-2.webp';
+import rfidTag3 from '@/assets/products/rfid-tag-3.webp';
+import turnstile1 from '@/assets/products/turnstile-1.webp';
+import turnstile2 from '@/assets/products/turnstile-2.webp';
 import turnstile4 from '@/assets/products/turnstile-4.png';
-import turnstile5 from '@/assets/products/turnstile-5.png';
+import turnstile5 from '@/assets/products/turnstile-5.webp';
 import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
 import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
-import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.png';
-import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.png';
-import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.png';
+import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';
+import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.webp';
+import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.webp';
 import breathalyzer1 from '@/assets/products/breathalyzer-1.png';
 import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
 import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
 
 const HardwareProducts = () => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'System One Ltd Hardware Products',
-    url: `${SITE.url}/hardware-products`,
-    itemListElement: [
-      'RFID Tags',
-      'RFID Desktop Readers',
-      'Biometric Systems',
-      'RFID Security Gates',
-      'Turnstiles',
-      'Self-check-in/check-out Kiosks',
-      'Kamnyweso Breathalyzer',
-    ].map((name, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name,
-    })),
-  };
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'System One Ltd Hardware Products',
+      url: `${SITE.url}/hardware-products`,
+      itemListElement: [
+        'RFID Tags',
+        'RFID Desktop Readers',
+        'Biometric Systems',
+        'RFID Security Gates',
+        'Turnstiles',
+        'Self-check-in/check-out Kiosks',
+        'Kamnyweso Breathalyzer',
+      ].map((name, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What RFID hardware products do you supply in Kenya?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'System One Ltd supplies RFID tags, RFID desktop readers, handheld RFID inventory stocktakers, RFID security gates, turnstiles, self-service kiosks, return drop boxes and biometric systems.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you install and configure the RFID hardware?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. System One Ltd supplies, installs and configures RFID hardware and integrates it with your library, asset tracking, inventory or access control software, including staff training and technical support.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Where can I buy RFID tags and readers in Nairobi?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'System One Ltd supplies RFID tags and readers in Nairobi and across Kenya, with delivery, installation and ongoing support for businesses, schools, universities and institutions.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do your security gates and turnstiles integrate with existing access control systems?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Our RFID security gates and turnstiles are designed to work with RFID library and access control systems, detecting unauthorized items or users and alerting staff at entry and exit points.',
+          },
+        },
+      ],
+    },
+  ];
 
   return (
     <Layout>

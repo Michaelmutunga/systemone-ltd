@@ -4,30 +4,30 @@ import { useCallback } from 'react';
 import PrefetchLink from '@/components/PrefetchLink';
 
 // Import all hardware product images
-import biometric1 from '@/assets/products/biometric-system-1.png';
+import biometric1 from '@/assets/products/biometric-system-1.webp';
 import biometric2 from '@/assets/products/biometric-system-2.png';
-import biometric3 from '@/assets/products/biometric-system-3.png';
+import biometric3 from '@/assets/products/biometric-system-3.webp';
 import breathalyzer1 from '@/assets/products/breathalyzer-1.png';
 import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
 import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
-import inventory1 from '@/assets/products/inventory-stock-taker-1.png';
+import inventory1 from '@/assets/products/inventory-stock-taker-1.webp';
 import inventory2 from '@/assets/products/inventory-stock-taker-2.png';
-import inventory3 from '@/assets/products/inventory-stock-taker-3.png';
-import rfidReader1 from '@/assets/products/rfid-desktop-reader-1.png';
-import rfidReader2 from '@/assets/products/rfid-desktop-reader-2.png';
-import rfidReader3 from '@/assets/products/rfid-desktop-reader-3.png';
+import inventory3 from '@/assets/products/inventory-stock-taker-3.webp';
+import rfidReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
+import rfidReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
+import rfidReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
 import rfidGate1 from '@/assets/products/rfid-security-gate-1.png';
 import rfidGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidGate3 from '@/assets/products/rfid-security-gate-3.png';
-import rfidTag1 from '@/assets/products/rfid-tag-1.png';
-import rfidTag2 from '@/assets/products/rfid-tag-2.png';
-import rfidTag3 from '@/assets/products/rfid-tag-3.png';
-import kiosk1 from '@/assets/products/self-checkin-kiosk-1.png';
-import kiosk2 from '@/assets/products/self-checkin-kiosk-2.png';
-import kiosk3 from '@/assets/products/self-checkin-kiosk-3.png';
-import turnstile1 from '@/assets/products/turnstile-1.png';
+import rfidTag1 from '@/assets/products/rfid-tag-1.webp';
+import rfidTag2 from '@/assets/products/rfid-tag-2.webp';
+import rfidTag3 from '@/assets/products/rfid-tag-3.webp';
+import kiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';
+import kiosk2 from '@/assets/products/self-checkin-kiosk-2.webp';
+import kiosk3 from '@/assets/products/self-checkin-kiosk-3.webp';
+import turnstile1 from '@/assets/products/turnstile-1.webp';
 import turnstile2 from '@/assets/products/turnstile-4.png';
-import turnstile3 from '@/assets/products/turnstile-5.png';
+import turnstile3 from '@/assets/products/turnstile-5.webp';
 
 const HardwareCarousel = () => {
   const products = [

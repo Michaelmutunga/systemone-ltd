@@ -25,43 +25,91 @@ import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
 import Reveal from '@/components/Reveal';
 
-import rfidTag1 from '@/assets/products/rfid-tag-1.png';
-import rfidTag2 from '@/assets/products/rfid-tag-2.png';
-import rfidTag3 from '@/assets/products/rfid-tag-3.png';
-import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.png';
-import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.png';
-import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.png';
-import inventoryStockTaker1 from '@/assets/products/inventory-stock-taker-1.png';
+import rfidTag1 from '@/assets/products/rfid-tag-1.webp';
+import rfidTag2 from '@/assets/products/rfid-tag-2.webp';
+import rfidTag3 from '@/assets/products/rfid-tag-3.webp';
+import rfidDesktopReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
+import rfidDesktopReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
+import rfidDesktopReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
+import inventoryStockTaker1 from '@/assets/products/inventory-stock-taker-1.webp';
 import inventoryStockTaker2 from '@/assets/products/inventory-stock-taker-2.png';
-import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.png';
-import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.png';
-import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.png';
-import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.png';
+import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.webp';
+import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';
+import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.webp';
+import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.webp';
 import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
 import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
-import turnstile1 from '@/assets/products/turnstile-1.png';
+import turnstile1 from '@/assets/products/turnstile-1.webp';
 import turnstile2 from '@/assets/products/turnstile-4.png';
-import turnstile4 from '@/assets/products/turnstile-5.png';
+import turnstile4 from '@/assets/products/turnstile-5.webp';
 import bookDropox from '@/assets/new assets/RFID book dropox.jfif';
 import libraryManage from '@/assets/new assets/library manage.jpg';
 import educationLibrary from '@/assets/new assets/education and library.jpg';
 
 const LibraryRadar = () => {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Library Radar',
-    url: `${SITE.url}/library-radar`,
-    provider: {
-      '@type': 'Organization',
-      name: SITE.name,
-      url: SITE.url,
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Library Radar',
+      url: `${SITE.url}/library-radar`,
+      provider: {
+        '@type': 'Organization',
+        name: SITE.name,
+        url: SITE.url,
+      },
+      areaServed: 'Kenya',
+      description:
+        'Library Radar is an integrated library automation and RFID management solution that works alongside existing Library Management Systems (LMS) including Koha, adding RFID automation for circulation, inventory, security and self-service.',
     },
-    areaServed: 'Kenya',
-    description:
-      'Library Radar is an integrated library automation and RFID management solution that works alongside existing Library Management Systems (LMS) including Koha, adding RFID automation for circulation, inventory, security and self-service.',
-  };
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is Library Radar?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Library Radar is an RFID-based library management system in Kenya that adds RFID automation for circulation, inventory, security and self-service on top of existing Library Management Systems (LMS) such as Koha.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Library Radar replace our existing Library Management System?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Library Radar works alongside your existing LMS including Koha, integrating RFID automation for issuing and returning books, stocktaking, security gates and self-service kiosks without replacing your current system.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What hardware does an RFID library system include?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'An RFID library system includes RFID tags for books, an RFID desktop reader for circulation and conversion, an RFID inventory stocktaker for stocktaking, RFID security gates and RFID self-service kiosks and return drop boxes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do RFID security gates work in a library?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'RFID security gates are installed at library entrances and exits. They read the security status of RFID-tagged books and raise an alert when an item that has not been properly checked out attempts to leave the library.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Where can I get an RFID library system in Kenya?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'System One Ltd supplies and installs Library Radar RFID library management systems across Kenya, including system setup, training and technical support.',
+          },
+        },
+      ],
+    },
+  ];
 
   const workstationFeatures = [
     {

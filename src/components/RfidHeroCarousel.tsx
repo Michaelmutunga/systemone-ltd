@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import rfidGate from '@/assets/products/rfid-security-gate-1.png';
-import rfidReader from '@/assets/products/rfid-desktop-reader-1.png';
-import inventoryReader from '@/assets/products/inventory-stock-taker-1.png';
-import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.png';
+import rfidReader from '@/assets/products/rfid-desktop-reader-1.webp';
+import inventoryReader from '@/assets/products/inventory-stock-taker-1.webp';
+import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.webp';
 
 const slides = [
   {
