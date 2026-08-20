@@ -37,6 +37,8 @@ import kslLogo from '@/assets/logos/ksl.png';
 import aldaiLogo from '@/assets/logos/aldai.png';
 import ummaLogo from '@/assets/logos/umma-university.jpeg';
 import iluLogo from '@/assets/logos/ilu.jpeg';
+import kirinyagaLogo from '@/assets/logos/Kirinyaga logo.png';
+import cooperativeLogo from '@/assets/logos/cooperative logo.webp';
 
 const Services = () => {
   const products = [
@@ -406,6 +408,16 @@ const Services = () => {
                 name: 'Maasai Mara Technical and Vocational College',
                 solution: 'CampusCURA ERP',
                 logo: maasaiMaraLogo
+              },
+              {
+                name: 'Kirinyaga University',
+                solution: 'Library Radar',
+                logo: kirinyagaLogo
+              },
+              {
+                name: 'Cooperative University',
+                solution: 'Library Radar',
+                logo: cooperativeLogo
               }
             ].map((client, index) => (
               <div
