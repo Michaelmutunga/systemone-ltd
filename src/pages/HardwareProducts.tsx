@@ -78,7 +78,7 @@ const HardwareProducts = () => {
       </section>
 
       {/* Hardware Products Section */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
@@ -296,10 +296,10 @@ const HardwareProducts = () => {
       </section>
 
       {/* Applications Section */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
               Perfect For
             </h2>
             
@@ -314,9 +314,9 @@ const HardwareProducts = () => {
               ].map((application, index) => (
                 <div
                   key={index}
-                  className="text-center p-6 bg-primary/5 rounded-xl card-hover"
+                  className="text-center p-6 card-glass rounded-xl card-hover"
                 >
-                  <p className="text-dark-grey font-semibold">
+                  <p className="text-white font-semibold">
                     {application}
                   </p>
                 </div>

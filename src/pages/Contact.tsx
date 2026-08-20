@@ -112,7 +112,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-white">
+      <section className="section-padding blueprint-grid">
         <div className="container-width">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -273,7 +273,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section (Placeholder) */}
-      <section className="section-padding bg-secondary/20">
+      <section className="section-padding mesh-gradient-subtle">
         <div className="container-width">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-dark-grey mb-4">

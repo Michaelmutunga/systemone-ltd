@@ -49,7 +49,7 @@ const CampusCURA = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
@@ -79,15 +79,15 @@ const CampusCURA = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
               Why Choose CampusCURA?
             </h2>
             
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
-              <p className="text-lg text-dark-grey leading-relaxed">
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-8 mb-8 backdrop-blur-sm">
+              <p className="text-lg text-white leading-relaxed">
                 CampusCURA enables institutions to improve efficiency, accountability, and student 
                 experience by providing a single, centralized system that integrates all aspects of 
                 educational management.

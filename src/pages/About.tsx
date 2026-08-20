@@ -66,7 +66,7 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -118,7 +118,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-2xl card-hover">
@@ -149,7 +149,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">

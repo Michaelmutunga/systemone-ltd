@@ -99,7 +99,7 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Key Benefits */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
@@ -126,13 +126,13 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Comparison Section */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               System One vs. Other companies
             </h2>
-            <p className="text-xl text-professional-grey">
+            <p className="text-xl text-white/85">
               See how we stack up against other technology providers
             </p>
           </div>
@@ -172,7 +172,7 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">

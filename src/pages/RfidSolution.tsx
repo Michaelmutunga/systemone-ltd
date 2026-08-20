@@ -198,7 +198,7 @@ const RfidSolution = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding blueprint-grid">
         <div className="container-width">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -221,7 +221,7 @@ const RfidSolution = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary/20">
+      <section className="section-padding mesh-gradient-subtle">
         <div className="container-width">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">How it works</p>
@@ -238,7 +238,7 @@ const RfidSolution = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding blueprint-grid">
         <div className="container-width">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Operational value</p>
@@ -255,7 +255,7 @@ const RfidSolution = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary/20">
+      <section className="section-padding mesh-gradient-subtle">
         <div className="container-width">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>

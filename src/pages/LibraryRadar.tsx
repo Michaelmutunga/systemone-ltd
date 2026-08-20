@@ -258,7 +258,7 @@ const LibraryRadar = () => {
       </section>
 
       {/* Complete Library Automation Ecosystem */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-12 text-center">
@@ -376,7 +376,7 @@ const LibraryRadar = () => {
       </section>
 
       {/* RFID Hardware Ecosystem */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
@@ -430,13 +430,13 @@ const LibraryRadar = () => {
       </section>
 
       {/* How the Ecosystem Works */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               How the Ecosystem Works
             </h2>
-            <p className="text-lg text-professional-grey leading-relaxed text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-white/85 leading-relaxed text-center max-w-3xl mx-auto mb-12">
               Library Radar connects the different stages of library operations into a single ecosystem - a typical resource lifecycle flows through the system end to end, alongside your existing Library Management System.
             </p>
 
@@ -456,7 +456,7 @@ const LibraryRadar = () => {
       </section>
 
       {/* Built Around Your Existing Library System */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -311,7 +311,7 @@ const Home = () => {
       </section>
 
       {/* RFID Value Proposition */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
@@ -383,13 +383,13 @@ const Home = () => {
       </section>
 
       {/* RFID Solutions Showcase */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding section-dark">
         <Reveal className="container-width">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured RFID Solutions
             </h2>
-            <p className="text-xl text-professional-grey max-w-3xl mx-auto">
+            <p className="text-xl text-white/85 max-w-3xl mx-auto">
               RFID solutions for libraries, institutions, healthcare teams, hospitality
               operations, warehouses, retailers, and corporate facilities.
             </p>
@@ -417,10 +417,10 @@ const Home = () => {
                   </div>
 
                   <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
-                    <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       {solution.title}
                     </h3>
-                    <p className="mt-4 max-w-xl text-base leading-7 text-professional-grey">
+                    <p className="mt-4 max-w-xl text-base leading-7 text-white/80">
                       {solution.description}
                     </p>
                     <PrefetchLink
@@ -439,7 +439,7 @@ const Home = () => {
       </section>
 
       {/* Products & Services */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
@@ -613,7 +613,7 @@ const Home = () => {
       </section>
 
       {/* Features Overview */}
-      <section className="section-padding bg-white blueprint-grid">
+      <section className="section-padding blueprint-grid">
         <Reveal className="container-width">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
