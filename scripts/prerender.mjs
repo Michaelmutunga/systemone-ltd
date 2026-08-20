@@ -61,10 +61,14 @@ const base = `http://127.0.0.1:${server.address().port}`;
 // Third-party hosts that add noise or keep the network busy during snapshots.
 const blockedHosts = ['vapi.ai', 'tile.openstreetmap.org', 'cdnjs.cloudflare.com'];
 
-const browser = await puppeteer.launch({
+const launchOptions = {
   headless: true,
   args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-});
+};
+if (process.env.CHROME_PATH) {
+  launchOptions.executablePath = process.env.CHROME_PATH;
+}
+const browser = await puppeteer.launch(launchOptions);
 
 let failures = 0;
 
