@@ -30,7 +30,7 @@ Key information about System One Ltd:
 - Founded in 2019
 - Specializes in educational technology solutions for higher learning institutions
 - Main products include CampusCURA ERP, Library Radar, Smart Biometrics, and Digital Payment solutions
-- Has partnerships with universities like Karatina University, Kibabii University, Maasai Mara University, University of Embu, Tharaka University, Machakos University, and technical institutes
+- Has partnerships with universities like Karatina University, Kibabii University, University of Embu, Tharaka University, Machakos University, and technical institutes
 - Contact: info@systemoneltd.com, +254 7XX XXX XXX
 - Website focuses on innovation, reliability, and transforming education through technology
 

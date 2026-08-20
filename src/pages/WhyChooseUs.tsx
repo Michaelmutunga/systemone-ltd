@@ -53,10 +53,10 @@ const WhyChooseUs = () => {
       quote: 'With CampusCURA, we now have a centralized system for managing students, finance, and library services. The integration of RFID and biometrics has significantly improved accountability and security across our campuses. We highly recommend System One\'s solutions for institutions looking to modernize.',
     },
     {
-      name: 'Deputy Vice-Chancellor',
-      company: 'Maasai Mara University',
-      role: 'Deputy Vice-Chancellor (Academic Affairs)',
-      quote: 'We chose CampusCURA because we wanted an ERP tailored for education. It has delivered beyond expectations, from automating finance to streamlining student services. The support from System One has been excellent.',
+      name: 'Deputy Principal',
+      company: 'PC Kinyanjui Technical Training Institute',
+      role: 'Deputy Principal',
+      quote: 'CampusCURA, together with Library Radar, has given us one connected view of our students, finances, and learning resources. System One understood our needs, delivered on schedule, and the ongoing support has been dependable throughout.',
     },
     {
       name: 'Chief Librarian',

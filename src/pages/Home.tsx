@@ -33,7 +33,6 @@ import kstvetLogo from '@/assets/logos/kstvet.jpeg';
 import machakosLogo from '@/assets/logos/machakos-university.png';
 import belgutLogo from '@/assets/logos/belgut-tti.jpeg';
 import rvttiLogo from '@/assets/logos/rvtti.png';
-import maasaiMaraLogo from '@/assets/logos/maasai-mara-university.jpeg';
 import pcKinyanjuiLogo from '@/assets/logos/pc-kinyanjui.jpeg';
 import kajiadoEastLogo from '@/assets/logos/kajiado-east.jpeg';
 import bandariLogo from '@/assets/logos/bandari.jpeg';
@@ -221,11 +220,6 @@ const Home = () => {
       name: 'RVTTI',
       solution: 'CampusCURA ERP',
       logo: rvttiLogo
-    },
-    {
-      name: 'Maasai Mara Technical and Vocational College',
-      solution: 'CampusCURA ERP',
-      logo: maasaiMaraLogo
     },
     {
       name: 'Kirinyaga University',
