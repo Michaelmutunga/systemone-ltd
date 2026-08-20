@@ -9,8 +9,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 COPY package.json package-lock.json ./
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_CACHE_DIR=/app/.puppeteer-cache
 RUN npm ci
-RUN npx puppeteer browsers install chrome
+RUN npx puppeteer browsers clear && npx puppeteer browsers install chrome
 COPY . .
 RUN npm run build
 RUN npm run prerender
