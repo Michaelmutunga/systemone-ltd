@@ -91,7 +91,7 @@ const Contact = () => {
   };
   return <Layout>
       <Seo
-        title="Contact System One | RFID Consultation & Demo in Kenya"
+        title="Contact System One Ltd | RFID Consultation & Demo Kenya"
         description="Contact System One Ltd in Nairobi for an RFID consultation or demo — by phone, email or the website form. We respond within 24 hours."
         canonicalPath="/contact"
         schema={schema}

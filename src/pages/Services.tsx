@@ -243,8 +243,8 @@ const Services = () => {
   return (
     <Layout>
       <Seo
-        title="RFID & Technology Solutions | Services | System One Ltd"
-        description="Explore System One's services: RFID library systems, asset tracking, security gates, Library Radar, CampusCURA ERP, biometrics and ICT support."
+        title="System One Ltd | RFID & Technology Solutions Kenya"
+        description="System One Ltd provides RFID solutions and technology services for Kenyan institutions — library management, asset tracking, security gates, tags, readers, CampusCURA ERP and ICT support."
         canonicalPath="/services"
         schema={[schema, faqSchema]}
       />

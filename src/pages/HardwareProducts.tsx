@@ -94,8 +94,8 @@ const HardwareProducts = () => {
   return (
     <Layout>
       <Seo
-        title="RFID Tags, Readers & Security Gates in Kenya | System One"
-        description="RFID hardware in Kenya — tags, desktop and handheld readers, security gates, turnstiles, self-service kiosks and biometric systems, supplied, installed and supported."
+        title="System One Ltd | RFID Tags, Readers & Security Gates Kenya"
+        description="System One Ltd supplies RFID hardware in Kenya — tags, desktop and handheld readers, security gates, turnstiles, self-service kiosks and biometric systems, installed and supported."
         canonicalPath="/hardware-products"
         schema={schema}
       />

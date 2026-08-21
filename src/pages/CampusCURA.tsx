@@ -24,8 +24,8 @@ const CampusCURA = () => {
   return (
     <Layout>
       <Seo
-        title="CampusCURA ERP | Education Management System for Kenya"
-        description="CampusCURA is an education ERP for Kenyan schools, colleges and universities — student, finance, attendance and library management with RFID and biometrics integration."
+        title="System One Ltd | CampusCURA ERP Education Management Kenya"
+        description="CampusCURA by System One Ltd — education ERP for Kenyan schools, colleges and universities. Student, finance, attendance and library management with RFID and biometrics integration."
         canonicalPath="/campus-cura"
         schema={schema}
       />

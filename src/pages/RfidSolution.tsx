@@ -132,13 +132,13 @@ const solutions: Solution[] = [
 ];
 
 const seoTitles: Record<string, string> = {
-  'library-management': 'RFID Library Management System in Kenya | System One',
-  'asset-tracking': 'RFID Asset Tracking Solutions in Kenya | System One',
-  'inventory-management': 'RFID Inventory Management in Kenya | System One',
-  'security-gates': 'RFID Security Gates for Libraries in Kenya | System One',
-  'tags-and-readers': 'RFID Tags & Readers in Kenya | System One',
-  'attendance-and-identification': 'RFID Attendance & ID Systems in Kenya | System One',
-  'access-control': 'RFID Access Control & Turnstiles in Kenya | System One',
+  'library-management': 'System One Ltd | RFID Library Management Kenya',
+  'asset-tracking': 'System One Ltd | RFID Asset Tracking Kenya',
+  'inventory-management': 'System One Ltd | RFID Inventory Management Kenya',
+  'security-gates': 'System One Ltd | RFID Security Gates Kenya',
+  'tags-and-readers': 'System One Ltd | RFID Tags & Readers Kenya',
+  'attendance-and-identification': 'System One Ltd | RFID Attendance & ID Systems Kenya',
+  'access-control': 'System One Ltd | RFID Access Control Kenya',
 };
 
 const RfidSolution = () => {

@@ -44,8 +44,8 @@ const About = () => {
   return (
     <Layout>
       <Seo
-        title="About System One Ltd | RFID & Education Technology in Kenya"
-        description="Learn about System One Ltd — Kenya's trusted RFID and education technology partner for universities, TVET colleges and institutions."
+        title="About System One Ltd | RFID & Education Technology Kenya"
+        description="System One Ltd is Kenya's trusted RFID and education technology partner for universities, TVET colleges and institutions. Learn about our RFID solutions and services."
         canonicalPath="/about"
         schema={schema}
       />

@@ -280,8 +280,8 @@ const LibraryRadar = () => {
   return (
     <Layout>
       <Seo
-        title="Library Radar | RFID Library Management System in Kenya"
-        description="Library Radar is an RFID library management system for Kenyan institutions — tags, security gates, self-service kiosks and stocktaking that work with your existing LMS, including Koha."
+        title="System One Ltd | Library Radar RFID Library Management Kenya"
+        description="Library Radar by System One Ltd — RFID library management system for Kenya. Tags, security gates, self-service kiosks and stocktaking that work with your existing LMS, including Koha."
         canonicalPath="/library-radar"
         schema={schema}
       />
