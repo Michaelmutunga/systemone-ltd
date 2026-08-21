@@ -180,58 +180,6 @@ const About = () => {
           </div>
         </Reveal>
       </section>
-
-      {/* Team Section */}
-      <section className="section-padding mesh-gradient-subtle">
-        <Reveal className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-professional-grey">
-              Experienced professionals dedicated to your success
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'John Erick Okatch',
-                role: 'Chief Executive Officer',
-                description: 'Visionary leader driving System One Ltd\'s strategic direction and innovation.',
-              },
-              {
-                name: 'Lynette Nzamalu',
-                role: 'Director',
-                description: 'Operations director ensuring excellence in service delivery and client satisfaction.',
-              },
-              {
-                name: 'Ruth Muyala',
-                role: 'Admin',
-                description: 'Administrative professional managing day-to-day operations and client support.',
-              },
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl card-hover text-center"
-              >
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users2 size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-dark-grey mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary font-medium mb-3">
-                  {member.role}
-                </p>
-                <p className="text-professional-grey text-sm">
-                  {member.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
     </Layout>
   );
 };
