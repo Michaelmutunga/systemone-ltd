@@ -152,12 +152,17 @@ const Contact = () => {
                     </label>
                     <select id="service" name="service" value={formData.service} onChange={handleInputChange} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                       <option value="">Select a service</option>
-                      <option value="erp">ERP Systems</option>
-                      <option value="consulting">IT Consultancy</option>
-                      <option value="development">Software Development</option>
-                      <option value="networking">Networking Solutions</option>
-                      <option value="hardware">Hardware Solutions</option>
-                      <option value="support">Support Services</option>
+                      <option value="library-management">Library Management (RFID)</option>
+                      <option value="asset-tracking">Asset Tracking (RFID)</option>
+                      <option value="inventory-management">Inventory Management (RFID)</option>
+                      <option value="security-gates">Security Gates (RFID)</option>
+                      <option value="tags-readers">Tags & Readers (RFID)</option>
+                      <option value="attendance-id">Attendance & ID Systems (RFID)</option>
+                      <option value="access-control">Access Control (RFID)</option>
+                      <option value="campus-cura">CampusCURA ERP</option>
+                      <option value="library-radar">Library Radar</option>
+                      <option value="hardware">Hardware Products</option>
+                      <option value="it-consultancy">IT Consultancy</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -223,7 +228,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-dark-grey mb-1">Visit Us</h3>
                     <p className="text-professional-grey">
-                      Greatwall Apartments<br />
+                      Greatwall Building<br />
                       Beijing Road<br />
                       Nairobi, Kenya
                     </p>
@@ -264,7 +269,7 @@ const Contact = () => {
                 </p>
                 <div className="flex items-center space-x-2">
                   <Phone size={16} className="text-primary" />
-                  <span className="font-medium text-primary">+254 718 375 717</span>
+                  <span className="font-medium text-primary">+254 716 025 131</span>
                 </div>
               </div>
             </div>
