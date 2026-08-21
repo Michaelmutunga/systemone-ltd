@@ -244,8 +244,8 @@ const Home = () => {
   return (
     <Layout>
       <Seo
-        title="RFID Solutions Kenya | System One Ltd"
-        description="Professional RFID solutions in Kenya — library management, asset tracking, security gates, tags and readers — plus ERP, installation, training and support."
+        title="RFID Solutions Kenya | System One Ltd — Library, Asset Tracking & Security"
+        description="System One Ltd supplies and installs RFID systems in Kenya — library management, asset tracking, security gates, tags, readers and CampusCURA ERP. Nairobi."
         canonicalPath="/"
         schema={schema}
       />
