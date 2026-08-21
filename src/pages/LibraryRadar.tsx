@@ -281,7 +281,7 @@ const LibraryRadar = () => {
     <Layout>
       <Seo
         title="System One Ltd | Library Radar RFID Library Management Kenya"
-        description="Library Radar by System One Ltd — RFID library management system for Kenya. Tags, security gates, self-service kiosks and stocktaking that work with your existing LMS, including Koha."
+        description="Library Radar by System One Ltd — RFID library management system for Kenya. How RFID improves library efficiency in Kenya — tags, security gates, self-service kiosks and stocktaking that work with Koha and other LMS."
         canonicalPath="/library-radar"
         schema={schema}
       />
