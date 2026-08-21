@@ -95,7 +95,7 @@ const HardwareProducts = () => {
     <Layout>
       <Seo
         title="System One Ltd | RFID Tags, Readers & Security Gates Kenya"
-        description="System One Ltd supplies RFID hardware in Kenya — buy RFID readers, RFID tags, desktop readers, security gates, turnstiles, self-service kiosks and biometric systems. Affordable RFID tags Kenya, RFID hardware suppliers Kenya."
+        description="System One Ltd supplies RFID hardware in Kenya — buy RFID readers, RFID tags, RFID gates, desktop readers, security gates, turnstiles, self-service kiosks and biometric systems. RFID tags Kenya, RFID readers Kenya, RFID gate price Kenya, affordable RFID tags Kenya."
         canonicalPath="/hardware-products"
         schema={schema}
       />

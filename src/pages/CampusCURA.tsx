@@ -25,7 +25,7 @@ const CampusCURA = () => {
     <Layout>
       <Seo
         title="System One Ltd | CampusCURA ERP Education Management Kenya"
-        description="CampusCURA by System One Ltd — RFID technology for smart campuses in Kenya. Education ERP for schools, colleges and universities. Student, finance, attendance and library management with RFID and biometrics integration."
+        description="CampusCURA by System One Ltd — RFID technology for smart campuses in Kenya. Education ERP for schools, colleges and universities. RFID campus security Kenya, RFID for universities, RFID for colleges, student, finance, attendance and library management with RFID and biometrics integration."
         canonicalPath="/campus-cura"
         schema={schema}
       />

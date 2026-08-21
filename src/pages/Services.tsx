@@ -244,7 +244,7 @@ const Services = () => {
     <Layout>
       <Seo
         title="System One Ltd | RFID & Technology Solutions Kenya"
-        description="System One Ltd provides RFID solutions and technology services for Kenyan institutions — library management, asset tracking, security gates, tags, readers, CampusCURA ERP, ICT support. Buy RFID readers Kenya, RFID hardware suppliers Kenya."
+        description="System One Ltd provides RFID solutions in Kenya — library management, asset tracking, security gates, tags, readers, CampusCURA ERP, ICT support. RFID services Kenya, RFID provider Kenya, RFID consultant Kenya, RFID installation Kenya, RFID training Kenya, RFID integration Kenya, cost of RFID Kenya."
         canonicalPath="/services"
         schema={[schema, faqSchema]}
       />
