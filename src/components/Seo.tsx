@@ -20,6 +20,8 @@ const BASE_SCHEMA: Record<string, unknown>[] = [
     name: SITE.name,
     url: SITE.url,
     logo: `${SITE.url}/system-one-logo.webp`,
+    image: `${SITE.url}/system-one-logo.webp`,
+    description: SITE.description,
     email: SITE.email,
     telephone: SITE.phoneDisplay,
     address: {
@@ -36,6 +38,13 @@ const BASE_SCHEMA: Record<string, unknown>[] = [
       longitude: SITE.geo.longitude,
     },
     areaServed: { '@type': 'Country', name: 'Kenya' },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: SITE.phoneDisplay,
+      contactType: 'sales',
+      areaServed: 'KE',
+      availableLanguage: 'English',
+    },
     ...(SITE.social.length > 0 ? { sameAs: SITE.social } : {}),
   },
   {
