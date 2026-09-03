@@ -8,7 +8,7 @@ export const SITE = {
   phoneDisplay: '+254 716 003 953',
   emergencyPhone: '+254 718 375 717',
   address: {
-    streetAddress: 'Greatwall Apartments, Beijing Road',
+    streetAddress: 'Greatwall Building, Beijing Road',
     locality: 'Nairobi',
     region: 'Nairobi County',
     postalCode: '',
@@ -19,7 +19,7 @@ export const SITE = {
     longitude: 36.93942379891467,
   },
   googleMapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Greatwall%20Apartments%2C%20Beijing%20Road%2C%20Nairobi%2C%20Kenya',
+    'https://www.google.com/maps/search/?api=1&query=Greatwall%20Building%2C%20Beijing%20Road%2C%20Nairobi%2C%20Kenya',
   hours: [
     'Mo-Fr 08:00-17:00',
     'Sa 09:00-14:00',

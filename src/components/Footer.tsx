@@ -127,7 +127,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-primary mt-1" />
                 <span className="text-gray-300 text-sm">
-                  Greatwall Apartments<br />
+                   Greatwall Building<br />
                   Beijing Road, Nairobi, Kenya
                 </span>
               </div>
