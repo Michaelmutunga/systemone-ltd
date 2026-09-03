@@ -1,7 +1,6 @@
 import { Suspense, lazy, useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { SITE } from '@/lib/site';
@@ -56,13 +55,16 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email via Supabase edge function
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
-      if (error) {
-        throw error;
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to send message');
       }
 
       toast({
@@ -70,7 +72,6 @@ const Contact = () => {
         description: "Thank you for your inquiry. We'll get back to you within 24 hours."
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',

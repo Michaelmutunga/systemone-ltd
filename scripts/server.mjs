@@ -34,6 +34,7 @@ const LEGACY_REDIRECTS = {
 };
 
 const PORT = Number(process.env.PORT || 8080);
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 const absoluteUrl = (pathname, req) => {
   const proto = req.headers['x-forwarded-proto'] || 'http';
@@ -41,10 +42,77 @@ const absoluteUrl = (pathname, req) => {
   return `${proto}://${host}${pathname}`;
 };
 
-const server = http.createServer((req, res) => {
+const readBody = (req) => new Promise((resolve, reject) => {
+  const chunks = [];
+  req.on('data', (c) => chunks.push(c));
+  req.on('end', () => resolve(Buffer.concat(chunks).toString()));
+  req.on('error', reject);
+});
+
+const server = http.createServer(async (req, res) => {
   const { pathname } = new URL(req.url, 'http://localhost');
   const decoded = decodeURIComponent(pathname);
 
+  // --- API: Contact Form ---
+  if (decoded === '/api/contact' && req.method === 'POST') {
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, corsHeaders);
+      return res.end();
+    }
+    if (!RESEND_API_KEY) {
+      res.writeHead(500, { 'Content-Type': 'application/json', ...corsHeaders });
+      return res.end(JSON.stringify({ success: false, error: 'RESEND_API_KEY not configured' }));
+    }
+    try {
+      const body = JSON.parse(await readBody(req));
+      const { name, email, company, service, message } = body;
+      if (!name || !email || !message) {
+        res.writeHead(400, { 'Content-Type': 'application/json', ...corsHeaders });
+        return res.end(JSON.stringify({ success: false, error: 'name, email and message are required' }));
+      }
+      const emailResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${RESEND_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from: 'System One Website <onboarding@resend.dev>',
+          to: ['info@systemoneltd.com'],
+          cc: ['michaelmutunga44@gmail.com'],
+          subject: `New Contact Form Submission from ${name}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
+            <p><strong>Service:</strong> ${service || 'Not specified'}</p>
+            <p><strong>Message:</strong></p>
+            <p>${String(message).replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p><small>This message was sent from the System One website contact form.</small></p>
+          `,
+        }),
+      });
+      if (!emailResponse.ok) {
+        const errText = await emailResponse.text();
+        throw new Error(`Resend API error: ${errText}`);
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json', ...corsHeaders });
+      return res.end(JSON.stringify({ success: true, message: 'Email sent successfully' }));
+    } catch (err) {
+      console.error('Contact form error:', err.message);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ success: false, error: err.message }));
+    }
+  }
+
+  // --- Legacy redirects ---
   if (LEGACY_REDIRECTS[decoded]) {
     res.writeHead(301, { Location: absoluteUrl(LEGACY_REDIRECTS[decoded], req) });
     return res.end();
