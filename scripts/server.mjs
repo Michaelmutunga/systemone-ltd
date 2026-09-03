@@ -82,7 +82,7 @@ const server = http.createServer(async (req, res) => {
           'Authorization': `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: 'System One Website <onboarding@resend.dev>',
+          from: 'System One Website <noreply@systemoneltd.com>',
           to: ['info@systemoneltd.com'],
           cc: ['michaelmutunga44@gmail.com'],
           subject: `New Contact Form Submission from ${name}`,
