@@ -84,7 +84,7 @@ const server = http.createServer(async (req, res) => {
         body: JSON.stringify({
           from: 'System One Website <noreply@systemoneltd.com>',
           to: ['info@systemoneltd.com'],
-          cc: ['michaelmutunga44@gmail.com'],
+          cc: ['sales@systemoneltd.com'],
           subject: `New Contact Form Submission from ${name}`,
           html: `
             <h2>New Contact Form Submission</h2>
