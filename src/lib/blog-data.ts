@@ -4,7 +4,7 @@ import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.webp';
 import turnstile from '@/assets/products/turnstile-1.webp';
 import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.webp';
 import biometricSystem from '@/assets/products/biometric-system-1.webp';
-import bookDropInUse from '@/assets/New images/RFID BOOKSDROP IN USE.jfif';
+import bookDropInUse from '@/assets/products/bookdrop-in-use.webp';
 
 export interface BlogArticle {
   slug: string;

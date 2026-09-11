@@ -46,7 +46,7 @@ import turnstile4 from '@/assets/products/turnstile-5.webp';
 import bookDropox from '@/assets/new assets/RFID book dropox.jfif';
 import libraryManage from '@/assets/new assets/library manage.jpg';
 import educationLibrary from '@/assets/new assets/education and library.jpg';
-import libraryCheckout from '@/assets/New images/Library radar checkout .jfif';
+import libraryCheckout from '@/assets/products/library-radar-checkout.webp';
 
 const LibraryRadar = () => {
   const schema = [
