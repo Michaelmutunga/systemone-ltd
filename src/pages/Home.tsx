@@ -44,6 +44,7 @@ import kirinyagaLogo from '@/assets/logos/Kirinyaga logo.webp';
 import cooperativeLogo from '@/assets/logos/cooperative logo.webp';
 import fullheightTurnstileImage from '@/assets/new assets/fullheight turnstile.jfif';
 import libraryRadarCheckout from '@/assets/products/library-radar-checkout.webp';
+import inventoryManagementLibrary from '@/assets/products/inventory-management-library.webp';
 import biometricSystem1 from '@/assets/products/biometric-system-1.webp';
 
 const Home = () => {
@@ -113,7 +114,7 @@ const Home = () => {
     {
       title: 'Inventory Management',
       slug: 'inventory-management',
-      image: inventoryStockTaker,
+      image: inventoryManagementLibrary,
       description: 'Replace slow manual counts with reliable item identification and stock visibility across stores, shelves, and operational areas.',
     },
     {
