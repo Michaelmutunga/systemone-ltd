@@ -25,7 +25,7 @@ const slides = [
   {
     title: 'RFID Inventory Management',
     description: 'Speed up stock checks and connect RFID workflows with existing operations.',
-    image: rfidReader,
+    image: inventoryReader,
   },
 ];
 

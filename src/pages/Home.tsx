@@ -43,6 +43,9 @@ import iluLogo from '@/assets/logos/ilu.jpeg';
 import kirinyagaLogo from '@/assets/logos/Kirinyaga logo.webp';
 import cooperativeLogo from '@/assets/logos/cooperative logo.webp';
 import fullheightTurnstileImage from '@/assets/new assets/fullheight turnstile.jfif';
+import inventoryStockTaking from '@/assets/products/inventory-stock-taking.webp';
+import libraryRadarCheckout from '@/assets/products/library-radar-checkout.webp';
+import biometricSystem1 from '@/assets/products/biometric-system-1.webp';
 
 const Home = () => {
   const features = [
@@ -73,7 +76,7 @@ const Home = () => {
       icon: Route,
       title: 'Track',
       description: 'Identify and track assets, items, and records across your operation.',
-      image: rfidDesktopReader,
+      image: inventoryStockTaker,
     },
     {
       icon: ShieldCheck,
@@ -99,19 +102,19 @@ const Home = () => {
     {
       title: 'Library Management',
       slug: 'library-management',
-      image: inventoryManagementImage,
+      image: libraryRadarCheckout,
       description: 'Tag, locate, circulate, and protect library materials with faster, more accurate workflows for staff and patrons.',
     },
     {
       title: 'Asset Tracking',
       slug: 'asset-tracking',
-      image: assetTrackingImage,
+      image: inventoryStockTaker,
       description: 'Maintain a clear view of valuable equipment and assets as they move between rooms, departments, and locations.',
     },
     {
       title: 'Inventory Management',
       slug: 'inventory-management',
-      image: libraryManagementImage,
+      image: inventoryStockTaking,
       description: 'Replace slow manual counts with reliable item identification and stock visibility across stores, shelves, and operational areas.',
     },
     {
@@ -129,7 +132,7 @@ const Home = () => {
     {
       title: 'Attendance & Identification',
       slug: 'attendance-and-identification',
-      image: rfidDesktopReader,
+      image: biometricSystem1,
       description: 'Support accurate identity and attendance records with faster, more consistent identification at the point of access or service.',
     },
     {
