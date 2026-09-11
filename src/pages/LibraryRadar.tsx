@@ -46,6 +46,7 @@ import turnstile4 from '@/assets/products/turnstile-5.webp';
 import bookDropox from '@/assets/new assets/RFID book dropox.jfif';
 import libraryManage from '@/assets/new assets/library manage.jpg';
 import educationLibrary from '@/assets/new assets/education and library.jpg';
+import libraryCheckout from '@/assets/New images/Library radar checkout .jfif';
 
 const LibraryRadar = () => {
   const schema = [
@@ -211,7 +212,10 @@ const LibraryRadar = () => {
       title: 'RFID Return Drop Box',
       description:
         'The RFID Return Drop Box automates the process of returning library materials. Patrons can return books through a designated drop point, where RFID technology identifies the returned items and supports the institution\u2019s return-processing workflow - providing an efficient option for handling returns while reducing pressure on the circulation desk.',
-      images: [{ src: bookDropox, alt: 'RFID Book Return Drop Box', large: true }],
+      images: [
+        { src: bookDropox, alt: 'RFID Book Return Drop Box', large: true },
+        { src: libraryCheckout, alt: 'Library Radar Checkout Station' },
+      ],
     },
     {
       icon: DoorOpen,

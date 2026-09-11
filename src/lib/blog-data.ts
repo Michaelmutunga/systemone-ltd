@@ -4,6 +4,7 @@ import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.webp';
 import turnstile from '@/assets/products/turnstile-1.webp';
 import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.webp';
 import biometricSystem from '@/assets/products/biometric-system-1.webp';
+import bookDropInUse from '@/assets/New images/RFID BOOKSDROP IN USE.jfif';
 
 export interface BlogArticle {
   slug: string;
@@ -27,8 +28,8 @@ export const blogArticles: BlogArticle[] = [
     author: 'Michael Mutunga',
     date: 'July 15, 2026',
     dateISO: '2026-07-15',
-    image: rfidDesktopReader,
-    imageAlt: 'RFID desktop reader used in Kenyan libraries for book checkout',
+    image: bookDropInUse,
+    imageAlt: 'RFID book drop box in use at a Kenyan library',
     keywords: 'RFID libraries Kenya, library RFID system, Library Radar Kenya, RFID book tagging, library automation Kenya',
     description: 'How RFID technology is transforming Kenyan libraries with faster checkout, accurate inventory, and stronger security. Learn about Library Radar and Koha integration.',
     content: `
