@@ -20,7 +20,7 @@ import turnstile1 from '@/assets/products/turnstile-1.webp';
 import turnstile2 from '@/assets/products/turnstile-2.webp';
 import turnstile4 from '@/assets/products/turnstile-4.png';
 import turnstile5 from '@/assets/products/turnstile-5.webp';
-import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
+import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.webp';
 import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
 import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';

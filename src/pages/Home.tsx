@@ -16,7 +16,7 @@ import PrefetchLink from '@/components/PrefetchLink';
 import RfidHeroCarousel from '@/components/RfidHeroCarousel';
 import Reveal from '@/components/Reveal';
 import MarqueeCarousel from '@/components/MarqueeCarousel';
-import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
+import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.webp';
 import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.webp';
 import inventoryStockTaker from '@/assets/products/inventory-stock-taker-1.webp';
 import rfidTag from '@/assets/products/rfid-tag-1.webp';

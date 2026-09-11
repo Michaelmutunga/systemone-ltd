@@ -16,7 +16,7 @@ import inventory3 from '@/assets/products/inventory-stock-taker-3.webp';
 import rfidReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
 import rfidReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
 import rfidReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
-import rfidGate1 from '@/assets/products/rfid-security-gate-1.png';
+import rfidGate1 from '@/assets/products/rfid-security-gate-1.webp';
 import rfidGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidGate3 from '@/assets/products/rfid-security-gate-3.png';
 import rfidTag1 from '@/assets/products/rfid-tag-1.webp';

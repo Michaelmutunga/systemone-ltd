@@ -37,7 +37,7 @@ import inventoryStockTaker3 from '@/assets/products/inventory-stock-taker-3.webp
 import selfCheckinKiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';
 import selfCheckinKiosk2 from '@/assets/products/self-checkin-kiosk-2.webp';
 import selfCheckinKiosk3 from '@/assets/products/self-checkin-kiosk-3.webp';
-import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.png';
+import rfidSecurityGate1 from '@/assets/products/rfid-security-gate-1.webp';
 import rfidSecurityGate2 from '@/assets/products/rfid-security-gate-2.png';
 import rfidSecurityGate3 from '@/assets/products/rfid-security-gate-3.png';
 import turnstile1 from '@/assets/products/turnstile-1.webp';
