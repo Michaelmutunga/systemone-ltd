@@ -65,6 +65,11 @@ const Footer = () => {
                 </PrefetchLink>
               </li>
               <li>
+                <PrefetchLink to="/blog" className="text-gray-300 hover:text-primary transition-colors">
+                  Blog
+                </PrefetchLink>
+              </li>
+              <li>
                 <PrefetchLink to="/contact" className="text-gray-300 hover:text-primary transition-colors">
                   Contact
                 </PrefetchLink>

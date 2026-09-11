@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import {
   AboutPage,
+  BlogPage,
+  BlogPostPage,
   CampusCURAPage,
   ContactPage,
   HardwareProductsPage,
@@ -43,6 +45,8 @@ const App = () => (
               <Route path="/library-radar" element={<LibraryRadarPage />} />
               <Route path="/hardware-products" element={<HardwareProductsPage />} />
               <Route path="/rfid-solutions/:slug" element={<RfidSolutionPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

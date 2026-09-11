@@ -9,6 +9,8 @@ export const CampusCURAPage = lazyWithPreload(() => import("@/pages/CampusCURA")
 export const LibraryRadarPage = lazyWithPreload(() => import("@/pages/LibraryRadar"));
 export const HardwareProductsPage = lazyWithPreload(() => import("@/pages/HardwareProducts"));
 export const RfidSolutionPage = lazyWithPreload(() => import("@/pages/RfidSolution"));
+export const BlogPage = lazyWithPreload(() => import("@/pages/Blog"));
+export const BlogPostPage = lazyWithPreload(() => import("@/pages/BlogPost"));
 export const NotFoundPage = lazyWithPreload(() => import("@/pages/NotFound"));
 
 const routePreloaders: Record<string, () => Promise<unknown>> = {
@@ -21,11 +23,14 @@ const routePreloaders: Record<string, () => Promise<unknown>> = {
   "/library-radar": LibraryRadarPage.preload,
   "/hardware-products": HardwareProductsPage.preload,
   "/rfid-solutions": RfidSolutionPage.preload,
+  "/blog": BlogPage.preload,
 };
 
 export const preloadRoute = (path: string) => {
   const preloader = routePreloaders[path] ?? (
-    path.startsWith("/rfid-solutions/") ? RfidSolutionPage.preload : undefined
+    path.startsWith("/rfid-solutions/") ? RfidSolutionPage.preload :
+    path.startsWith("/blog/") ? BlogPostPage.preload :
+    undefined
   );
 
   return preloader?.();
