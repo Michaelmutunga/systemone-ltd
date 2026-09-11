@@ -1,9 +1,9 @@
-import rfidTag from '@/assets/products/rfid-tag.webp';
-import rfidDesktopReader from '@/assets/products/rfid-desktop-reader.webp';
-import rfidSecurityGate from '@/assets/products/rfid-security-gate.webp';
-import turnstile from '@/assets/products/turnstile.webp';
-import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk.webp';
-import biometricSystem from '@/assets/products/biometric-system.webp';
+import rfidTag from '@/assets/products/rfid-tag-1.webp';
+import rfidDesktopReader from '@/assets/products/rfid-desktop-reader-1.webp';
+import rfidSecurityGate from '@/assets/products/rfid-security-gate-1.png';
+import turnstile from '@/assets/products/turnstile-1.webp';
+import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.webp';
+import biometricSystem from '@/assets/products/biometric-system-1.webp';
 
 export interface BlogArticle {
   slug: string;
