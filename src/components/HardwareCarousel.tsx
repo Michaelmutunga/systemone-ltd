@@ -11,8 +11,6 @@ import breathalyzer1 from '@/assets/products/breathalyzer-1.png';
 import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
 import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
 import inventory1 from '@/assets/products/inventory-stock-taker-1.webp';
-import inventory2 from '@/assets/products/inventory-stock-taker-2.png';
-import inventory3 from '@/assets/products/inventory-stock-taker-3.webp';
 import rfidReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
 import rfidReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
 import rfidReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
@@ -38,8 +36,8 @@ const HardwareCarousel = () => {
     { image: breathalyzer2, name: 'Kamnyweso Breathalyzer' },
     { image: breathalyzer3, name: 'Kamnyweso Breathalyzer' },
     { image: inventory1, name: 'Inventory Stock Taker' },
-    { image: inventory2, name: 'Inventory Stock Taker' },
-    { image: inventory3, name: 'Inventory Stock Taker' },
+    { image: inventory1, name: 'Inventory Stock Taker' },
+    { image: inventory1, name: 'Inventory Stock Taker' },
     { image: rfidReader1, name: 'RFID Desktop Reader' },
     { image: rfidReader2, name: 'RFID Desktop Reader' },
     { image: rfidReader3, name: 'RFID Desktop Reader' },
