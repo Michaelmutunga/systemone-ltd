@@ -88,7 +88,7 @@ const Home = () => {
       icon: ScanLine,
       title: 'Automate',
       description: 'Reduce manual identification, counting, and recording work.',
-      image: inventoryStockTaker,
+      image: inventoryManagementLibrary,
     },
     {
       icon: Settings,
