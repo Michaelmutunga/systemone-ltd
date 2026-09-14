@@ -1,9 +1,28 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, User, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Calendar, User, ArrowLeft, ArrowRight, Tag, Clock } from 'lucide-react';
 import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { blogArticles, getBlogArticle } from '@/lib/blog-data';
 import { SITE } from '@/lib/site';
+
+const categoryColors: Record<string, string> = {
+  library: 'bg-blue-100 text-blue-700',
+  asset: 'bg-emerald-100 text-emerald-700',
+  technology: 'bg-purple-100 text-purple-700',
+  security: 'bg-red-100 text-red-700',
+  inventory: 'bg-amber-100 text-amber-700',
+  access: 'bg-cyan-100 text-cyan-700',
+};
+
+const getCategory = (slug: string) => {
+  if (slug.includes('library')) return { label: 'Library', color: categoryColors.library };
+  if (slug.includes('asset')) return { label: 'Asset Tracking', color: categoryColors.asset };
+  if (slug.includes('barcode')) return { label: 'Technology', color: categoryColors.technology };
+  if (slug.includes('security')) return { label: 'Security', color: categoryColors.security };
+  if (slug.includes('inventory')) return { label: 'Inventory', color: categoryColors.inventory };
+  if (slug.includes('access')) return { label: 'Access Control', color: categoryColors.access };
+  return { label: 'RFID', color: categoryColors.technology };
+};
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -16,6 +35,7 @@ const BlogPost = () => {
   const articleIndex = blogArticles.findIndex((a) => a.slug === slug);
   const prevArticle = articleIndex > 0 ? blogArticles[articleIndex - 1] : null;
   const nextArticle = articleIndex < blogArticles.length - 1 ? blogArticles[articleIndex + 1] : null;
+  const cat = getCategory(article.slug);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -53,70 +73,89 @@ const BlogPost = () => {
         schema={schema}
       />
 
-      {/* Article Header */}
-      <section className="hero-section">
-        <div className="container-width section-padding">
-          <div className="max-w-4xl mx-auto">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-primary hover:underline mb-6">
+      {/* Hero Image */}
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <img
+          src={article.image}
+          alt={article.imageAlt}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="container-width pb-8 md:pb-12">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-4 transition-colors"
+            >
               <ArrowLeft className="w-4 h-4" />
-              Back to Blog
+              All Articles
             </Link>
-            <div className="flex items-center gap-4 text-sm text-professional-grey mb-4">
-              <span className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${cat.color}`}>
+                <Tag className="w-3 h-3" />
+                {cat.label}
+              </span>
+              <span className="flex items-center gap-1.5 text-sm text-white/70">
+                <Calendar className="w-3.5 h-3.5" />
                 {article.date}
               </span>
-              <span className="flex items-center gap-1">
-                <User className="w-4 h-4" />
+              <span className="flex items-center gap-1.5 text-sm text-white/70">
+                <User className="w-3.5 h-3.5" />
                 {article.author}
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-dark-grey leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-4xl">
               {article.title}
             </h1>
           </div>
         </div>
       </section>
 
-      {/* Article Image */}
-      <section className="section-padding pt-0">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={article.image}
-                alt={article.imageAlt}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Article Content */}
-      <section className="section-padding pt-0">
+      <section className="section-padding">
         <div className="container-width">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div
-              className="prose prose-lg max-w-none prose-headings:text-dark-grey prose-p:text-professional-grey prose-a:text-primary prose-strong:text-dark-grey"
+              className="prose prose-lg max-w-none prose-headings:text-dark-grey prose-p:text-professional-grey prose-a:text-primary prose-strong:text-dark-grey prose-headings:font-bold"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </div>
         </div>
       </section>
 
-      {/* Navigation Between Articles */}
-      <section className="section-padding border-t border-border">
+      {/* Author Box */}
+      <section className="pb-16">
         <div className="container-width">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <User className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-professional-grey uppercase tracking-wider mb-1">Written by</p>
+                <p className="font-semibold text-dark-grey">{article.author}</p>
+                <p className="text-sm text-professional-grey">System One Ltd Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Between Articles */}
+      <section className="pb-16">
+        <div className="container-width">
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {prevArticle ? (
                 <Link
                   to={`/blog/${prevArticle.slug}`}
-                  className="group p-6 border border-border rounded-xl hover:border-primary hover:shadow-md transition-all"
+                  className="group p-5 border border-slate-200 rounded-xl hover:border-primary/30 hover:shadow-md transition-all"
                 >
-                  <span className="text-sm text-professional-grey">Previous Article</span>
-                  <h3 className="text-lg font-semibold text-dark-grey group-hover:text-primary transition-colors mt-1">
+                  <span className="text-xs text-professional-grey uppercase tracking-wider flex items-center gap-1">
+                    <ArrowLeft className="w-3 h-3" />
+                    Previous Article
+                  </span>
+                  <h3 className="text-base font-semibold text-dark-grey group-hover:text-primary transition-colors mt-2 line-clamp-2">
                     {prevArticle.title}
                   </h3>
                 </Link>
@@ -126,10 +165,13 @@ const BlogPost = () => {
               {nextArticle ? (
                 <Link
                   to={`/blog/${nextArticle.slug}`}
-                  className="group p-6 border border-border rounded-xl hover:border-primary hover:shadow-md transition-all text-right"
+                  className="group p-5 border border-slate-200 rounded-xl hover:border-primary/30 hover:shadow-md transition-all text-right"
                 >
-                  <span className="text-sm text-professional-grey">Next Article</span>
-                  <h3 className="text-lg font-semibold text-dark-grey group-hover:text-primary transition-colors mt-1">
+                  <span className="text-xs text-professional-grey uppercase tracking-wider flex items-center justify-end gap-1">
+                    Next Article
+                    <ArrowRight className="w-3 h-3" />
+                  </span>
+                  <h3 className="text-base font-semibold text-dark-grey group-hover:text-primary transition-colors mt-2 line-clamp-2">
                     {nextArticle.title}
                   </h3>
                 </Link>
@@ -142,16 +184,16 @@ const BlogPost = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding mesh-gradient-subtle">
+      <section className="section-padding tech-gradient-animated text-white">
         <div className="container-width">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Implement RFID?
             </h2>
-            <p className="text-xl text-professional-grey mb-8">
+            <p className="text-xl mb-8 text-white/85">
               Whether you're looking for library management, asset tracking, or access control solutions, our team can help you find the right approach for your institution.
             </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+            <Link to="/contact" className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2">
               Get in Touch
               <ArrowRight className="w-5 h-5" />
             </Link>
