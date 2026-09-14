@@ -5,6 +5,10 @@ import turnstile from '@/assets/products/turnstile-1.webp';
 import selfCheckinKiosk from '@/assets/products/self-checkin-kiosk-1.webp';
 import biometricSystem from '@/assets/products/biometric-system-1.webp';
 import bookDropInUse from '@/assets/products/bookdrop-in-use.webp';
+import blogDesktopReader from '@/assets/products/blog-desktop-reader.webp';
+import blogRfidTag from '@/assets/products/blog-rfid-tag.webp';
+import blogTagPlacement from '@/assets/products/blog-tag-placement.webp';
+import inventoryStocktakingLibrary from '@/assets/products/inventory-stocktaking-library.webp';
 
 export interface BlogArticle {
   slug: string;
@@ -77,8 +81,8 @@ export const blogArticles: BlogArticle[] = [
     author: 'Alex Mwanzia',
     date: 'July 28, 2026',
     dateISO: '2026-07-28',
-    image: rfidTag,
-    imageAlt: 'RFID tags used for asset tracking in Kenyan businesses',
+    image: inventoryStocktakingLibrary,
+    imageAlt: 'Staff using RFID handheld scanner for asset tracking in a Kenyan business',
     keywords: 'RFID asset tracking Kenya, equipment tracking RFID, asset management Kenya, RFID for businesses',
     description: 'Discover 5 reasons why Kenyan businesses need RFID asset tracking. Reduce losses, save time, and improve accountability with RFID technology.',
     content: `
@@ -130,8 +134,8 @@ export const blogArticles: BlogArticle[] = [
     author: 'Lilian Ogollah',
     date: 'August 5, 2026',
     dateISO: '2026-08-05',
-    image: rfidTag,
-    imageAlt: 'Comparison of RFID tag and barcode label for identification',
+    image: blogRfidTag,
+    imageAlt: 'Close-up comparison of RFID tag and barcode label',
     keywords: 'RFID vs barcode Kenya, RFID advantages over barcode, barcode vs RFID comparison, RFID technology Kenya',
     description: 'RFID vs barcode: a honest comparison for Kenyan institutions. Learn the speed, cost, durability, and efficiency differences to make the right choice.',
     content: `
@@ -242,8 +246,8 @@ export const blogArticles: BlogArticle[] = [
     author: 'Alfred Ochieng',
     date: 'August 19, 2026',
     dateISO: '2026-08-19',
-    image: rfidTag,
-    imageAlt: 'RFID tags and handheld scanner for inventory management',
+    image: blogTagPlacement,
+    imageAlt: 'RFID tag placement on inventory items for automated tracking',
     keywords: 'RFID inventory management Kenya, RFID stocktaking, warehouse RFID Kenya, inventory control RFID',
     description: 'How RFID inventory management saves Kenyan businesses time and money. Faster stocktaking, better accuracy, and reduced labor costs with RFID technology.',
     content: `
