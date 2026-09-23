@@ -3,56 +3,26 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback } from 'react';
 import PrefetchLink from '@/components/PrefetchLink';
 
-// Import all hardware product images
+// Import one representative image per hardware product
 import biometric1 from '@/assets/products/biometric-system-1.webp';
-import biometric2 from '@/assets/products/biometric-system-2.png';
-import biometric3 from '@/assets/products/biometric-system-3.webp';
 import breathalyzer1 from '@/assets/products/breathalyzer-1.png';
-import breathalyzer2 from '@/assets/products/breathalyzer-2.png';
-import breathalyzer3 from '@/assets/products/breathalyzer-3.png';
 import inventory1 from '@/assets/products/inventory-stock-taker-1.webp';
 import rfidReader1 from '@/assets/products/rfid-desktop-reader-1.webp';
-import rfidReader2 from '@/assets/products/rfid-desktop-reader-2.webp';
-import rfidReader3 from '@/assets/products/rfid-desktop-reader-3.webp';
 import rfidGate1 from '@/assets/products/rfid-security-gate-1.webp';
-import rfidGate2 from '@/assets/products/rfid-security-gate-2.webp';
-import rfidGate3 from '@/assets/products/rfid-security-gate-3.webp';
 import rfidTag1 from '@/assets/products/rfid-tag-1.webp';
-import rfidTag2 from '@/assets/products/rfid-tag-2.webp';
-import rfidTag3 from '@/assets/products/rfid-tag-3.webp';
 import kiosk1 from '@/assets/products/self-checkin-kiosk-1.webp';
-import kiosk2 from '@/assets/products/self-checkin-kiosk-2.webp';
-import kiosk3 from '@/assets/products/self-checkin-kiosk-3.webp';
 import turnstile1 from '@/assets/products/turnstile-1.webp';
-import turnstile2 from '@/assets/products/turnstile-4.png';
-import turnstile3 from '@/assets/products/turnstile-5.webp';
 
 const HardwareCarousel = () => {
   const products = [
     { image: biometric1, name: 'Biometric System' },
-    { image: biometric2, name: 'Biometric System' },
-    { image: biometric3, name: 'Biometric System' },
     { image: breathalyzer1, name: 'Kamnyweso Breathalyzer' },
-    { image: breathalyzer2, name: 'Kamnyweso Breathalyzer' },
-    { image: breathalyzer3, name: 'Kamnyweso Breathalyzer' },
-    { image: inventory1, name: 'Inventory Stock Taker' },
-    { image: inventory1, name: 'Inventory Stock Taker' },
     { image: inventory1, name: 'Inventory Stock Taker' },
     { image: rfidReader1, name: 'RFID Desktop Reader' },
-    { image: rfidReader2, name: 'RFID Desktop Reader' },
-    { image: rfidReader3, name: 'RFID Desktop Reader' },
     { image: rfidGate1, name: 'RFID Security Gate' },
-    { image: rfidGate2, name: 'RFID Security Gate' },
-    { image: rfidGate3, name: 'RFID Security Gate' },
     { image: rfidTag1, name: 'RFID Tag' },
-    { image: rfidTag2, name: 'RFID Tag' },
-    { image: rfidTag3, name: 'RFID Tag' },
     { image: kiosk1, name: 'Self Check-in Kiosk' },
-    { image: kiosk2, name: 'Self Check-in Kiosk' },
-    { image: kiosk3, name: 'Self Check-in Kiosk' },
     { image: turnstile1, name: 'Turnstile' },
-    { image: turnstile2, name: 'Turnstile' },
-    { image: turnstile3, name: 'Turnstile' },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
